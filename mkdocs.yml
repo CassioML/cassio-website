@@ -4,8 +4,40 @@ nav:
   - Langchain:
     - Setup: examples/langchain/setup.md
     - Prompt templates: examples/langchain/prompt_templates.md
-theme: readthedocs
+
+# theme: readthedocs
+
 # markdown_extensions:
 #    - pymdownx.arithmatex
 # extra_javascript:
 #   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+extra_css:
+  - stylesheets/theme.css
+
+# Theme
+theme:
+  name: material
+  language: en
+  favicon: img/favicon.svg
+  logo: images/cassio_logo1_transparent.png
+  features:
+    - content.code.annotate
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - scheme: cassio
+      toggle:
+        icon: material/weather-night
+        name: Switch color
+    - scheme: cassio_blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch color

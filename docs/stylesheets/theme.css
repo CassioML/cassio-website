@@ -1,0 +1,12 @@
+/*
+Color schemes.
+check this for all definitions: https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss
+*/
+
+[data-md-color-scheme="cassio"] {
+  --md-primary-fg-color:        #741b47;
+}
+
+[data-md-color-scheme="cassio_blue"] {
+  --md-primary-fg-color:        #1155cc;
+}
