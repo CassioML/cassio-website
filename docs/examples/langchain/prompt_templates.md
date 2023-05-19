@@ -7,12 +7,12 @@ The examples below will get you started
 
 ## Standard prompt templates
 
-Example coming soon.
+See [this](https://github.com/hemidactylus/langchain-cassio-examples/blob/main/examples/01-prompt-template-basics.ipynb).
 
 ## Chat prompt templates
 
-Example coming soon.
+See [this](https://github.com/hemidactylus/langchain-cassio-examples/blob/main/examples/02-chat-prompt-templates.ipynb).
 
 ## "Partialing" a prompt template
 
-Example coming soon.
+Both above notebooks show this.
