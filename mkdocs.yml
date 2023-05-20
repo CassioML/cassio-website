@@ -9,7 +9,7 @@ nav:
     - Setup for LangChain: frameworks/langchain/setup.md
     - Prompt Templates, intro: frameworks/langchain/prompt-templates-basic.ipynb
     - Chat Prompt Templates: frameworks/langchain/chat-prompt-templates.ipynb
-    - Partialing Prompt Templates: frameworks/langchain/partialing_prompt_templates.md
+    - Partialing Prompt Templates: frameworks/langchain/prompt-templates-partialing.ipynb
 
 markdown_extensions:
   - admonition
