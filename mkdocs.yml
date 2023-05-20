@@ -3,15 +3,18 @@ nav:
   - Home:
       - Welcome: index.md
       - DB Setup: db_setup.md
+      - API Setup: api_setup.md
   - LangChain:
-    - Setup for LangChain: examples/langchain/setup.md
-    - Prompt Templates: examples/langchain/base_prompt_templates.md
-    - Chat Prompt Templates: examples/langchain/chat_prompt_templates.md
-    - Partialing Prompt Templates: examples/langchain/partialing_prompt_templates.md
+    - About LangChain: frameworks/langchain/about.md
+    - Setup for LangChain: frameworks/langchain/setup.md
+    - Prompt Templates, intro: frameworks/langchain/prompt-templates-basic.ipynb
+    - Chat Prompt Templates: frameworks/langchain/chat-prompt-templates.ipynb
+    - Partialing Prompt Templates: frameworks/langchain/partialing_prompt_templates.md
 
-# theme: readthedocs
-
-# markdown_extensions:
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 #    - pymdownx.arithmatex
 # extra_javascript:
 #   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
@@ -19,9 +22,14 @@ nav:
 extra_css:
   - stylesheets/theme.css
 
+plugins:
+  - mkdocs-jupyter:
+      include_source: True
+
 # Theme
 theme:
   name: material
+  custom_dir: overrides
   language: en
   favicon: img/favicon.svg
   logo: images/cassio_logo1_transparent.png

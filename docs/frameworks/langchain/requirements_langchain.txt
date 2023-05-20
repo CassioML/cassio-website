@@ -1,0 +1,6 @@
+# for the time being:
+git+https://github.com/hemidactylus/langchain@cassio#egg=langchain
+git+https://github.com/CassioML/cassio
+#
+jupyter>=1.0.0
+python-dotenv==1.0.0

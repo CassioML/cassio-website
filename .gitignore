@@ -3,6 +3,7 @@ __pycache__/
 
 # Environments
 .env
+.api_keys
 
 # notebooks stuff
 .ipynb_checkpoints

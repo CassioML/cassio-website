@@ -4,9 +4,9 @@ check this for all definitions: https://github.com/squidfunk/mkdocs-material/blo
 */
 
 [data-md-color-scheme="cassio"] {
-  --md-primary-fg-color:        #741b47;
+  --md-primary-fg-color:        #943b67;
 }
 
 [data-md-color-scheme="cassio_blue"] {
-  --md-primary-fg-color:        #1155cc;
+  --md-primary-fg-color:        #3175ec;
 }

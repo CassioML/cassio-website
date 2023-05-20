@@ -3,6 +3,7 @@ from dotenv import find_dotenv, load_dotenv
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
+# this will climb the directory tree looking for the file
 dotenv_file = find_dotenv('.env')
 load_dotenv(dotenv_file)
 
