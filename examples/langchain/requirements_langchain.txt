@@ -1,0 +1,6 @@
+# For the time being, these are in dev mode:
+#langchain
+#cassio
+#
+jupyter>=1.0.0
+python-dotenv==1.0.0

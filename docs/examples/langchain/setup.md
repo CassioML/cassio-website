@@ -1,17 +1,16 @@
-# General setup for the LangChain examples
+# Setup to run the LangChain examples
 
-First clone the [repo](https://github.com/hemidactylus/langchain-cassio-examples) on your machine.
+Make sure you did the [general setup](/db_setup/) first.
 
-Create a virtualenv and pip-install the `requirements.txt` found in the repo.
+Go to `examples/langchain`.
+
+Create a Python 3.8+ virtualenv and pip-install the `requirements_langchain.txt` found there.
 
 **NOTE**: at the moment you need to do dev install of both a certain branch of LangChain and the `cassIO` library:
 
 - clone `https://github.com/hemidactylus/cassio` and `pip install -e .`;
 - clone `https://github.com/hemidactylus/langchain` _in the `cassio` branch_ and `pip install -e .`;
 
-At the moment we support Astra DB only (going to change very soon).
+Now, in the same console, first `. ../.env` and then `jupyter notebook`.
 
-Create a dot-env file as in the provided template, about your Astra DB instance.
-
-Now, in the same console, first `. .env` and then `jupyter notebook`.
-You can now experiment with the notebooks as in the other pages.
+You are now ready to run the notebooks.

@@ -1,9 +1,13 @@
 site_name: CassIO
 nav:
-  - Home: index.md
-  - Langchain:
-    - Setup: examples/langchain/setup.md
-    - Prompt templates: examples/langchain/prompt_templates.md
+  - Home:
+      - Welcome: index.md
+      - DB Setup: db_setup.md
+  - LangChain:
+    - Setup for LangChain: examples/langchain/setup.md
+    - Prompt Templates: examples/langchain/base_prompt_templates.md
+    - Chat Prompt Templates: examples/langchain/chat_prompt_templates.md
+    - Partialing Prompt Templates: examples/langchain/partialing_prompt_templates.md
 
 # theme: readthedocs
 
