@@ -7,3 +7,6 @@ __pycache__/
 
 # notebooks stuff
 .ipynb_checkpoints
+
+# MkDocs Ignore
+site
