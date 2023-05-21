@@ -6,3 +6,9 @@ Create a virtualenv e.g. `cassio-website-3.10`
 
 `pip install -r requirements.txt`
 
+
+## Run MkDocs 
+Serve
+`mkdocs serve`
+Build
+`mkdocs build`
