@@ -39,14 +39,3 @@ jupyter notebook
 
 and wait for a browser window to open with the notebooks in this directory,
 ready to run.
-
-
-
-
-
-- clone `https://github.com/hemidactylus/cassio` and `pip install -e .`;
-- clone `https://github.com/hemidactylus/langchain` _in the `cassio` branch_ and `pip install -e .`;
-
-Now, in the same console, first `. ../.env` and then `jupyter notebook`.
-
-You are now ready to run the notebooks.

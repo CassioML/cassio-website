@@ -5,11 +5,16 @@ nav:
       - DB Setup: db_setup.md
       - API Setup: api_setup.md
   - LangChain:
-    - About LangChain: frameworks/langchain/about.md
-    - Setup for LangChain: frameworks/langchain/setup.md
-    - Prompt Templates, intro: frameworks/langchain/prompt-templates-basic.ipynb
-    - Chat Prompt Templates: frameworks/langchain/chat-prompt-templates.ipynb
-    - Partialing Prompt Templates: frameworks/langchain/prompt-templates-partialing.ipynb
+    - About: frameworks/langchain/about.md
+    - Setup: frameworks/langchain/setup.md
+    - Prompt Templates:
+      - Intro: frameworks/langchain/prompt-templates-basic.ipynb
+      - Chat templates: frameworks/langchain/chat-prompt-templates.ipynb
+      - Partialing: frameworks/langchain/prompt-templates-partialing.ipynb
+    - Advanced Prompt Templates:
+        - Custom templates: frameworks/langchain/prompt-templates-engine.ipynb
+        - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
+        - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
 
 markdown_extensions:
   - admonition

@@ -10,3 +10,6 @@ __pycache__/
 
 # MkDocs Ignore
 site
+
+# LangChain/Feast store
+docs/frameworks/langchain/feast_store/user_features
