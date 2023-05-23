@@ -15,6 +15,10 @@ nav:
         - Custom templates: frameworks/langchain/prompt-templates-engine.ipynb
         - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
         - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
+    - Memory:
+        - Base class: frameworks/langchain/memory-basic.ipynb
+        - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
+        - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
 
 markdown_extensions:
   - admonition
