@@ -19,6 +19,11 @@ nav:
         - Base class: frameworks/langchain/memory-basic.ipynb
         - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
         - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
+    - Caching:
+        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
+    - Vector Similarity Search:
+        - About: frameworks/langchain/vector-similarity-search.md
+        - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
 
 markdown_extensions:
   - admonition

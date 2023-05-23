@@ -28,8 +28,8 @@ def getCQLSession():
 def getCQLKeyspace():
     return ASTRA_DB_KEYSPACE
 
-# def getLocalCassandraSession():
-#     # A session to a locally-running Cassandra
-#     cluster = Cluster()
-#     localSession = cluster.connect()
-#     return localSession
+def getLocalCassandraSession():
+    # A session to a locally-running, vector-similarity-search-capable Cassandra
+    cluster = Cluster()
+    localSession = cluster.connect()
+    return localSession
