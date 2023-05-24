@@ -24,6 +24,8 @@ nav:
     - Vector Similarity Search:
         - About: frameworks/langchain/vector-similarity-search.md
         - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
+        - VectorStore, quickstart: frameworks/langchain/qa-basic.ipynb
+        - More VectorStore QA: frameworks/langchain/qa-advanced.ipynb
 
 markdown_extensions:
   - admonition
