@@ -20,6 +20,18 @@ In the [general setup instructions](/db_setup), we show how to create a free Ast
 but of course you can use any Cassandra installation, provided you adapt
 the few lines of code that connect to your database.
 
+!!! info "Experimental Cassandra features"
+
+    Some of the features rely on the "Vector Similarity Search"
+    capabilities, which is being added to Cassandra and is not yet
+    merged to the released versions.
+
+    In order to start experimenting with them, at the moment, you need to
+    build the binary yourself from the source and start an instance locally.
+
+    Refer to the [Local DB Setup](/local_db_setup) for instructions. This notice will be
+    lifted as the feature will be shipped with Cassandra.
+
 Similarly, many of the examples need access to third-party
 services such as LLMs provided by OpenAI: make sure you
 follow the [API setup](/api_setup) to configure the necessary API Keys
@@ -41,8 +53,9 @@ described at the top of the section.
 
     1. clone [this repo](https://github.com/cassioML/cassio-website);
     2. do the [general DB setup](/db_setup);
-    3. do the [API setup](/api_setup);
-    4. do the [LangChain-specific setup](/frameworks/langchain/setup/).
+    3. do the [local DB setup](/local_db_setup) if you want to use the Vector Search capabilities;
+    4. do the [API setup](/api_setup);
+    5. do the [LangChain-specific setup](/frameworks/langchain/setup/).
 
     At this point you can fire up Jupyter notebook and start running any of the
     provided notebooks.

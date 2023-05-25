@@ -1,6 +1,6 @@
 # API Setup
 
-### Credentials file
+## Credentials file
 
 In the repo root directory, create file `.api_keys` by copying
 `.api_keys.template` and insert your valid credentials.
@@ -13,6 +13,9 @@ In the repo root directory, create file `.api_keys` by copying
 
     Currently, only OpenAI is supported.
 
-### Everything is set
+## API Setup completed.
 
-Well done: you can now browse the website and run the code examples!
+The (optional) next is the [setup of the local Cassandra](/local_db_setup). to be able to use
+the experimental features (Vector Similarity Search).
+
+You can skip it and start browsing the code examples right now!

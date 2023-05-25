@@ -2,8 +2,10 @@ site_name: CassIO
 nav:
   - Home:
       - Welcome: index.md
+      - General architecture: general_architecture.md
       - DB Setup: db_setup.md
       - API Setup: api_setup.md
+      - Local DB Setup: local_db_setup.md
   - LangChain:
     - About: frameworks/langchain/about.md
     - Setup: frameworks/langchain/setup.md
@@ -48,7 +50,7 @@ theme:
   custom_dir: overrides
   language: en
   favicon: img/favicon.svg
-  logo: images/cassio_logo1_transparent.png
+  logo: images/cassio_logo1_transparent_small.png
   features:
     - content.code.annotate
     - navigation.indexes
