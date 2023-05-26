@@ -7,11 +7,17 @@ In the repo root directory, create file `.api_keys` by copying
 
 !!! note Available LLM Services
 
-    Depending on which API Keys you define in the file,
-    a different provider will be used as the source of
-    the LLMs.
+    Depending on which API Key you define in the file,
+    you will be able to use certain providers
+    for your LLM services.
 
-    Currently, only OpenAI is supported.
+    Currently, OpenAI and Google VertexAI are supported.
+
+The notebooks use a simple utility to choose the provider
+automatically based on the credentials available, but you can
+override this choice at any time. The (few) lines of code that
+actually instantiate the LLM objects are in the notebooks for
+maximum clarity.
 
 ## API Setup completed.
 
