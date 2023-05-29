@@ -1,3 +1,6 @@
 export OPENAI_API_KEY="..."
 
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/service-account-key.json"
+
+# see e.g. 'docs/frameworks/langchain/llm_choice.py' for valid options here
+export PREFERRED_LLM_PROVIDER="VertexAI"
