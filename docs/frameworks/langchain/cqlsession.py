@@ -1,3 +1,7 @@
+"""
+Utilities to provide connection to Astra DB (and local Cassandra)
+"""
+
 import os
 from dotenv import find_dotenv, load_dotenv
 from cassandra.cluster import Cluster
