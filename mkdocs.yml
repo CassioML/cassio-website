@@ -29,6 +29,7 @@ nav:
         - VectorStore/Q&A, quickstart: frameworks/langchain/qa-basic.ipynb
         - VectorStore/Q&A, learn more: frameworks/langchain/qa-advanced.ipynb
         - VectorStore, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
+        - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
 
 markdown_extensions:
   - admonition
