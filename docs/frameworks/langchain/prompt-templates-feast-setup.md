@@ -32,7 +32,7 @@ repo, activate the virtual environment for the LangChain examples
 and install this dependency:
 
 ```
-pip install "feast[cassandra]>=0.026"
+pip install "feast[cassandra]>=0.26"
 ```
 
 Keep file `../../../../.env` handy, as you will be shortly asked to provide
@@ -46,7 +46,10 @@ Launch the following:
 feast init -t cassandra user_features
 ```
 
-choose Astra DB and provide the other required information.
+choose Astra DB (recommended) or Cassandra,
+then provide the other required information (pay attention
+to the question about the keyspace: provide the name of the keyspace you
+created earlier in the "DB setup" step).
 You can skip the optional parameters altogether.
 
 !!! Note "Client ID and Client Secret"

@@ -24,10 +24,22 @@ you can call it something like `cassio_tutorials` for example.
 
 Detailed explanations can be found [at this page](https://awesome-astra.github.io/docs/pages/astra/create-instance/).
 
+!!! tip "Vector Search"
+
+    If you want to take advantage of the Vector Search capabilities that are
+    currently in Public Preview in Astra, make sure to pick the
+    **"Serverless with Vector (Preview)"** option when creating your database.
+
+    If you choose to use an Astra database without Vector Search support, you
+    can still test the corresponding components of CassIO against a
+    Cassandra instance with Vector Search enabled. See [here](/local_db_setup/)
+    for instructions on how to build and run one such instance locally.
+
 ### Get Token and Secure Connect Bundle, create `.env` file
 
 In order to establish a connection to your Cloud Database,
-you need a secret string ("Token") and a "Secure Connect Bundle" zipfile, containing certificates/proxy/routing information.
+you need a secret string ("Token") and a "Secure Connect Bundle"
+zipfile, containing certificates/proxy/routing information.
 
 The easiest way to do so is to first generate a database token with
 role "Database Administrator", then use the Astra CLI to automate the
@@ -43,10 +55,9 @@ astra setup
 ```
 
 and providing the token (the string starting with `AstraCS:...`).
-Then, in the root directory of this repo, launch
+Then, in the root directory of this repo, adjusting names if needed, launch
 
 ```
-# Replace database and keyspace name with your values!
 astra db create-dotenv cassio_db -k cassio_tutorials
 ```
 
@@ -64,17 +75,34 @@ with all connection parameters you'll need later.
 ### Import sample data
 
 Some of the provided code examples require pre-existing data on your
-database. Run the following (which launches a CQL scripts in your database)
+database.
+<!-- Run the following (which launches a CQL scripts in your database)
 to write the reference data:
 
 ```
 astra db cqlsh cassio_db -k cassio_tutorials \
   -f setup/provision_db/write_sample_data.cql
 ```
+ -->
+To populate the newly-created keyspace with the required data:
+
+- download the newest (vector-search-compatible) `cqlsh` utility from [this link](https://downloads.datastax.com/enterprise/cqlsh-astra-20230526-vectortype-bin.tar.gz);
+- extract the archive to a location of your liking, e.g. `/home/user/myCqlsh`;
+- source the environment file you just prepared with `. .env` (make sure you are in this repo's root directory);
+- launch the script that populates the database with:
+
+```
+/home/user/myCqlsh/cqlsh-astra/bin/cqlsh \
+    -b "$ASTRA_DB_SECURE_BUNDLE_PATH" \
+    -u token \
+    -p "$ASTRA_DB_APPLICATION_TOKEN" \
+    -k "$ASTRA_DB_KEYSPACE" \
+    -f setup/provision_db/write_sample_data.cql
+```
 
 !!! note
 
-    If you target a Cassandra cluster, make sure you `USE` your
+    If you target your own Cassandra cluster, make sure you `USE` your
     keyspace before running the script above.
 
 ### Your database is ready

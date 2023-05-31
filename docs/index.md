@@ -17,10 +17,18 @@ pip install cassio
 
 However, most likely you will want to use third-party frameworks,
 such as LangChain, that in turn _use_ CassIO.
-In those cases, the installation of CassIO will take place
-behind the scenes, as is customary for derived dependencies.
-A good example is the LangChain setup outlined [here](/frameworks/langchain/setup/),
-which triggers installation of the library through its [requirement file](https://github.com/CassioML/cassio-website/blob/main/docs/frameworks/langchain/requirements_langchain.txt).
+Depending on how these frameworks are structured,
+they may require CassIO upfront in their sub-dependencies
+or you might have to manually install it.
+
+!!! example
+
+    A good example is the LangChain setup outlined [here](/frameworks/langchain/setup/):
+    the LangChain framework itself does not list all of the packages
+    it _might_ need and it is up to the user to pick, and install,
+    those that will actually be needed by their application.
+    In fact, you can see `cassio` being explicitly listed in the
+    [requirements file](https://github.com/CassioML/cassio-website/blob/main/docs/frameworks/langchain/requirements_langchain.txt) for these demo notebooks.
 
 ## How to use this site
 
@@ -37,15 +45,16 @@ the few lines of code that connect to your database.
 
 !!! info "Experimental Cassandra features"
 
-    Some of the features rely on the "Vector Similarity Search"
-    capabilities, which are being added to Cassandra and are not yet
-    merged to the released versions.
+    Some of the features rely on the "Vector Search"
+    capabilities, which are being added to Cassandra right now.
 
-    In order to start experimenting with them, at the moment, you need to
-    build the binary yourself from the source and start an instance locally.
+    If you want to experiment with these, you have several options:
+    you can build and run locally a version of Cassandra that implements
+    these features from a pre-release branch, or you can create
+    an Astra DB instance choosing to enable the vector capabilities,
+    now in Public Preview.
 
-    Refer to the [Local DB Setup](/local_db_setup) for instructions. This notice will be
-    lifted as the feature will be shipped with Cassandra.
+    Keep reading to find out more.
 
 Similarly, many of the examples need access to a third-party
 service for LLMs and embeddings (for instance, Google's Vertex AI or OpenAI):
@@ -68,7 +77,7 @@ described at the top of the section.
 
     1. clone [this repo](https://github.com/cassioML/cassio-website);
     2. do the [general DB setup](/db_setup);
-    3. do the [local DB setup](/local_db_setup) if you want to use the Vector Search capabilities;
+    3. do the [local DB setup](/local_db_setup) if needed;
     4. do the [API setup](/api_setup);
     5. do the [LangChain-specific setup](/frameworks/langchain/setup/).
 
