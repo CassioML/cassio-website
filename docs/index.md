@@ -7,6 +7,21 @@ and **do you want to start NOW**?
 
 This is the place for you.
 
+## Installation and usage
+
+Installing CassIO is as simple as
+
+```
+pip install cassio
+```
+
+However, most likely you will want to use third-party frameworks,
+such as LangChain, that in turn _use_ CassIO.
+In those cases, the installation of CassIO will take place
+behind the scenes, as is customary for derived dependencies.
+A good example is the LangChain setup outlined [here](/frameworks/langchain/setup/),
+which triggers installation of the library through its [requirement file](https://github.com/CassioML/cassio-website/blob/main/docs/frameworks/langchain/requirements_langchain.txt).
+
 ## How to use this site
 
 Don't just browse the website: you should clone the [repository](https://github.com/cassioML/cassio-website)
@@ -60,3 +75,7 @@ described at the top of the section.
     At this point you can fire up Jupyter notebook and start running any of the
     provided notebooks.
     When moving on to testing another framework, only the last step will be needed.
+
+## CassIO repository
+
+The source code is available at [this location](https://github.com/CassioML/cassio).
