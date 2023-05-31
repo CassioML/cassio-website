@@ -23,7 +23,7 @@ the few lines of code that connect to your database.
 !!! info "Experimental Cassandra features"
 
     Some of the features rely on the "Vector Similarity Search"
-    capabilities, which is being added to Cassandra and is not yet
+    capabilities, which are being added to Cassandra and are not yet
     merged to the released versions.
 
     In order to start experimenting with them, at the moment, you need to
@@ -32,10 +32,10 @@ the few lines of code that connect to your database.
     Refer to the [Local DB Setup](/local_db_setup) for instructions. This notice will be
     lifted as the feature will be shipped with Cassandra.
 
-Similarly, many of the examples need access to third-party
-services such as LLMs provided by OpenAI: make sure you
-follow the [API setup](/api_setup) to configure the necessary API Keys
-and other secrets.
+Similarly, many of the examples need access to a third-party
+service for LLMs and embeddings (for instance, Google's Vertex AI or OpenAI):
+make sure you follow the [API setup](/api_setup) to configure the
+necessary API Keys and other secrets for your provider of choice.
 
 ### Per-framework specific setup
 
