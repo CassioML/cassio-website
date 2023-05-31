@@ -21,7 +21,5 @@ maximum clarity.
 
 ## API Setup completed.
 
-The (optional) next is the [setup of the local Cassandra](/local_db_setup). to be able to use
-the experimental features (Vector Similarity Search).
-
-You can skip it and start browsing the code examples right now!
+Your basic setup is all done now.
+Feel free to browse the code examples right away!

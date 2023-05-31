@@ -23,7 +23,7 @@ nav:
         - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
     - Caching:
         - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
-    - Vector Similarity Search:
+    - Vector Search:
         - About: frameworks/langchain/vector-similarity-search.md
         - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
         - VectorStore/Q&A, quickstart: frameworks/langchain/qa-basic.ipynb

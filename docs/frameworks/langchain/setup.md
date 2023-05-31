@@ -19,7 +19,6 @@ pip install -r requirements_langchain.txt
 !!! info
 
     The current requirements file builds a couple of packages from source.
-    We are working to publish the `cassio` package to PyPI very soon.
 
 ## Launch
 
@@ -39,3 +38,9 @@ jupyter notebook
 
 and wait for a browser window to open with the notebooks in this directory,
 ready to run.
+
+## Database choice
+
+In most notebooks you'll find a cell where the two calls `` and `` take place.
+You can switch between the Astra DB instance and the local database (if you have
+one) by changing the value of the variable `cqlMode` therein.

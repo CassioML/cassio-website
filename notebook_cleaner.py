@@ -27,7 +27,10 @@ def _cleanValue(value, path):
 def _keepValue(value, path):
     path_str = '.'.join(path)
     if path_str == 'cells..id':
-        return False
+        return True
+        # Unfortunately we cannot strip the id field as its absence
+        # will become a hard error in future nbformat versions.
+        # return False
     elif path_str == 'cells..outputs.':
         if value.get('name') == 'stderr':
             return False
