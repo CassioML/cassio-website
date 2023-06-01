@@ -27,4 +27,4 @@ For cleanliness, please run this after closing the notebooks and before committi
 find -name "*.ipynb" | grep -v ".ipynb_checkpoints" | xargs ./notebook_cleaner.py
 ```
 
-This simply strips warnings and stuff like the (always-changing) cell IDs from the notebooks.
+This simply strips `stderr` noise (and possibly other stuff that gets in the way) from notebooks.
