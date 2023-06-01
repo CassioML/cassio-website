@@ -43,6 +43,8 @@ extra_css:
   - stylesheets/theme.css
 
 plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - mkdocs-jupyter:
       include_source: True
 
@@ -60,8 +62,8 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
-    - search.highlight
     - search.share
+    - search.highlight
     - search.suggest
     - toc.follow
   palette:
