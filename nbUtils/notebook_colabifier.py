@@ -18,7 +18,7 @@ from nbmanipulate import (
     cleanNb,
 )
 
-from settings import codeLineReplacements
+from settings import codeLineReplacements, suppressColabify
 
 # cell enrichments
 
@@ -178,13 +178,14 @@ if __name__ == '__main__':
     ]
 
     # TODO: use config files for exclusion, etc
-    skippedFiles = [
-        'docs/frameworks/langchain/prompt-templates-feast.ipynb',
+    skippedFileTitles = [
+        f'{fr}.ipynb'
+        for fr in suppressColabify
     ]
 
     for pathList, fileTitle in parsed:
         pathString = joinFilePath(pathList, fileTitle)
-        if pathString not in skippedFiles:
+        if fileTitle not in skippedFileTitles:
             print(f'* Doing "{pathString}" ... ', end='')
             colabifyNotebook(pathList, fileTitle)
             print('done.')

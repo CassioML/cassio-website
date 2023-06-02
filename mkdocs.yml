@@ -47,6 +47,8 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - mkdocs-jupyter:
       include_source: True
+      include: ["*.ipynb"]
+      ignore: ["**/.colab/*.ipynb", "**/.ipynb_checkpoints/*.ipynb"]
 
 # Theme
 theme:

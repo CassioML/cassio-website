@@ -22,3 +22,11 @@ codeLineReplacements = [
         "cqlMode = 'astra_db'",
     )
 ]
+
+# NOTE: currently you HAVE to mirror these changes
+# to a list in overrides/main.html to suppress
+# the 'open in colab' button!
+suppressColabify = [
+    'prompt-templates-feast',
+    'another-notebook-not-colabified', 
+]
