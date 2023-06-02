@@ -28,3 +28,11 @@ find -name "*.ipynb" | grep -v ".ipynb_checkpoints" | grep -v ".colab" | xargs .
 ```
 
 This simply strips `stderr` noise (and possibly other stuff that gets in the way) from notebooks.
+
+## Colab generation
+
+Run this after the above cleaning:
+
+```
+./nbUtils/notebook_colabifier.py
+```
