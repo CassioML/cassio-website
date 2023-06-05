@@ -41,6 +41,7 @@ ready to run.
 
 ## Database choice
 
-In most notebooks you'll find a cell where the two calls `` and `` take place.
+In most notebooks you'll find a cell where the two
+calls `getCQLSession` and `getCQLKeyspace` take place.
 You can switch between the Astra DB instance and the local database (if you have
 one) by changing the value of the variable `cqlMode` therein.

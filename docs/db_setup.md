@@ -52,12 +52,8 @@ In order to establish a connection to your Cloud Database,
 you need a secret string ("Token") and a "Secure Connect Bundle"
 zipfile, containing certificates/proxy/routing information.
 
-The easiest way to do so is to first generate a database token with
-role "Database Administrator", then use the Astra CLI to automate the
-remaining part:
-
 - how to [generate a token](https://awesome-astra.github.io/docs/pages/astra/create-token/) (remember to pick the "Database Administrator role);
-- how to [install Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/#1-installation)
+- how to obtain the [Secure Connect Bundle](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure) for the database. Store it somewhere on your computer (without unpacking the zip).
 
 !!! tip "Colab users: you're done"
 
@@ -70,29 +66,38 @@ remaining part:
 
 ### Create `.env` file
 
-Now you can configure the CLI by running
+Now you need to create a `.env` file, at the root of this repo,
+with a few connection parameters
+for the code examples to be able to access your database.
 
-```
-astra setup
-```
+You can copy the `.env.template` file you find there and replace
+the environment variables you see there.
+(essentially, the full path to the bundle file, the keyspace
+name and your database secret token string).
 
-and providing the token (the string starting with `AstraCS:...`).
-Then, in the root directory of this repo, adjusting names if needed, launch
+??? tip "Using the Astra CLI"
 
-```
-astra db create-dotenv cassio_db -k cassio_tutorials
-```
+    Alternatively, once you have the Database Administrator token,
+    you can use the Astra CLI to automate the rest (bundle and env-file).
 
-This will download the bundle zipfile and create a `.env` file
-with all connection parameters you'll need later.
+    First [install Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/#1-installation).
 
-??? tip "Alternatives to Astra CLI"
+    Then configure it with:
 
-    If you prefer to proceed manually, you can
-    [download the Secure Connect Bundle](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure) somewhere on your machine,
-    then create the `.env` file yourself, as long as it defines the same
-    environment variables you see in the provided `.env.template` file
-    (essentially, the full path to bundle file, the keyspace name and your database secret token string).
+    ```
+    astra setup
+    ```
+
+    providing the token (the string starting with `AstraCS:...`).
+
+    Then, in the root directory of this repo, adjusting names if needed, launch
+
+    ```
+    astra db create-dotenv cassio_db -k cassio_tutorials
+    ```
+
+    This will download the bundle zipfile and create a `.env` file
+    with all connection parameters you'll need later.
 
 ### Import sample data
 

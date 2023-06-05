@@ -6,9 +6,6 @@ import os
 from dotenv import find_dotenv, load_dotenv
 from cassandra.cluster import (
     Cluster,
-    ExecutionProfile,
-    EXEC_PROFILE_DEFAULT,
-    ConsistencyLevel,
 )
 from cassandra.auth import PlainTextAuthProvider
 
@@ -25,11 +22,6 @@ LOCAL_KEYSPACE = os.environ.get('LOCAL_KEYSPACE', 'cassio_tutorials')
 
 def getCQLSession(mode='astra_db'):
     if mode == 'astra_db':
-        #
-        profile = ExecutionProfile(
-            consistency_level=ConsistencyLevel.LOCAL_QUORUM,
-        )
-        #
         cluster = Cluster(
             cloud={
                 "secure_connect_bundle": ASTRA_DB_SECURE_BUNDLE_PATH,
@@ -38,7 +30,6 @@ def getCQLSession(mode='astra_db'):
                 ASTRA_DB_CLIENT_ID,
                 ASTRA_DB_APPLICATION_TOKEN,
             ),
-            execution_profiles={EXEC_PROFILE_DEFAULT: profile},
         )
         astraSession = cluster.connect()
         return astraSession
