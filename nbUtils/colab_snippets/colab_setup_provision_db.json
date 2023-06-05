@@ -13,9 +13,27 @@
    "id": "ade437a4",
    "metadata": {},
    "source": [
-    "This notebook requires some data to be pre-populated on your database. Please follow these steps:\n",
+    "This notebook requires some data to be pre-populated on your database. Please follow these steps (roughly equivalent to [this section](https://cassio.org/db_setup/#import-sample-data) of the instructions on cassio.org):"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9cc8fb23",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ASTRA_DB_KEYSPACE = getCQLKeyspace(mode=\"astra_db\")\n",
     "\n",
-    "TODO: what is the best way to have users create and fill the tables in colab?"
+    "!curl https://raw.githubusercontent.com/CassioML/cassio-website/main/setup/provision_db/write_sample_data.cql --output write_sample_data.cql\n",
+    "!curl https://downloads.datastax.com/enterprise/cqlsh-astra-20230526-vectortype-bin.tar.gz --output cqlsh.tar.gz\n",
+    "!tar -xzf cqlsh.tar.gz\n",
+    "!./cqlsh-astra/bin/cqlsh \\\n",
+    "    -b \"$ASTRA_DB_SECURE_BUNDLE_PATH\" \\\n",
+    "    -u token \\n",
+    "    -p \"$ASTRA_DB_APPLICATION_TOKEN\" \\\n",
+    "    -k \"$ASTRA_DB_KEYSPACE\" \\\n",
+    "    -f write_sample_data.cql"
    ]
   }
  ],

@@ -56,30 +56,28 @@ defaultColabCellSequences = [
     'seq_colab_setup_preamble',
     'seq_colab_dependency_setup',
     'seq_colab_setup',
+    'colab_setup_closing',
 ]
+populateDBColabCellSequences = [
+    'seq_title',
+    'seq_colab_setup_preamble',
+    'seq_colab_dependency_setup',
+    'seq_colab_setup',
+    'colab_setup_provision_db',
+    'colab_setup_closing',
+]
+
 # Per-notebook overrides:
 perNotebookColabCellSequences = {
-    'docs/frameworks/langchain/chat-prompt-templates.ipynb': (
-        defaultColabCellSequences + [
-            'colab_setup_provision_db',
-        ]
-    ),
-    'docs/frameworks/langchain/prompt-templates-basic.ipynb': (
-        defaultColabCellSequences + [
-            'colab_setup_provision_db',
-        ]
-    ),
-    'docs/frameworks/langchain/prompt-templates-partialing.ipynb': (
-        defaultColabCellSequences + [
-            'colab_setup_provision_db',
-        ]
-    ),
+    'docs/frameworks/langchain/chat-prompt-templates.ipynb': populateDBColabCellSequences,
+    'docs/frameworks/langchain/prompt-templates-basic.ipynb': populateDBColabCellSequences,
+    'docs/frameworks/langchain/prompt-templates-partialing.ipynb': populateDBColabCellSequences,
 }
 # Cell sequence generators, and their mapping, are defined here:
 #
 baseDir = os.path.abspath(os.path.dirname(__file__))
 
-def loadAndStripCells(jsonTitle):
+def loadAndStripColabSnippetCells(jsonTitle):
     filePath = os.path.join(baseDir, 'colab_snippets', jsonTitle)
     cells = cleanNb(
         json.load(open(filePath)),
@@ -92,15 +90,19 @@ def loadAndStripCells(jsonTitle):
 
 
 def colabSetupPreambleCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripCells('colab_setup_preamble.json')
+    return loadAndStripColabSnippetCells('colab_setup_preamble.json')
 
 
 def colabSetupCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripCells('colab_setup.json')
+    return loadAndStripColabSnippetCells('colab_setup.json')
 
 
 def colabSetupProvisionDBCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripCells('colab_setup_provision_db.json')
+    return loadAndStripColabSnippetCells('colab_setup_provision_db.json')
+
+
+def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_closing.json')
 
 
 def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
@@ -161,9 +163,10 @@ def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
 
 
 cellSequenceCreatorMap = {
-    'seq_title':                   prepareTitleCells,
-    'seq_colab_setup_preamble':    colabSetupPreambleCells,
-    'seq_colab_dependency_setup':  prepareDependencyCells,
-    'seq_colab_setup':             colabSetupCells,
-    'colab_setup_provision_db':    colabSetupProvisionDBCells,
+    'seq_title':                    prepareTitleCells,
+    'seq_colab_setup_preamble':     colabSetupPreambleCells,
+    'seq_colab_dependency_setup':   prepareDependencyCells,
+    'seq_colab_setup':              colabSetupCells,
+    'colab_setup_provision_db':     colabSetupProvisionDBCells,
+    'colab_setup_closing':          colabSetupClosing,
 }

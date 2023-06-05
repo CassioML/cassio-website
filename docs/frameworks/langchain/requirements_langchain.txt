@@ -3,7 +3,6 @@ git+https://github.com/hemidactylus/langchain@cassio#egg=langchain
 git+https://github.com/datastax/python-driver.git@cep-vsearch#egg=cassandra-driver
 #
 cassio>=0.0.2
-feast>=0.26
 google-cloud-aiplatform>=1.25.0
 jupyter>=1.0.0
 openai==0.27.7

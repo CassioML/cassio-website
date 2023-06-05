@@ -28,7 +28,8 @@ on your database.
 ### Preliminaries
 
 Navigate to the directory `docs/frameworks/langchain/feast_store` of this
-repo, activate the virtual environment for the LangChain examples
+repo (which you should have cloned in earlier setup steps),
+activate the virtual environment for the LangChain examples
 and install this dependency:
 
 ```
