@@ -3,6 +3,17 @@
 We show how to create an Astra DB instance and set the connection
 details and secrets that all code examples can then use.
 
+!!! question "Run locally or use Colab?"
+
+    You can run most of the examples either locally on your environment
+    or taking advantage of Google Colaboratory, it's up to you.
+
+    Just keep in mind that each Colab instance is ephemeral: as such,
+    to run each notebook there you will have to repeat a modicum of setup
+    such as installing dependencies and supplying DB connection parameters
+    and API Keys, whereas if you configure a local environment once you will
+    be able to run all notebooks straight away.
+
 Astra DB is a serverless DBaaS by DataStax, built on Apache Cassandra, that offers
 a free tier with generous traffic and storage limits. Using Astra DB frees you
 from the hassle of running your own cluster while retaining all the advantages, such as the excellent data distribution and very high availability that make Cassandra a world-class NoSQL database.
@@ -35,7 +46,7 @@ Detailed explanations can be found [at this page](https://awesome-astra.github.i
     Cassandra instance with Vector Search enabled. See [here](/local_db_setup/)
     for instructions on how to build and run one such instance locally.
 
-### Get Token and Secure Connect Bundle, create `.env` file
+### Get Token and Secure Connect Bundle
 
 In order to establish a connection to your Cloud Database,
 you need a secret string ("Token") and a "Secure Connect Bundle"
@@ -47,6 +58,17 @@ remaining part:
 
 - how to [generate a token](https://awesome-astra.github.io/docs/pages/astra/create-token/) (remember to pick the "Database Administrator role);
 - how to [install Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/#1-installation)
+
+!!! tip "Colab users: you're done"
+
+    If you plan to run the examples within Google Colab, that's all you need
+    to do now: you can skip the rest of the page and move on to 
+    [API Setup](/api_setup).
+
+    Note, however, that certain notebooks may occasionally require further
+    setup steps (we'll make that clear along the way).
+
+### Create `.env` file
 
 Now you can configure the CLI by running
 
@@ -86,10 +108,11 @@ astra db cqlsh cassio_db -k cassio_tutorials \
  -->
 To populate the newly-created keyspace with the required data:
 
+- clone [this repo](https://github.com/cassioML/cassio-website) if you haven't already (it contains the website content, but also all code examples for you);
 - download the newest (vector-search-compatible) `cqlsh` utility from [this link](https://downloads.datastax.com/enterprise/cqlsh-astra-20230526-vectortype-bin.tar.gz);
 - extract the archive to a location of your liking, e.g. `/home/user/myCqlsh`;
 - source the environment file you just prepared with `. .env` (make sure you are in this repo's root directory);
-- launch the script that populates the database with:
+- `cd` to this repo's root directory and launch the script that populates the database:
 
 ```
 /home/user/myCqlsh/cqlsh-astra/bin/cqlsh \
@@ -99,6 +122,18 @@ To populate the newly-created keyspace with the required data:
     -k "$ASTRA_DB_KEYSPACE" \
     -f setup/provision_db/write_sample_data.cql
 ```
+
+
+!!! tip "Astra DB's in-browser console"
+
+    You can also run this step without a local `cqlsh` client (for instance,
+    if you are using Colab and want to skip local setup entirely).
+
+    Locate the [CQL Console](https://awesome-astra.github.io/docs/pages/astra/faq/#how-to-open-the-web-cql-console) in you Astra DB instance, then:
+
+    1. enter the command `USE cassio_tutorials;` and press Enter. Replace with your keyspace name if you called it differently.
+    2. Paste the contents of [this file](https://raw.githubusercontent.com/CassioML/cassio-website/main/setup/provision_db/write_sample_data.cql) in the Console and watch the show.
+
 
 !!! note
 
