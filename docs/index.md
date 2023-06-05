@@ -35,11 +35,28 @@ or you might have to manually install it.
 Don't just browse the website: you should clone the [repository](https://github.com/cassioML/cassio-website)
 and start running the code examples yourself (notebooks, tutorials, full-fledged small applications).
 You'll find everything in this repo.
+You can also download a single notebook's code by clicking on the
+"Download Notebook" icon at the top of each page
+(<svg viewBox="0 0 24 24" style="height: 1.4em; vertical-align: middle;"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>).
+
+!!! Tip "Google Colaboratory"
+
+    You can also run most of the code examples directly in Google Colaboratory
+    ("Colab" for short) after a minimal amount of setup.
+
+    Just create your Astra DB instance and get an API Key for an LLM provider
+    and you're good to go. We will give Colab-specific setup instructions
+    later on.
+
+    If you want to run the examples in Colab, look for the
+    "Open in Colab" icon at the top of the page
+    (<img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>).
 
 ### General pre-requisites
 
 Most code examples require a Cassandra / Astra DB database.
-In the [general setup instructions](/db_setup), we show how to create a free Astra DB instance out of convenience,
+Out of convenience, in the [general setup instructions](/db_setup),
+we show how to create a free Astra DB instance,
 but of course you can use any Cassandra installation, provided you adapt
 the few lines of code that connect to your database.
 
@@ -48,11 +65,11 @@ the few lines of code that connect to your database.
     Some of the features rely on the "Vector Search"
     capabilities, which are being added to Cassandra right now.
 
-    If you want to experiment with these, you have several options:
-    you can build and run locally a version of Cassandra that implements
-    these features from a pre-release branch, or you can create
-    an Astra DB instance choosing to enable the vector capabilities,
-    now in Public Preview.
+    If you want to use these, you have several options:
+    you can make sure the Astra DB instance you create is
+    a "Vector Database" (now in Public Preview), or you
+    can build and run locally a version of Cassandra that implements
+    these features from a pre-release branch.
 
     Keep reading to find out more.
 
@@ -65,11 +82,12 @@ necessary API Keys and other secrets for your provider of choice.
 
 We cover Cassandra integrations with several ML-centric tools and frameworks:
 for each of them (a section of the site), there is a subdirectory with
-explanations and examples. The code there is stand-alone, provided you
-did the general setup (see above): but usually you have first to
-go through a framework-specific setup (covering e.g. the setup
-of a suitable Python environment with the right dependencies),
-described at the top of the section.
+explanations and examples.
+In order to run locally the code examples you find there,
+further, framework-specific setup instructions are given at the top
+of the section: these mostly amount to creating a suitable Python environment
+with the right dependencies, and not much else.
+
 
 !!! example
 
@@ -84,6 +102,10 @@ described at the top of the section.
     At this point you can fire up Jupyter notebook and start running any of the
     provided notebooks.
     When moving on to testing another framework, only the last step will be needed.
+
+    If you prefer to use Colab, instead, just create the Astra DB instance
+    and obtain a valid Secret to an LLM provider - the online notebook
+    will tell you what else is needed, if anything.
 
 ## CassIO repository
 

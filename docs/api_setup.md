@@ -1,5 +1,11 @@
 # API Setup
 
+!!! tip "Colab users"
+
+    If you plan to run the examples within Google Colab, there's no need
+    to do anything here. Just keep your secrets ready, for each notebook
+    will ask you to enter them in order to proceed.
+
 ## Credentials file
 
 In the repo root directory, create file `.api_keys` by copying

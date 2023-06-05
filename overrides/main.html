@@ -7,9 +7,9 @@
 
         Also we have to hardcode the (original, extension-stripped) filename for NON-COLABIFIED notebooks here:
     -->
-    {% if page.url.split('/')[-2] not in [
-            'prompt-templates-feast',
-            'another-notebook-not-colabified', 
+    {% if page.url not in [
+            'frameworks/langchain/prompt-templates-feast/',
+            'frameworks/dir1/dir2/another-notebook-not-colabified', 
     ] %}
         <a
             href="http://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/{%- for p in page.url.split('/')[:-2] -%}
