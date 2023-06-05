@@ -84,24 +84,36 @@ def colabifyNotebook(pathList, fileTitle):
         of.write(f'{cleaned_json}\n')
 
 
-if __name__ == '__main__':
-    # TODO: BETTER here: scan and prepare file tree, etc etc
-    import subprocess
-    notebookNames = [
-        nbn
-        for nbn in subprocess.check_output('find -iname "*ipynb" | grep -v ".colab" | grep -v ".ipynb_checkpoints"',shell=True).decode().split('\n')
-        if nbn
-    ]
-    def _parseNBN(pth):
-        parts = [p for p in pth.split('/') if p != '.']
-        return parts[:-1], parts[-1]
-    #
-    parsed = [
-        _parseNBN(nbn)
-        for nbn in notebookNames
-    ]
+def locateNotebooks(home='.', excludeDirs={'.ipynb_checkpoints', '.colab'}):
 
-    for pathList, fileTitle in parsed:
+    NOTEBOOK_FILE_EXTENSION = '.ipynb'
+
+    def _scanPath(pth=[],excludeDirs=excludeDirs):
+        fullPth = os.path.join(home, *pth)
+        everything = os.listdir(fullPth)
+        dirs = [
+            e
+            for e in everything 
+            if os.path.isdir(os.path.join(*([home]+pth+[e])))
+            if e not in excludeDirs
+        ]
+        nbFiles = [
+            e
+            for e in everything
+            if os.path.isfile(os.path.join(*([home]+pth+[e])))
+            if len(e) >= len(NOTEBOOK_FILE_EXTENSION)
+            if e.lower()[-len(NOTEBOOK_FILE_EXTENSION):] == NOTEBOOK_FILE_EXTENSION
+        ]
+        for f in nbFiles:
+            yield pth, f
+        for d in dirs:
+            for pair in _scanPath(pth+[d],excludeDirs=excludeDirs):
+                yield pair
+
+    return _scanPath()
+
+if __name__ == '__main__':
+    for pathList, fileTitle in locateNotebooks():
         pathString = joinFilePath(pathList, fileTitle)
         if pathString not in suppressColabify:
             print(f'* Doing "{pathString}" ... ', end='')
