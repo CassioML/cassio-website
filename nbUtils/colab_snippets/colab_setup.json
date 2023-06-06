@@ -69,7 +69,7 @@
     "### LLM Provider\n",
     "\n",
     "In the cell below you can choose between **GCP VertexAI** or **OpenAI** for your LLM services.\n",
-    "Make sure you set the `llmProvider` variable and supply the corresponding access secrets.",
+    "Make sure you set the `llmProvider` variable and supply the corresponding access secrets."
    ],
    "id": "QXCQ6T_Gjk0Oz"
   },

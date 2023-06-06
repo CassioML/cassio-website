@@ -69,11 +69,11 @@ theme:
     - search.suggest
     - toc.follow
   palette:
-    - scheme: cassio
+    - scheme: default
       toggle:
         icon: material/weather-night
         name: Switch color
-    - scheme: cassio_blue
+    - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch color
