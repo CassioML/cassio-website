@@ -60,10 +60,11 @@ we show how to create a free Astra DB instance,
 but of course you can use any Cassandra installation, provided you adapt
 the few lines of code that connect to your database.
 
-!!! info "Experimental Cassandra features"
+!!! info "Vector-search Cassandra"
 
     Some of the features rely on the "Vector Search"
-    capabilities, which are being added to Cassandra right now.
+    capabilities, which are being added to Cassandra right now,
+    but have not yet made it to Cassandra official releases.
 
     If you want to use these, you have several options:
     you can make sure the Astra DB instance you create is
