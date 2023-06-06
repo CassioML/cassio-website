@@ -23,6 +23,21 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "QNQ6T_Gjk0Oz"
+   },
+   "source": [
+    "### Astra DB Secure Connect Bundle\n",
+    "\n",
+    "Please upload the Secure Connect Bundle zipfile to connect to your Astra DB instance.\n",
+    "\n",
+    "The Secure Connect Bundle is needed to establish a secure connection to the database.\n",
+    "Click [here](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure) for instructions on how to download it from Astra DB."
+   ],
+   "id": "QNQ6T_Gjk0Oz"
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "9b28f773",
@@ -46,6 +61,19 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "QXCQ6T_Gjk0Oz"
+   },
+   "source": [
+    "### LLM Provider\n",
+    "\n",
+    "In the cell below you can choose between **GCP VertexAI** or **OpenAI** for your LLM services.\n",
+    "Make sure you set the `llmProvider` variable and supply the corresponding access secrets.",
+   ],
+   "id": "QXCQ6T_Gjk0Oz"
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "960dc915",
@@ -53,11 +81,11 @@
    "outputs": [],
    "source": [
     "# Set your secret(s) for LLM access (key names must match `providerValidator` in `llm_choice`)\n",
-    "llmProvider = 'OpenAI'  # 'VertexAI'\n",
+    "llmProvider = 'OpenAI'  # 'GCP_VertexAI'\n",
     "if llmProvider == 'OpenAI':\n",
     "    apiSecret = input(f'Your secret for LLM provider \"{llmProvider}\": ')\n",
     "    os.environ['OPENAI_API_KEY'] = apiSecret\n",
-    "elif llmProvider == 'VertexAI':\n",
+    "elif llmProvider == 'GCP_VertexAI':\n",
     "    # we need a json file\n",
     "    print(f'Please upload your Service Account JSON for the LLM provider \"{llmProvider}\":')\n",
     "    from google.colab import files\n",

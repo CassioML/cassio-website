@@ -36,7 +36,7 @@ codeLineReplacements = [
     ),
     (
         "cqlMode = 'astra_db' # 'astra_db'/'local'",
-        "cqlMode = 'astra_db'",
+        "cqlMode = 'astra_db' # alternatively, 'local' ... if you do have a Cassandra cluster to use, that is",
     ),
     (
         "loader = TextLoader('texts/amontillado.txt', encoding='utf8')",
