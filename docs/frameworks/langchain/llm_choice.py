@@ -6,7 +6,7 @@ import os
 
 # functions from env var map to boolean (whereby True means valid)
 providerValidator = {
-    'VertexAI': lambda envMap: 'GOOGLE_APPLICATION_CREDENTIALS' in envMap,
+    'GCP_VertexAI': lambda envMap: 'GOOGLE_APPLICATION_CREDENTIALS' in envMap,
     'OpenAI': lambda envMap: 'OPENAI_API_KEY' in envMap,
 }
 

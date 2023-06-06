@@ -3,10 +3,15 @@ Color schemes.
 check this for all definitions: https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss
 */
 
-[data-md-color-scheme="cassio"] {
-  --md-primary-fg-color:        #943b67;
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #4778df;
+  --md-primary-fg-color--light: #6788df;
+  --md-primary-fg-color--dark:  #2f68df;
 }
 
-[data-md-color-scheme="cassio_blue"] {
-  --md-primary-fg-color:        #3175ec;
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #192e59;
+  --md-primary-fg-color--light: #274166;
+  --md-primary-fg-color--dark:  #0e1a32;
+  --md-default-bg-color:        #101d35;
 }

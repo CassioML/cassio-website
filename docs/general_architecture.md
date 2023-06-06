@@ -27,7 +27,3 @@ CassIO is evolving rapidly. Note that at the time of writing
 2. a fork of LangChain is needed (a PR to upstream is on its way).
 
 As long as you follow the setup instructions we offer, this is easy and quick.
-
-Moreover, some development features of Cassandra are used: these require building the Cassandra database from source (we provide instructions for that).
-
-Correspondingly, a not-yet-released version of the Python drivers for Cassandra is used: its installation is automated in the setup instructions.

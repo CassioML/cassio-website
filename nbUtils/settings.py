@@ -36,7 +36,7 @@ codeLineReplacements = [
     ),
     (
         "cqlMode = 'astra_db' # 'astra_db'/'local'",
-        "cqlMode = 'astra_db'",
+        "cqlMode = 'astra_db' # alternatively, 'local' ... if you do have a Cassandra cluster to use, that is",
     ),
     (
         "loader = TextLoader('texts/amontillado.txt', encoding='utf8')",
@@ -53,37 +53,54 @@ suppressColabify = [
     'docs/frameworks/dir1/dir2/another-notebook-not-colabified.ipynb', 
 ]
 
-# SEQUENCES OF COLAB-SPECIFIC CELLS
-# Default:
+# SEQUENCES OF COLAB-SPECIFIC CELLS (no writeDB, no amontillado)
 defaultColabCellSequences = [
     'seq_title',
     'seq_colab_setup_preamble',
     'seq_colab_dependency_setup',
-    'seq_colab_setup',
-    'colab_setup_closing',
+    'seq_colab_setup_db',
+    'seq_colab_setup_llm',
+    'seq_colab_setup_closing',
 ]
-populateDBColabCellSequences = [
+# variants
+writeDB_noLLM_cellSequences = [
     'seq_title',
     'seq_colab_setup_preamble',
     'seq_colab_dependency_setup',
-    'seq_colab_setup',
-    'colab_setup_provision_db',
-    'colab_setup_closing',
+    'seq_colab_setup_db',
+    'seq_colab_setup_provision_db',
+    'seq_colab_setup_closing',
+]
+noDB_noLLM_cellSequences = [
+    'seq_title',
+    'seq_colab_setup_preamble',
+    'seq_colab_dependency_setup',
+    'seq_colab_setup_closing',
+]
+noLLM_cellSequences = [
+    'seq_title',
+    'seq_colab_setup_preamble',
+    'seq_colab_dependency_setup',
+    'seq_colab_setup_db',
+    'seq_colab_setup_closing',
 ]
 
 # Per-notebook overrides:
 perNotebookColabCellSequences = {
-    'docs/frameworks/langchain/chat-prompt-templates.ipynb': populateDBColabCellSequences,
-    'docs/frameworks/langchain/prompt-templates-basic.ipynb': populateDBColabCellSequences,
-    'docs/frameworks/langchain/prompt-templates-partialing.ipynb': populateDBColabCellSequences,
+    'docs/frameworks/langchain/chat-prompt-templates.ipynb': writeDB_noLLM_cellSequences,
+    'docs/frameworks/langchain/prompt-templates-basic.ipynb': writeDB_noLLM_cellSequences,
+    'docs/frameworks/langchain/prompt-templates-partialing.ipynb': writeDB_noLLM_cellSequences,
     'docs/frameworks/langchain/qa-basic.ipynb': [
         'seq_title',
         'seq_colab_setup_preamble',
         'seq_colab_dependency_setup',
-        'seq_colab_setup',
-        'colab_setup_download_amontillado',
-        'colab_setup_closing',
+        'seq_colab_setup_db',
+        'seq_colab_setup_llm',
+        'seq_colab_setup_download_amontillado',
+        'seq_colab_setup_closing',
     ],
+    'docs/frameworks/langchain/memory-basic.ipynb': noLLM_cellSequences,
+    'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
 }
 # Cell sequence generators, and their mapping, are defined here:
 #
@@ -120,8 +137,12 @@ def colabSetupPreambleCells(pathList, fileTitle, nbTree, **kwargs):
     ]
 
 
-def colabSetupCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripColabSnippetCells('colab_setup.json')
+def colabSetupDBCells(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_db.json')
+
+
+def colabSetupLLMCells(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_llm.json')
 
 
 def colabSetupProvisionDBCells(pathList, fileTitle, nbTree, **kwargs):
@@ -194,11 +215,12 @@ def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
 
 
 cellSequenceCreatorMap = {
-    'seq_title':                        prepareTitleCells,
-    'seq_colab_setup_preamble':         colabSetupPreambleCells,
-    'seq_colab_dependency_setup':       prepareDependencyCells,
-    'seq_colab_setup':                  colabSetupCells,
-    'colab_setup_provision_db':         colabSetupProvisionDBCells,
-    'colab_setup_download_amontillado': colabSetupDownloadAmontillado,
-    'colab_setup_closing':              colabSetupClosing,
+    'seq_title':                            prepareTitleCells,
+    'seq_colab_setup_preamble':             colabSetupPreambleCells,
+    'seq_colab_dependency_setup':           prepareDependencyCells,
+    'seq_colab_setup_db':                   colabSetupDBCells,
+    'seq_colab_setup_llm':                  colabSetupLLMCells,
+    'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
+    'seq_colab_setup_download_amontillado': colabSetupDownloadAmontillado,
+    'seq_colab_setup_closing':              colabSetupClosing,
 }

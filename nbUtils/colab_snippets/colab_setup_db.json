@@ -23,6 +23,21 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "QNQ6T_Gjk0Oz"
+   },
+   "source": [
+    "### Astra DB Secure Connect Bundle\n",
+    "\n",
+    "Please upload the Secure Connect Bundle zipfile to connect to your Astra DB instance.\n",
+    "\n",
+    "The Secure Connect Bundle is needed to establish a secure connection to the database.\n",
+    "Click [here](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure) for instructions on how to download it from Astra DB."
+   ],
+   "id": "QNQ6T_Gjk0Oz"
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "9b28f773",
@@ -43,34 +58,6 @@
     "    raise ValueError(\n",
     "        'Cannot proceed without Secure Connect Bundle. Please re-run the cell.'\n",
     "    )"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "960dc915",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Set your secret(s) for LLM access (key names must match `providerValidator` in `llm_choice`)\n",
-    "llmProvider = 'OpenAI'  # 'VertexAI'\n",
-    "if llmProvider == 'OpenAI':\n",
-    "    apiSecret = input(f'Your secret for LLM provider \"{llmProvider}\": ')\n",
-    "    os.environ['OPENAI_API_KEY'] = apiSecret\n",
-    "elif llmProvider == 'VertexAI':\n",
-    "    # we need a json file\n",
-    "    print(f'Please upload your Service Account JSON for the LLM provider \"{llmProvider}\":')\n",
-    "    from google.colab import files\n",
-    "    uploaded = files.upload()\n",
-    "    if uploaded:\n",
-    "        vertexAIJsonFileTitle = list(uploaded.keys())[0]\n",
-    "        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.join(os.getcwd(), vertexAIJsonFileTitle)\n",
-    "    else:\n",
-    "        raise ValueError(\n",
-    "            'No file uploaded. Please re-run the cell.'\n",
-    "        )\n",
-    "else:\n",
-    "    raise ValueError('Unknown/unsupported LLM Provider')"
    ]
   },
   {
