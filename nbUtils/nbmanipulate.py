@@ -63,6 +63,15 @@ def findNbTitle(nbTree):
         return None
 
 
+nbUrlPrefix = 'https://cassio.org/'
+nbExtension = '.ipynb'
+def findNbUrl(pathList, fileTitle):
+    assert(pathList[0] == 'docs')
+    assert(fileTitle.lower()[-len(nbExtension):] == nbExtension)
+    filePathComponent = fileTitle[:-len(nbExtension)]
+    return f'{nbUrlPrefix}{"/".join(pathList[1:])}/{filePathComponent}/'
+
+
 def _replaceNbCodeLine(line, replacements):
     for oldB, newL in replacements:
         if line.find(oldB) > -1:

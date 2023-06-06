@@ -37,7 +37,11 @@ codeLineReplacements = [
     (
         "cqlMode = 'astra_db' # 'astra_db'/'local'",
         "cqlMode = 'astra_db'",
-    )
+    ),
+    (
+        "loader = TextLoader('texts/amontillado.txt', encoding='utf8')",
+        "loader = TextLoader('amontillado.txt', encoding='utf8')",
+    ),
 ]
 
 # NOTE: currently you HAVE to mirror these changes
@@ -72,6 +76,14 @@ perNotebookColabCellSequences = {
     'docs/frameworks/langchain/chat-prompt-templates.ipynb': populateDBColabCellSequences,
     'docs/frameworks/langchain/prompt-templates-basic.ipynb': populateDBColabCellSequences,
     'docs/frameworks/langchain/prompt-templates-partialing.ipynb': populateDBColabCellSequences,
+    'docs/frameworks/langchain/qa-basic.ipynb': [
+        'seq_title',
+        'seq_colab_setup_preamble',
+        'seq_colab_dependency_setup',
+        'seq_colab_setup',
+        'colab_setup_download_amontillado',
+        'colab_setup_closing',
+    ],
 }
 # Cell sequence generators, and their mapping, are defined here:
 #
@@ -90,7 +102,22 @@ def loadAndStripColabSnippetCells(jsonTitle):
 
 
 def colabSetupPreambleCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripColabSnippetCells('colab_setup_preamble.json')
+    nbUrl = kwargs['nbUrl']
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble.json')
+    return [
+        {
+            k: (
+                v
+                if k != 'source'
+                else [
+                    lin.replace('__NOTEBOOK_URL__', nbUrl)
+                    for lin in v
+                ]
+            )
+            for k, v in c.items()
+        }
+        for c in cells
+    ]
 
 
 def colabSetupCells(pathList, fileTitle, nbTree, **kwargs):
@@ -103,6 +130,10 @@ def colabSetupProvisionDBCells(pathList, fileTitle, nbTree, **kwargs):
 
 def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_closing.json')
+
+
+def colabSetupDownloadAmontillado(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_download_amontillado.json')
 
 
 def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
@@ -163,10 +194,11 @@ def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
 
 
 cellSequenceCreatorMap = {
-    'seq_title':                    prepareTitleCells,
-    'seq_colab_setup_preamble':     colabSetupPreambleCells,
-    'seq_colab_dependency_setup':   prepareDependencyCells,
-    'seq_colab_setup':              colabSetupCells,
-    'colab_setup_provision_db':     colabSetupProvisionDBCells,
-    'colab_setup_closing':          colabSetupClosing,
+    'seq_title':                        prepareTitleCells,
+    'seq_colab_setup_preamble':         colabSetupPreambleCells,
+    'seq_colab_dependency_setup':       prepareDependencyCells,
+    'seq_colab_setup':                  colabSetupCells,
+    'colab_setup_provision_db':         colabSetupProvisionDBCells,
+    'colab_setup_download_amontillado': colabSetupDownloadAmontillado,
+    'colab_setup_closing':              colabSetupClosing,
 }
