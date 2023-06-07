@@ -1,12 +1,12 @@
 # Connecting With CassIO Community
 
-All code, including this website, are under Apache Licence v2. You can find everything in the following GitHub organizations:
+All code, including this website, are under Apache License v2. You can find everything in the following GitHub organization:
 
 [https://github.com/CassioML](https://github.com/CassioML)
 
 ## Reporting Issues
 
-Reporting an issue on GitHub is straightforward. Navigate to the issues page of the repository:[https://github.com/CassioML/cassio/issues](https://github.com/CassioML/cassio/issues)
+Reporting an issue on GitHub is straightforward. Navigate to the issues page of the repository: [https://github.com/CassioML/cassio/issues](https://github.com/CassioML/cassio/issues)
 
 Click on the "**New Issue**" button: This will direct you to a page where you can create a new issue.
 
@@ -19,7 +19,7 @@ Click on the "**New Issue**" button: This will direct you to a page where you ca
 Remember to check first if your issue has already been reported by someone else to avoid duplicates. If you find a similar issue that's already been reported, you can contribute by commenting on the existing issue with any new information.
 
 ## Discussions
-CassIO uses [GitHub discussions](https://github.com/orgs/CassioML/discussions) Please use this for general usage questions.
+CassIO uses [GitHub discussions](https://github.com/orgs/CassioML/discussions). Please use this for general usage questions.
 
 ## Apache Cassandra or DataStax Astra help
-The Planet Cassandra discord server has people that can help. You can follow this invite to join: [https://discord.gg/JqKeEcZ3qE](https://discord.gg/JqKeEcZ3qE)
+The Planet Cassandra Discord server has people that can help. You can follow this invite to join: [https://discord.gg/JqKeEcZ3qE](https://discord.gg/JqKeEcZ3qE).
