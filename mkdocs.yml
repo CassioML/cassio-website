@@ -1,7 +1,9 @@
 site_name: CassIO
+repo_url: https://github.com/CassioML/cassio
+
 nav:
   - Home:
-      - Welcome: index.md
+      - Welcome to the CassIO project website: index.md
       - General architecture: general_architecture.md
       - DB Setup: db_setup.md
       - API Setup: api_setup.md
@@ -30,6 +32,9 @@ nav:
         - VectorStore/Q&A, learn more: frameworks/langchain/qa-advanced.ipynb
         - VectorStore, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
         - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
+  - Community:
+      - Getting Help: community_help.md
+      - Contributor Guide: community_contrib.md
 
 markdown_extensions:
   - admonition
