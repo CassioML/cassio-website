@@ -88,7 +88,8 @@ You can check that the keyspace exists with:
 DESC KEYSPACES;
 ```
 
-Exit the CQL console and run this script, which will populate the local database
+Exit the CQL console, `cd` to this repo's root dir (`.../cassio-website/`),
+then run this script, which will populate the local database
 with sample tables occasionally used by some of the examples you'll encounter:
 
 ```
