@@ -1,21 +1,9 @@
-# cassIO, general architecture
+# General Architecture of CassIO
 
-The purpose of CassIO is to abstract away the details of
-accessing the Cassandra database for the typical needs of
-Generative AI or other Machine Learning workloads,
-so as to offer a low-boilerplate, ready-to-use set of
-tools for seamless integration of Cassandra in
-most AI-oriented applications.
+CassIO simplifies accessing the Cassandra database for Generative AI and other Machine Learning tasks. Its convenient tools require minimal setup and can easily be integrated into most AI-based applications. 
 
-CassIO is framework-agnostic: it does not know the specific
-implementation details of interfaces of LangChain, Llamaindex
-or any of the various toolkits built around Generative AI.
-Rather, for each such framework, a set of "thin adapters" is built
-that fits the interfaces of the framework while leveraging
-the capabilities implemented in CassIO.
+CassIO is adaptable to various frameworks, utilizing "thin adapters" tailored to fit the particular interfaces of each framework while taking advantage of the features offered by CassIO. As a mediator between your application, a framework like LangChain or Llamaindex, and the Cassandra database, CassIO is the optimal solution for efficient and effective data management.
 
-Here is a sketch of the relation between your application, an LLM
-framework such as LangChain, and CassIO:
 
 ![CassIO, sketch](images/cassio_sketch.png)
 
