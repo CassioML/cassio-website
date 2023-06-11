@@ -6,14 +6,13 @@
 
 ## Welcome to CassIO
 
-Do you want to use [Apache Cassandra®](https://cassandra.apache.org) with your ML/LLM/GenAI workloads,
-and **do you want to start NOW**?
+Do you want to use [Apache Cassandra®](https://cassandra.apache.org) with your ML/LLM/GenAI workloads?
 
 This is the place for you.
 
 ## Installation and usage
 
-Installing CassIO is as simple as
+Installing CassIO is as simple as:
 
 ```
 pip install cassio
@@ -38,7 +37,6 @@ or you might have to manually install it.
 
 Don't just browse the website: you should clone the [repository](https://github.com/cassioML/cassio-website)
 and start running the code examples yourself (notebooks, tutorials, full-fledged small applications).
-You'll find everything in this repo.
 You can also download a single notebook's code by clicking on the
 "Download Notebook" icon at the top of each page
 (<svg viewBox="0 0 24 24" style="height: 1.4em; vertical-align: middle;"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>).
@@ -114,4 +112,4 @@ with the right dependencies, and not much else.
 
 ## CassIO repository
 
-The source code is available at [this location](https://github.com/CassioML/cassio).
+The source code for CassIO [is available here](https://github.com/CassioML/cassio).
