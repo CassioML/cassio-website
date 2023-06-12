@@ -7,10 +7,12 @@
     This is required if you want to _run the examples yourself_ (recommended).
 
 Make sure complete the [general setup](/db_setup/) before proceeding with this tutorial.
+You will have a local clone of this repository, in which you will run the following
+commands.
 
 Go to `docs/frameworks/langchain`.
 
-Create a Python 3.8+ virtual environment, activate it and install dependencies with:
+Create a Python 3.8+ [virtual environment](https://virtualenv.pypa.io/en/latest/user_guide.html), activate it and install dependencies with:
 
 ```
 pip install -r requirements_langchain.txt

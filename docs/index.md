@@ -7,30 +7,29 @@ CassIO is the ultimate solution for seamlessly integrating [Apache Cassandra®](
 
 ## Installation and usage
 
-Installing CassIO is as simple as:
+Installing CassIO is as simple `pip install cassio`.
 
-```
-pip install cassio
-```
-
-To ensure optimal performance, it is recommended to make use of third-party frameworks such as LangChain which incorporate CassIO. The framework's architecture will dictate whether CassIO is a sub-dependency that necessitates installation beforehand or if it must be installed manually.
-
-!!! example
-
-    A good example is the LangChain setup outlined [here](/frameworks/langchain/setup/):
-    the LangChain framework itself does not list all of the packages
-    it _might_ need and it is up to the user to pick, and install,
-    those that will actually be needed by their application.
-    In fact, you can see `cassio` being explicitly listed in the
-    [requirements file](https://github.com/CassioML/cassio-website/blob/main/docs/frameworks/langchain/requirements_langchain.txt) for these demo notebooks.
+However, typically you'll use an LLM framework, such as LangChain,
+that _in turn_ uses CassIO internally: in those cases, you might not even
+need to bother with explicit installation. Try out the example code below
+and you'll see by yourself.
 
 ## How to use this site
 
-Don't just browse the website: you should clone the [repository](https://github.com/cassioML/cassio-website)
-and start running the code examples yourself (notebooks, tutorials, full-fledged small applications).
-You can also download a single notebook's code by clicking on the
-"Download Notebook" icon at the top of each page
-(<svg viewBox="0 0 24 24" style="height: 1.4em; vertical-align: middle;"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>).
+This website offers plenty of runnable code examples for a
+more effective, hands-on way of learning.
+
+<img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
+Here, try out a LangChain-based Colab for [vector-based question answering](http://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb)
+(check out also the [prerequisites](/db_setup/) and the full LangChain [examples](/frameworks/langchain/about/)).
+
+You can also run all examples locally:
+clone the [repository](https://github.com/cassioML/cassio-website), go through
+a one-off [setup](),
+then start running the code examples yourself (notebooks & tutorials).
+The "Download Notebook" icon at the top of each page
+(<svg viewBox="0 0 24 24" style="height: 1.4em; vertical-align: middle;"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>) lets you download each example
+notebook individually.
 
 !!! Tip "Google Colaboratory"
 
@@ -42,7 +41,7 @@ You can also download a single notebook's code by clicking on the
     later on.
 
     If you want to run the examples in Colab, look for the
-    "Open in Colab" icon at the top of the page
+    "Open in Colab" icon at the top of the sample-code pages
     (<img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>).
 
 ### General pre-requisites

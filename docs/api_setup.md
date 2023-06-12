@@ -2,8 +2,9 @@
 
 !!! tip "Colab users"
 
-    If you plan to run the examples within Google Colab, there's no need
-    to do anything here. Just keep your secrets ready, for each notebook
+    If you plan to run the examples within Google Colab, you don't need to
+    create any `.api_keys` file. Choose your LLM provider and
+    just keep the corresponding secrets ready, for each notebook
     will ask you to enter them in order to proceed.
 
 ## Credentials file
