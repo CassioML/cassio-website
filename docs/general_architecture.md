@@ -4,7 +4,6 @@ CassIO simplifies accessing the Cassandra database for Generative AI and other M
 
 CassIO is adaptable to various frameworks, utilizing "thin adapters" tailored to fit the particular interfaces of each framework while taking advantage of the features offered by CassIO. As a mediator between your application, a framework like LangChain or Llamaindex, and the Cassandra database, CassIO is the optimal solution for efficient and effective data management.
 
-
 ![CassIO, sketch](images/cassio_sketch.png)
 
 ### Latest status

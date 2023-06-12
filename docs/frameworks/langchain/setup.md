@@ -6,7 +6,7 @@
 
     This is required if you want to _run the examples yourself_ (recommended).
 
-Make sure you did the [general setup](/db_setup/) first.
+Make sure complete the [general setup](/db_setup/) before proceeding with this tutorial.
 
 Go to `docs/frameworks/langchain`.
 

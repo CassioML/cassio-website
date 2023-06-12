@@ -2,11 +2,12 @@
 <img src="images/cassio_logo1_transparent_darkmode.png#only-dark" alt="CassIO logo" style="width: 30%;"/>
 <!-- ![CassIO logo](images/cassio_logo1_transparent.png#only-light) -->
 <!-- ![CassIO logo](images/cassio_logo1.png#only-dark) -->
+
 CassIO is the ultimate solution for seamlessly integrating [Apache Cassandra®](https://cassandra.apache.org) with generative artificial intelligence and other machine learning workloads. This powerful Python library simplifies the complicated process of accessing the advanced features of the Cassandra database, including vector search capabilities. With CassIO, developers can fully concentrate on designing and perfecting their AI systems without any concerns regarding the complexities of integration with Cassandra.
 
 ## Installation and usage
 
-Installing CassIO is as simple as
+Installing CassIO is as simple as:
 
 ```
 pip install cassio
@@ -27,7 +28,6 @@ To ensure optimal performance, it is recommended to make use of third-party fram
 
 Don't just browse the website: you should clone the [repository](https://github.com/cassioML/cassio-website)
 and start running the code examples yourself (notebooks, tutorials, full-fledged small applications).
-You'll find everything in this repo.
 You can also download a single notebook's code by clicking on the
 "Download Notebook" icon at the top of each page
 (<svg viewBox="0 0 24 24" style="height: 1.4em; vertical-align: middle;"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg>).

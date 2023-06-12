@@ -5,6 +5,9 @@ __pycache__/
 .env
 .api_keys
 
+# IDE
+.idea
+
 # notebooks stuff
 .ipynb_checkpoints
 
