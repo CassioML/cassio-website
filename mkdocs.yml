@@ -63,6 +63,7 @@ theme:
   favicon: img/favicon.svg
   logo: images/cassio_logo1_transparent_small.png
   features:
+    - navigation.tabs.sticky
     - content.code.annotate
     - navigation.indexes
     - navigation.sections
