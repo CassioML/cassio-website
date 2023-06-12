@@ -1,14 +1,9 @@
 <img src="images/cassio_logo1_transparent.png#only-light" alt="CassIO logo" style="width: 30%;"/>
 <img src="images/cassio_logo1_transparent_darkmode.png#only-dark" alt="CassIO logo" style="width: 30%;"/>
-
 <!-- ![CassIO logo](images/cassio_logo1_transparent.png#only-light) -->
 <!-- ![CassIO logo](images/cassio_logo1.png#only-dark) -->
 
-## Welcome to CassIO
-
-Do you want to use [Apache Cassandra®](https://cassandra.apache.org) with your ML/LLM/GenAI workloads?
-
-This is the place for you.
+CassIO is the ultimate solution for seamlessly integrating [Apache Cassandra®](https://cassandra.apache.org) with generative artificial intelligence and other machine learning workloads. This powerful Python library simplifies the complicated process of accessing the advanced features of the Cassandra database, including vector search capabilities. With CassIO, developers can fully concentrate on designing and perfecting their AI systems without any concerns regarding the complexities of integration with Cassandra.
 
 ## Installation and usage
 
@@ -18,11 +13,7 @@ Installing CassIO is as simple as:
 pip install cassio
 ```
 
-However, most likely you will want to use third-party frameworks,
-such as LangChain, that in turn _use_ CassIO.
-Depending on how these frameworks are structured,
-they may require CassIO upfront in their sub-dependencies
-or you might have to manually install it.
+To ensure optimal performance, it is recommended to make use of third-party frameworks such as LangChain which incorporate CassIO. The framework's architecture will dictate whether CassIO is a sub-dependency that necessitates installation beforehand or if it must be installed manually.
 
 !!! example
 
@@ -110,6 +101,6 @@ with the right dependencies, and not much else.
     and obtain a valid Secret to an LLM provider - the online notebook
     will tell you what else is needed, if anything.
 
-## CassIO repository
+## Trademark
 
-The source code for CassIO [is available here](https://github.com/CassioML/cassio).
+Apache®, Apache Cassandra®, and the eye logo are either registered trademarks or trademarks of the Apache Software Foundation in the United States and/or other countries.

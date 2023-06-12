@@ -18,7 +18,7 @@ pip install -r requirements_langchain.txt
 
 !!! info
 
-    The current requirements file builds a couple of packages from source.
+    Pending a PR to upstream, the current requirements file temporarily installs LangChain from a fork we maintain.
 
 ## Launch
 
