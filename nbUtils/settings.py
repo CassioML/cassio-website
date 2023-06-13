@@ -173,6 +173,15 @@ def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
 
 
 dependencyInstallerLineClosing = ' \\\n'
+postReqInstallCell = {
+    "cell_type": "markdown",
+    "id": "222f44ff",
+    "metadata": {},
+    "source": [
+        "You will likely be asked to \"Restart the Kernel\" at this time, as some dependencies\n",
+        "have been upgraded. **Please do restart the kernel now** for a smoother execution from this point onward."
+    ]
+}
 def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
     reqFiles = [
         f
@@ -194,20 +203,23 @@ def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
         ]
         if dependencies:
             numDeps = len(dependencies)
-            return [{
-                "cell_type": "code",
-                "execution_count": None,
-                "id": "2953d95b",
-                "metadata": {},
-                "outputs": [],
-                "source": [
-                    "# install required dependencies\n",
-                    "! pip install \\\n",
-                ] + [
-                    f"    \"{depline}\"{'' if deplinei+1 == numDeps else dependencyInstallerLineClosing}"
-                    for deplinei, depline in enumerate(dependencies)
-                ]
-            }]
+            return [
+                {
+                    "cell_type": "code",
+                    "execution_count": None,
+                    "id": "2953d95b",
+                    "metadata": {},
+                    "outputs": [],
+                    "source": [
+                        "# install required dependencies\n",
+                        "! pip install \\\n",
+                    ] + [
+                        f"    \"{depline}\"{'' if deplinei+1 == numDeps else dependencyInstallerLineClosing}"
+                        for deplinei, depline in enumerate(dependencies)
+                    ]
+                },
+                postReqInstallCell
+            ]
         else:
             return []
     else:

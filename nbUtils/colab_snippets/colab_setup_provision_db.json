@@ -13,7 +13,7 @@
    "id": "ade437a4",
    "metadata": {},
    "source": [
-    "This notebook requires some data to be pre-populated on your database. Please follow these steps (roughly equivalent to [this section](https://cassio.org/db_setup/#import-sample-data) of the instructions on cassio.org):"
+    "This notebook requires some data to be pre-populated on your database. Please follow these steps (roughly equivalent to [this section](https://cassio.org/more_info/#pre-populate-the-database) of the instructions on cassio.org):"
    ]
   },
   {

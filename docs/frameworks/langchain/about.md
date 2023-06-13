@@ -36,7 +36,7 @@ icon at the top of each page):
 Additionally, the "Vector Search" capabilities that are being added to Cassandra / Astra DB enables another set of "semantically aware" tools:
 
 - A [cache of LLM responses](/frameworks/langchain/semantic-caching-llm-responses/) that is oblivious to the exact form a test is phrased.
-- A ["semantic index"](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to buil the best answer to a given question ("Q&A use case");
+- A ["semantic index"](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to buil the best answer to a given question ("QA use case");
 - ... whose usage can be [adapted](/frameworks/langchain/qa-advanced/) to suit many specific needs.
 - ... and that can be configured to retrieve pieces of information [as diverse as possible](/frameworks/langchain/qa-maximal-marginal-relevance/) to maximize the actual information flowing to the answer.
 - A ["semantic memory" element](/frameworks/langchain/memory-vectorstore/) for inclusion in LLM chat interactions, that can retrieve relevant past exchanges even if occurred in the far past.

@@ -9,7 +9,9 @@
     "### LLM Provider\n",
     "\n",
     "In the cell below you can choose between **GCP VertexAI** or **OpenAI** for your LLM services.\n",
-    "Make sure you set the `llmProvider` variable and supply the corresponding access secrets."
+    "(See [Pre-requisites](https://cassio.org/start_here/#llm-access) on cassio.org for more details).\n",
+    "\n",
+    "Make sure you set the `llmProvider` variable and supply the corresponding access secrets in the following cell."
    ],
    "id": "QXCQ6T_Gjk0Oz"
   },
@@ -20,8 +22,17 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Set your secret(s) for LLM access (key names must match `providerValidator` in `llm_choice`)\n",
-    "llmProvider = 'OpenAI'  # 'GCP_VertexAI'\n",
+    "# Set your secret(s) for LLM access:\n",
+    "llmProvider = 'OpenAI'  # 'GCP_VertexAI'\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "930dc915",
+   "metadata": {},
+   "outputs": [],
+   "source": [
     "if llmProvider == 'OpenAI':\n",
     "    apiSecret = input(f'Your secret for LLM provider \"{llmProvider}\": ')\n",
     "    os.environ['OPENAI_API_KEY'] = apiSecret\n",
