@@ -103,7 +103,7 @@ to start using your Vector Search Database in the LangChain QA example:
 
 <p align="center">
   <a href="http://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb" target="blank;">
-    <img src="/images/colab.png" style="height: 2.8em; vertical-align: middle;"/>
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="height: 2.0em; vertical-align: middle;"/>
   </a>
 </p>
 
