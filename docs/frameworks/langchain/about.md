@@ -2,7 +2,7 @@
 
 [LangChain](https://docs.langchain.com/docs/) is a popular and rapidly evolving
 framework to automate most of the management of, and interaction with, large language
-models: among its features are support for memory, vector-based similarity search,
+models (LLMs): among its features are support for memory, vector-based similarity search,
 an advanced prompt templating abstraction and much more.
 
 LangChain comes with a Python and a Javascript implementation. This section
@@ -10,13 +10,19 @@ targets the Python version.
 
 !!! info
 
-    To be able to run the examples below, first go through the
-    [LangChain-specific setup instructions](/frameworks/langchain/setup/).
+    Most of the examples in this section can run straight away as Colab notebooks,
+    provided you have checked the [pre-requisites](/start_here/#vector-database).
+
+    If you prefer to run in local Jupyter, set up the
+    [LangChain Python environment](/frameworks/langchain/setup/) first.
 
 ## Available components
 
 CassIO seamlessly integrates with LangChain, offering Cassandra-specific
-tools for the following tasks:
+tools for many tasks. Almost all of the following examples can run as Colab
+notebooks straight away (check out the
+<img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
+icon at the top of each page):
 
 - Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
 - ... the same, as part of a [longer LLM conversation](/frameworks/langchain/chat-prompt-templates/).
@@ -30,7 +36,7 @@ tools for the following tasks:
 Additionally, the "Vector Search" capabilities that are being added to Cassandra / Astra DB enables another set of "semantically aware" tools:
 
 - A [cache of LLM responses](/frameworks/langchain/semantic-caching-llm-responses/) that is oblivious to the exact form a test is phrased.
-- A ["semantic index"](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to buil the best answer to a given question ("Q&A use case");
+- A ["semantic index"](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to buil the best answer to a given question ("QA use case");
 - ... whose usage can be [adapted](/frameworks/langchain/qa-advanced/) to suit many specific needs.
 - ... and that can be configured to retrieve pieces of information [as diverse as possible](/frameworks/langchain/qa-maximal-marginal-relevance/) to maximize the actual information flowing to the answer.
 - A ["semantic memory" element](/frameworks/langchain/memory-vectorstore/) for inclusion in LLM chat interactions, that can retrieve relevant past exchanges even if occurred in the far past.
