@@ -3,14 +3,12 @@ repo_url: https://github.com/CassioML/cassio
 
 nav:
   - Home:
-      - Welcome to the CassIO project website: index.md
-      - General architecture: general_architecture.md
-      - DB Setup: db_setup.md
-      - API Setup: api_setup.md
-      - Local DB Setup: local_db_setup.md
+      - Overview: index.md
+      - Start Here: start_here.md
+      - Further reading: more_info.md
   - LangChain:
     - About: frameworks/langchain/about.md
-    - Setup: frameworks/langchain/setup.md
+    - Local setup: frameworks/langchain/setup.md
     - Prompt Templates:
       - Intro: frameworks/langchain/prompt-templates-basic.ipynb
       - Chat templates: frameworks/langchain/chat-prompt-templates.ipynb

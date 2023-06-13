@@ -1,18 +1,20 @@
-# Setup to run the LangChain examples
+# LangChain setup for running locally
 
 ## Setup
 
 !!! note
 
-    This is required if you want to _run the examples yourself_ (recommended).
+    You can skip this page if you are interested in Colab notebooks only.
 
-Make sure complete the [general setup](/db_setup/) before proceeding with this tutorial.
-You will have a local clone of this repository, in which you will run the following
-commands.
+    These are the instructions for local setup of the LangChain-specific
+    Python environment. A prerequisite is the [general setup for running locally](/more_info/#run-with-local-jupyter).
 
-Go to `docs/frameworks/langchain`.
+You should have a copy of this repository from the [general local-run setup](/more_info/#run-with-local-jupyter) already.
+Go to the `docs/frameworks/langchain` subdirectory.
 
-Create a Python 3.8+ [virtual environment](https://virtualenv.pypa.io/en/latest/user_guide.html), activate it and install dependencies with:
+Create a Python 3.8+
+[virtual environment](https://virtualenv.pypa.io/en/latest/user_guide.html),
+activate it and install the required dependencies with:
 
 ```
 pip install -r requirements_langchain.txt
@@ -43,8 +45,14 @@ ready to run.
 
 ## Database choice
 
-In most notebooks you'll find a cell where the two
-calls `getCQLSession` and `getCQLKeyspace` take place.
-You can switch between the Astra DB instance and the local database (if you have
-one) by changing the value of the variable `cqlMode` therein
-from `astra_db` to `local`.
+The code looks for an Astra DB instance by default (as defined in
+the `.env` file at the root of this repo).
+
+If you have a Cassandra cluster
+and want to use it instead, all you need is to find the notebook cell
+where the two calls `getCQLSession` and `getCQLKeyspace` take place:
+you can switch to a Cassandra cluster by changing the value
+of the variable `cqlMode` therein from `astra_db` to `local`.
+See the
+["Further reading"](/more_info/#use-the-local-cassandra-in-the-code)
+section for more on using a local Cassandra.

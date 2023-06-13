@@ -3,7 +3,7 @@
 The following example shows how to connect your prompt templates
 with the Feast feature store with minimal boilerplate.
 
-!!! info Feast and Cassandra
+!!! info "Feast and Cassandra"
 
     Feast can admit several database technologies as its storage layer, one
     of which being Cassandra.
@@ -16,6 +16,15 @@ In order to test the code yourself, you first need to create a sample
 feature store. The following instructions will guide you through the
 setup of the very feature store (including sample data) that is used
 in the next code example.
+
+!!! warning
+
+The Feast example is not available as Colab and must be run locally.
+This means you'll need to go through a
+[general setup](/more_info/#run-with-local-jupyter),
+followed by
+[LangChain-specific setup](/frameworks/langchain/setup/),
+before reading this page further.
 
 ### Provision the Feature Store
 
@@ -55,11 +64,11 @@ You can skip the optional parameters altogether.
 
 !!! Note "Client ID and Client Secret"
 
-    Provide the literal `token` as "Client ID" and the value of
-    `ASTRA_DB_APPLICATION_TOKEN` as found in `.env` as "Client Secret".
+    Provide the string literal `token` as "Client ID" and the value of
+    `ASTRA_DB_APPLICATION_TOKEN`, found in your `.env`, as "Client Secret".
 
-    If you did not use the Astra CLI to set up the global `.env` file,
-    please refer to [these instructions](https://awesome-astra.github.io/docs/pages/astra/create-token/#c-procedure)
+    If needed, please refer to
+    [these instructions](https://awesome-astra.github.io/docs/pages/astra/create-token/#c-procedure)
     on how to generate a Token for your database.
 
 A brand new feature store has been created in subdirectory `user_features`.
