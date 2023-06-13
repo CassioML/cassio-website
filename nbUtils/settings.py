@@ -178,8 +178,8 @@ postReqInstallCell = {
     "id": "222f44ff",
     "metadata": {},
     "source": [
-        "You will likely be asked to \"Restart the Kernel\" at this time, as some dependencies\n",
-        "have been upgraded. **Please do restart the kernel now** for a smoother execution from this point onward."
+        "You will likely be asked to \"Restart the Runtime\" at this time, as some dependencies\n",
+        "have been upgraded. **Please do restart the runtime now** for a smoother execution from this point onward."
     ]
 }
 def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
