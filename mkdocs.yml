@@ -81,3 +81,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch color
+extra:
+  analytics:
+    provider: google
+    property: G-5D1VE6YCN1
