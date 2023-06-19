@@ -5,6 +5,7 @@ framework to automate most of the management of, and interaction with, large lan
 models (LLMs): among its features are support for memory, vector-based similarity search,
 an advanced prompt templating abstraction and much more.
 
+
 LangChain comes with a Python and a Javascript implementation. This section
 targets the Python version.
 
