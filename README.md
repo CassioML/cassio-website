@@ -36,3 +36,9 @@ Run this after the above cleaning:
 ```
 ./nbUtils/notebook_colabifier.py
 ```
+
+## Branch model
+
+Do not push to `main`. The `main` branch should only receive merges from `eng`.
+
+Push to `eng` directly only in quick-fix circumstances. Preferrably work on a feature branch and then submit a PR to `eng`.

@@ -23,7 +23,9 @@ from settings import (
     codeLineReplacements,
     suppressColabify,
     defaultColabCellSequences,
+    defaultColabCellClosingSequences,
     perNotebookColabCellSequences,
+    perNotebookColabCellClosingSequences,
     cellSequenceCreatorMap,
 )
 
@@ -35,6 +37,10 @@ def enrichNbTree(pathList, fileTitle, nbTree, **kwargs):
         inputFile,
         defaultColabCellSequences,
     )
+    cellClosingSequenceIDs = perNotebookColabCellClosingSequences.get(
+        inputFile,
+        defaultColabCellClosingSequences,
+    )
     # what cell sequences should be added to this notebook?
     return {
         k: (
@@ -44,7 +50,11 @@ def enrichNbTree(pathList, fileTitle, nbTree, **kwargs):
                 cell
                 for cellSeqID in cellSequenceIDs
                 for cell in cellSequenceCreatorMap[cellSeqID](pathList, fileTitle, nbTree, **kwargs)
-            ] + v
+            ] + v + [
+                cell
+                for cellSeqID in cellClosingSequenceIDs
+                for cell in cellSequenceCreatorMap[cellSeqID](pathList, fileTitle, nbTree, **kwargs)
+            ]
         )
         for k, v in nbTree.items()
     }
@@ -65,7 +75,7 @@ def colabifyNotebook(pathList, fileTitle):
         inNbTree,
         codeLineReplacements,
     )
-    # phase 3: add cells to the beginning, both dynamic and static groups
+    # phase 3: add cells to the notebook, both dynamic and static groups
     enrichedNbTree = enrichNbTree(
         pathList,
         fileTitle,

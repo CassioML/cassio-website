@@ -19,12 +19,12 @@ in the next code example.
 
 !!! warning
 
-The Feast example is not available as Colab and must be run locally.
-This means you'll need to go through a
-[general setup](/more_info/#run-with-local-jupyter),
-followed by
-[LangChain-specific setup](/frameworks/langchain/setup/),
-before reading this page further.
+    The Feast example is not available as Colab and must be run locally.
+    This means you'll need to go through a
+    [general setup](/more_info/#run-with-local-jupyter),
+    followed by
+    [LangChain-specific setup](/frameworks/langchain/setup/),
+    before reading this page further.
 
 ### Provision the Feature Store
 
@@ -50,16 +50,15 @@ the Secure Connect Bundle location and the keyspace name defined there.
 
 ### Create the feature store
 
-Launch the following:
+The following command starts an interactive creation
+of the feature store. Choose Astra DB, unless you want to
+use your on-premise Cassandra cluster:
 
 ```
 feast init -t cassandra user_features
 ```
 
-choose Astra DB (recommended) or Cassandra,
-then provide the other required information (pay attention
-to the question about the keyspace: provide the name of the keyspace you
-created earlier in the "DB setup" step).
+Provide the required information, paying attention to the keyspace name (`cassio_tutorials` if you went with the defaults).
 You can skip the optional parameters altogether.
 
 !!! Note "Client ID and Client Secret"
