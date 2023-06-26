@@ -22,7 +22,11 @@ pip install -r requirements_langchain.txt
 
 !!! info
 
-    Pending a PR to upstream, the current requirements file temporarily installs LangChain from a fork we maintain.
+    We are still in the process of getting
+    all Cassandra components in the distributed LangChain:
+    for this reason, until this is completed,
+    the current requirements file temporarily
+    installs LangChain from a fork we maintain.
 
 ## Launch
 
