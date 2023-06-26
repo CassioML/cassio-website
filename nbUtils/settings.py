@@ -53,6 +53,11 @@ suppressColabify = [
     'docs/frameworks/dir1/dir2/another-notebook-not-colabified.ipynb', 
 ]
 
+# SEQUENCES OF COLAB-SPECIFIC CLOSING CELLS (just a cta)
+defaultColabCellClosingSequences = [
+    'seq_colab_closing_cta',
+]
+
 # SEQUENCES OF COLAB-SPECIFIC CELLS (no writeDB, no amontillado)
 defaultColabCellSequences = [
     'seq_title',
@@ -102,6 +107,7 @@ perNotebookColabCellSequences = {
     'docs/frameworks/langchain/memory-basic.ipynb': noLLM_cellSequences,
     'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
 }
+perNotebookColabCellClosingSequences = {}
 # Cell sequence generators, and their mapping, are defined here:
 #
 baseDir = os.path.abspath(os.path.dirname(__file__))
@@ -155,6 +161,30 @@ def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
 
 def colabSetupDownloadAmontillado(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_download_amontillado.json')
+
+
+def colabClosingCTA(pathList, fileTitle, nbTree, **kwargs):
+    # e.g. "https://cassio.org/frameworks/langchain/memory-vectorstore/"
+    nbUrl = kwargs['nbUrl']
+    # e.g. "https://cassio.org/frameworks/langchain/about/"
+    fwUrl = '/'.join(nbUrl.split('/')[:-2] + ['about', ''])
+    cells = loadAndStripColabSnippetCells('colab_closing_cta.json')
+    return [
+        {
+            k: (
+                v
+                if k != 'source'
+                else [
+                    lin
+                        .replace('__NOTEBOOK_URL__', nbUrl)
+                        .replace('__FRAMEWORK_URL__', fwUrl)
+                    for lin in v
+                ]
+            )
+            for k, v in c.items()
+        }
+        for c in cells
+    ]
 
 
 def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
@@ -235,4 +265,6 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
     'seq_colab_setup_download_amontillado': colabSetupDownloadAmontillado,
     'seq_colab_setup_closing':              colabSetupClosing,
+    #
+    'seq_colab_closing_cta':                colabClosingCTA,
 }
