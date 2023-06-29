@@ -8,7 +8,7 @@
    "source": [
     "### LLM Provider\n",
     "\n",
-    "In the cell below you can choose between **GCP VertexAI** or **OpenAI** for your LLM services.\n",
+    "In the cell below you can choose between **GCP Vertex AI** or **OpenAI** for your LLM services.\n",
     "(See [Pre-requisites](https://cassio.org/start_here/#llm-access) on cassio.org for more details).\n",
     "\n",
     "Make sure you set the `llmProvider` variable and supply the corresponding access secrets in the following cell."
