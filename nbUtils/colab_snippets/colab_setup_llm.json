@@ -23,7 +23,7 @@
    "outputs": [],
    "source": [
     "# Set your secret(s) for LLM access:\n",
-    "llmProvider = 'OpenAI'  # 'GCP_VertexAI'\n"
+    "llmProvider = 'OpenAI'  # 'GCP_VertexAI', 'Azure_OpenAI'\n"
    ]
   },
   {
@@ -48,6 +48,23 @@
     "        raise ValueError(\n",
     "            'No file uploaded. Please re-run the cell.'\n",
     "        )\n",
+    "elif llmProvider == 'Azure_OpenAI':\n",
+    "    # a few parameters must be input\n",
+    "    apiSecret = input(f'Your API Key for LLM provider \"{llmProvider}\": ')\n",
+    "    os.environ['AZURE_OPENAI_API_KEY'] = apiSecret\n",
+    "    apiBase = input('The \"Base URL\" for your models (e.g. \"https://YOUR-RESOURCE-NAME.openai.azure.com\"): ')\n",
+    "    os.environ['AZURE_OPENAI_API_BASE'] = apiBase\n",
+    "    apiLLMDepl = input('The name of your LLM Deployment: ')\n",
+    "    os.environ['AZURE_OPENAI_LLM_DEPLOYMENT'] = apiLLMDepl\n",
+    "    apiLLMModel = input('The name of your LLM Model (e.g. \"gpt-4\"): ')\n",
+    "    os.environ['AZURE_OPENAI_LLM_MODEL'] = apiLLMModel\n",
+    "    apiEmbDepl = input('The name for your Embeddings Deployment: ')\n",
+    "    os.environ['AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT'] = apiEmbDepl\n",
+    "    apiEmbModel = input('The name of your Embedding Model (e.g. \"text-embedding-ada-002\"): ')\n",
+    "    os.environ['AZURE_OPENAI_EMBEDDINGS_MODEL'] = apiEmbModel\n",
+    "\n",
+    "    # The following is probably not going to change for some time...\n",
+    "    os.environ['AZURE_OPENAI_API_VERSION'] = '2023-03-15-preview'\n",
     "else:\n",
     "    raise ValueError('Unknown/unsupported LLM Provider')"
    ]
