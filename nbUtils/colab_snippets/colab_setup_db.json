@@ -8,7 +8,7 @@
    "outputs": [],
    "source": [
     "# Input your database keyspace name:\n",
-    "ASTRA_DB_KEYSPACE = input('Your Astra DB Keyspace name: ')"
+    "ASTRA_DB_KEYSPACE = input('Your Astra DB Keyspace name (e.g. cassio_tutorials): ')"
    ]
   },
   {
@@ -19,7 +19,7 @@
    "outputs": [],
    "source": [
     "# Input your Astra DB token string, the one starting with \"AstraCS:...\"\n",
-    "ASTRA_DB_TOKEN_BASED_PASSWORD = input('Your Astra DB Token: ')"
+    "ASTRA_DB_TOKEN_BASED_PASSWORD = input('Your Astra DB Token (\"AstraCS:...\"): ')"
    ]
   },
   {

@@ -65,8 +65,8 @@ Now you need credentials to connect securely to your database.
 
 On the DB Quickstart panel, locate the "Create a custom token" link
 and generate a new token **with role "Database Administrator"**. _Make sure you
-safely store all parts of the Token, as you won't be shown
-them anymore for security reasons._
+safely store all parts of the Token: it will not be shown
+anymore for security reasons._
 
 Detailed information on DB Tokens can be found
 [here](https://awesome-astra.github.io/docs/pages/astra/create-token/).
