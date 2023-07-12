@@ -10,7 +10,7 @@ from filesystem import (
 )
 
 from nbmanipulate import (
-    # findNbTitle,
+    # findNbHeadings,
     # replaceNbCodeLines,
     cleanNb,
 )
@@ -188,17 +188,30 @@ def colabClosingCTA(pathList, fileTitle, nbTree, **kwargs):
 
 
 def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
-    title = kwargs.get('title')
+    headings = kwargs.get('headings', {})
+    title = headings.get('title')
+    subtitle = headings.get('subtitle')
     if title is None:
         return []
     else:
+        _mdlines = [
+            r
+            for r in [
+                f"# {title}",
+                "" if subtitle is not None else None,
+                subtitle,
+            ]
+            if r is not None
+        ]
+        mdlines = [
+            r if i+1 == len(_mdlines) else f'{r}\n'
+            for i, r in enumerate(_mdlines)
+        ]
         return [{
             "cell_type": "markdown",
             # "id": "84094469",
             "metadata": {},
-            "source": [
-                f"# {title}"
-            ]
+            "source": mdlines,
         }]
 
 
