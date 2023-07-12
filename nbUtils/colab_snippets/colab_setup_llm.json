@@ -33,8 +33,9 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "from getpass import getpass\n",
     "if llmProvider == 'OpenAI':\n",
-    "    apiSecret = input(f'Your secret for LLM provider \"{llmProvider}\": ')\n",
+    "    apiSecret = getpass(f'Your secret for LLM provider \"{llmProvider}\": ')\n",
     "    os.environ['OPENAI_API_KEY'] = apiSecret\n",
     "elif llmProvider == 'GCP_VertexAI':\n",
     "    # we need a json file\n",

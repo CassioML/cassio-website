@@ -13,7 +13,7 @@ from filesystem import (
 )
 
 from nbmanipulate import (
-    findNbTitle,
+    findNbHeadings,
     findNbUrl,
     replaceNbCodeLines,
     cleanNb,
@@ -68,7 +68,7 @@ def colabifyNotebook(pathList, fileTitle):
     outputFile = joinFilePath(colabPathList, colabFileTitle)
     # phase 1: inspect to find out a couple of properties
     inNbTree = json.load(open(inputFile))
-    nbTitle = findNbTitle(inNbTree)
+    nbHeadings = findNbHeadings(inNbTree)
     nbUrl = findNbUrl(pathList, fileTitle)
     # phase 2: clean specific lines in specific cells
     cleanedNbTree = replaceNbCodeLines(
@@ -82,7 +82,7 @@ def colabifyNotebook(pathList, fileTitle):
         #
         cleanedNbTree,
         #
-        title=nbTitle,
+        headings=nbHeadings,
         nbUrl=nbUrl,
     )
     #

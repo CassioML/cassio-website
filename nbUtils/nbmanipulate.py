@@ -44,23 +44,73 @@ def cleanNb(nbTree, options={}):
     return _cleanValue(nbTree, path=[], options=options)
 
 
-def findNbTitle(nbTree):
+def findNbHeadings(nbTree):
+    """
+    Assumption: if there is a "subtitle" i.e. a markdown regular pararaph,
+    it is in the same cell as the one with the "# title" row.
+
+    Returns (all keys can be None):
+        {
+            'title': ...
+            'subtitle': ...
+        }
+    """
     cells = nbTree['cells']
-    mdTitleRows = [
-        line
-        for line in (
-            _line.strip()
-            for cell in cells
-            if cell.get('cell_type') == 'markdown'
-            for source in cell.get('source', [])
-            for _line in source.split('\n')
+
+    def _isTitleCell(cell):
+        return any(
+            len(line) > 1 and line[:2] == '# '
+            for line in (
+                _line.strip()
+                for source in cell.get('source', [])
+                for _line in source.split('\n')
+            )
         )
-        if len(line) > 1 and line[:2] == '# '
+
+    mdTitleCells = [
+        cell
+        for cell in cells
+        if cell.get('cell_type') == 'markdown'
+        if _isTitleCell(cell)
     ]
-    if mdTitleRows:
-        return mdTitleRows[0][2:]
+
+    if mdTitleCells:
+        # take the first!
+        mdTitleCell = mdTitleCells[0]
+        titleRows = [
+            line
+            for line in (
+                _line.strip()
+                for source in mdTitleCell.get('source', [])
+                for _line in source.split('\n')
+            )
+            if len(line) > 1 and line[:2] == '# '            
+        ]
+        titleString = titleRows[0][2:] 
+        #
+        subtitleRows = [
+            line
+            for line in (
+                _line.strip()
+                for source in mdTitleCell.get('source', [])
+                for _line in source.split('\n')
+            )
+            if len(line) > 1 and line[:1] != '#'            
+        ]
+        if subtitleRows:
+            subtitleString = ' '.join(subtitleRows)
+        else:
+            subtitleString = None
+        #
+        return {
+            'title': titleString,
+            'subtitle': subtitleString,
+        }
     else:
-        return None
+        return {
+            'title': None,
+            'subtitle': None,
+        }
 
 
 nbUrlPrefix = 'https://cassio.org/'
