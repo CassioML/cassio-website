@@ -16,3 +16,6 @@ site
 
 # LangChain/Feast store
 docs/frameworks/langchain/feast_store/user_features
+
+# Sample data
+docs/frameworks/direct_cassio/miaow_16k.wav
