@@ -70,7 +70,7 @@ defaultColabCellSequences = [
 # variants
 writeDB_noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
     'seq_colab_setup_db',
     'seq_colab_setup_provision_db',
@@ -78,13 +78,22 @@ writeDB_noLLM_cellSequences = [
 ]
 noDB_noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
     'seq_colab_setup_closing',
 ]
 noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble',
+    'seq_colab_setup_preamble_no_llm',
+    'seq_colab_dependency_setup',
+    'seq_colab_setup_db',
+    'seq_colab_setup_closing',
+]
+
+noLLM_GPU_cellSequences = [
+    'seq_title',
+    'seq_colab_setup_preamble_no_llm',
+    'seq_colab_setup_switch_to_gpu',
     'seq_colab_dependency_setup',
     'seq_colab_setup_db',
     'seq_colab_setup_closing',
@@ -106,6 +115,8 @@ perNotebookColabCellSequences = {
     ],
     'docs/frameworks/langchain/memory-basic.ipynb': noLLM_cellSequences,
     'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
+    #
+    'docs/frameworks/direct_cassio/sound_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
 }
 perNotebookColabCellClosingSequences = {}
 # Cell sequence generators, and their mapping, are defined here:
@@ -122,6 +133,30 @@ def loadAndStripColabSnippetCells(jsonTitle):
         }
     )['cells']
     return cells
+
+
+def colabSetupSuggestGPUSwitchCells(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_suggest_gpu.json')
+
+
+
+def colabSetupPreambleNoLLMCells(pathList, fileTitle, nbTree, **kwargs):
+    nbUrl = kwargs['nbUrl']
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble_no_llm.json')
+    return [
+        {
+            k: (
+                v
+                if k != 'source'
+                else [
+                    lin.replace('__NOTEBOOK_URL__', nbUrl)
+                    for lin in v
+                ]
+            )
+            for k, v in c.items()
+        }
+        for c in cells
+    ]
 
 
 def colabSetupPreambleCells(pathList, fileTitle, nbTree, **kwargs):
@@ -225,7 +260,7 @@ postReqInstallCell = {
         "have been upgraded. **Please do restart the runtime now** for a smoother execution from this point onward."
     ]
 }
-def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
+def colabSetupPrepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
     reqFiles = [
         f
         for f in os.listdir(os.path.join(*pathList))
@@ -272,7 +307,9 @@ def prepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
 cellSequenceCreatorMap = {
     'seq_title':                            prepareTitleCells,
     'seq_colab_setup_preamble':             colabSetupPreambleCells,
-    'seq_colab_dependency_setup':           prepareDependencyCells,
+    'seq_colab_setup_preamble_no_llm':      colabSetupPreambleNoLLMCells,
+    'seq_colab_setup_switch_to_gpu':        colabSetupSuggestGPUSwitchCells,
+    'seq_colab_dependency_setup':           colabSetupPrepareDependencyCells,
     'seq_colab_setup_db':                   colabSetupDBCells,
     'seq_colab_setup_llm':                  colabSetupLLMCells,
     'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
