@@ -30,6 +30,11 @@ nav:
         - VectorStore/QA, learn more: frameworks/langchain/qa-advanced.ipynb
         - VectorStore/QA, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
         - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
+  - Direct CassIO:
+      - About: frameworks/direct_cassio/about.md
+      - Local setup: frameworks/direct_cassio/setup.md
+      - Vector Search use cases:
+        - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
   - Community:
       - Getting Help: community_help.md
       - Contributor Guide: community_contrib.md

@@ -145,7 +145,7 @@ See the inserts below for more information on each provider.
     First you need an Azure account allowed to access
     the [Azure OpenAI](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) service.
 
-    Log in to the [Azure Portal](portal.azure.com) and choose the "Azure OpenAI" service
+    Log in to the [Azure Portal](https://portal.azure.com) and choose the "Azure OpenAI" service
     in the dashboard.
 
     ![Azure OpenAI Service](images/services/azure-openai-api-key-1.png)

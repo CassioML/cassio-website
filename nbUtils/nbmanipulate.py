@@ -26,11 +26,21 @@ def _keepValue(value, path, options):
             # unfortunately we cannot strip the id field as its absence
             # will become a hard error in future nbformat versions.
             return True
+    elif path_str == 'cells..metadata.colab':
+        # for notebooks imported from colabs, there is a long list
+        # of "associated widget IDs" here (+ other stuff) we don't care.
+        return False
     elif path_str == 'cells..outputs.':
         if value.get('name') == 'stderr':
             return False
         elif value.get('name') == 'stdout' and options.get('stripStdoutOutput', False):
             # normally we want to keep the stdout chunks of output
+            return False
+        elif value.get('output_type') == 'display_data':
+            # this e.g. contains for massive "Audio widget" sounds,
+            # base-64 encoded in the page.
+            # Also: progress bars (tqdm stuff), gradio apps (...?)
+            # We discard all those.
             return False
         else:
             return True

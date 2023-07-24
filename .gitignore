@@ -16,3 +16,7 @@ site
 
 # LangChain/Feast store
 docs/frameworks/langchain/feast_store/user_features
+
+# Direct CassIO / Sound similarity search debris:
+docs/frameworks/direct_cassio/miaow_16k.wav*
+docs/frameworks/direct_cassio/flagged
