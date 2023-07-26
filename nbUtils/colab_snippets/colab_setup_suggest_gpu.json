@@ -2,14 +2,6 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "214d12af",
-   "metadata": {},
-   "source": [
-    "## Colab-specific setup"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "adf438a4",
    "metadata": {},
    "source": [
