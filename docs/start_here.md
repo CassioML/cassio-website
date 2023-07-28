@@ -63,7 +63,7 @@ Detailed explanations can be found
 
 Now you need credentials to connect securely to your database.
 
-On the DB Quickstart panel, locate the "Create a custom token" link
+On the DB Connect panel, locate the "Create a custom token" link
 and generate a new token **with role "Database Administrator"**. _Make sure you
 safely store all parts of the Token: it will not be shown
 anymore for security reasons._
@@ -77,7 +77,7 @@ Next, you need a "Secure Connect Bundle" zipfile, containing certificates
 and routing information for the drivers to properly establish a connection to
 your database.
 
-On the DB Quickstart panel, find the "Get Bundle" button and click on it.
+On the DB Connect panel, find the "Get Bundle" button and click on it.
 You don't need to unpack the zip file, just save it on you computer: you
 will need it momentarily.
 
