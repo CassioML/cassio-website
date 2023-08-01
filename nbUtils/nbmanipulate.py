@@ -26,6 +26,11 @@ def _keepValue(value, path, options):
             # unfortunately we cannot strip the id field as its absence
             # will become a hard error in future nbformat versions.
             return True
+    elif path_str == 'metadata.widgets':
+        # for notebooks from colabs, these are widgets such as
+        # those from gradio which make nbconvert complain of a KeyError
+        # (see https://github.com/jupyter/nbconvert/issues/1731#issuecomment-1113451797)
+        return False
     elif path_str == 'cells..metadata.colab':
         # for notebooks imported from colabs, there is a long list
         # of "associated widget IDs" here (+ other stuff) we don't care.
