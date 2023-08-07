@@ -17,7 +17,7 @@ management and -- crucially -- Vector Similarity Search.
 
 !!! info "What is Vector Similarity Search?"
 
-        Vector similarity search is a powerful information retrieval technique,
+        Vector Similarity Search is a powerful information retrieval technique,
         used to find similar items based on their vector representations.
 
         Embedding vectors, which are essentially numerical representations of input data
@@ -25,8 +25,8 @@ management and -- crucially -- Vector Similarity Search.
         (e.g. for text data this means a semantic similarity, regardless of
         the exact words used in the texts you compare).
 
-        Vector similarity search can thus be at the heart of applications such as
-        recommendation systems, content summarization, image retrieval and many more.
+        Vector Similarity Search can thus be at the heart of applications such as
+        recommendation systems, content summarization, image retrieval and much more.
         It provides a scalable and efficient way to search and retrieve relevant
         information even from very large datasets, and can be used across very different
         domains to solve a variety of use cases.
@@ -38,7 +38,7 @@ As a mediator between your application, a framework like LangChain or Llamaindex
 
 ![CassIO, sketch](images/cassio_sketch.png)
 
-#### Latest status
+## Latest status
 
 CassIO is evolving rapidly. Note that at the time of writing
 
