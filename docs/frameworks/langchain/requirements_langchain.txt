@@ -2,7 +2,7 @@
 git+https://github.com/hemidactylus/langchain@cassio-full-preview#egg=langchain
 #
 cassandra-driver>=3.28.0
-cassio==0.0.6
+cassio==0.1.0
 google-cloud-aiplatform>=1.25.0
 jupyter>=1.0.0
 openai==0.27.7

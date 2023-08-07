@@ -1,4 +1,4 @@
-cassio==0.0.7
+cassio==0.1.0
 datasets==2.13.1
 gradio==3.36.1
 jupyter>=1.0.0
