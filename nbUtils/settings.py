@@ -117,6 +117,7 @@ perNotebookColabCellSequences = {
     'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
     #
     'docs/frameworks/direct_cassio/sound_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
+    'docs/frameworks/direct_cassio/image_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
 }
 perNotebookColabCellClosingSequences = {}
 # Cell sequence generators, and their mapping, are defined here:

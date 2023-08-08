@@ -7,3 +7,4 @@ panns_inference==0.1.1
 python-dotenv==1.0.0
 scipy==1.11.1
 torch==2.0.1
+torchvision==0.15.2

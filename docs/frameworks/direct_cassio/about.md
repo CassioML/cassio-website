@@ -26,3 +26,4 @@ All of the following examples can run as Colab
 notebooks straight away:
 
 - [Sound similarity detection](/frameworks/direct_cassio/sound_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._
+- [Image similarity detection](/frameworks/direct_cassio/image_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._
