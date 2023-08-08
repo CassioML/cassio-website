@@ -26,6 +26,11 @@ def _keepValue(value, path, options):
             # unfortunately we cannot strip the id field as its absence
             # will become a hard error in future nbformat versions.
             return True
+    elif path_str == 'metadata.widgets':
+        # for notebooks from colabs, these are widgets such as
+        # those from gradio which make nbconvert complain of a KeyError
+        # (see https://github.com/jupyter/nbconvert/issues/1731#issuecomment-1113451797)
+        return False
     elif path_str == 'cells..metadata.colab':
         # for notebooks imported from colabs, there is a long list
         # of "associated widget IDs" here (+ other stuff) we don't care.
@@ -36,12 +41,25 @@ def _keepValue(value, path, options):
         elif value.get('name') == 'stdout' and options.get('stripStdoutOutput', False):
             # normally we want to keep the stdout chunks of output
             return False
+        elif value.get('output_type') == 'execute_result':
+            # this is immediate (implicit) output from the last cell command
+            # At the moment it's an occasional image or text, we keep it
+            return True
         elif value.get('output_type') == 'display_data':
             # this e.g. contains for massive "Audio widget" sounds,
             # base-64 encoded in the page.
             # Also: progress bars (tqdm stuff), gradio apps (...?)
-            # We discard all those.
-            return False
+            # We discard those, except for those with images, that we keep.
+            _data = value.get('data') or {}
+            _tps = str(_data.get('text/plain'))
+            if 'PIL.Image.Image' in _tps:
+                # it's harmless inline image stuff
+                return True
+            elif 'Figure size' in _tps:
+                # other image stuff
+                return True
+            else:
+                return False
         else:
             return True
     elif path_str == 'metadata.language_info.version':

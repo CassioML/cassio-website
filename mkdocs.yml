@@ -34,6 +34,7 @@ nav:
       - About: frameworks/direct_cassio/about.md
       - Local setup: frameworks/direct_cassio/setup.md
       - Vector Search use cases:
+        - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
         - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
   - Community:
       - Getting Help: community_help.md
