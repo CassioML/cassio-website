@@ -14,7 +14,6 @@ dotenv_file = find_dotenv('.env')
 load_dotenv(dotenv_file)
 
 ASTRA_DB_SECURE_BUNDLE_PATH = os.environ["ASTRA_DB_SECURE_BUNDLE_PATH"]
-ASTRA_DB_CLIENT_ID = "token"
 ASTRA_DB_APPLICATION_TOKEN = os.environ["ASTRA_DB_APPLICATION_TOKEN"]
 ASTRA_DB_KEYSPACE = os.environ["ASTRA_DB_KEYSPACE"]
 
@@ -27,7 +26,7 @@ def getCQLSession(mode='astra_db'):
                 "secure_connect_bundle": ASTRA_DB_SECURE_BUNDLE_PATH,
             },
             auth_provider=PlainTextAuthProvider(
-                ASTRA_DB_CLIENT_ID,
+                "token",
                 ASTRA_DB_APPLICATION_TOKEN,
             ),
         )
