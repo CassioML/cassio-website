@@ -34,7 +34,7 @@ management and -- crucially -- Vector Similarity Search.
 ## General architecture
 
 CassIO is the core logic powering various LLM frameworks, utilizing "thin adapters" tailored to fit the particular interfaces of each framework.
-As a mediator between your application, a framework like LangChain or Llamaindex, and the Cassandra database, CassIO is the optimal solution for efficient and effective data management.
+As a mediator between your application, a framework like LangChain or LlamaIndex, and the Cassandra database, CassIO is the optimal solution for efficient and effective data management.
 
 ![CassIO, sketch](images/cassio_sketch.png)
 
@@ -42,7 +42,7 @@ As a mediator between your application, a framework like LangChain or Llamaindex
 
 CassIO is evolving rapidly. Note that at the time of writing
 
-1. there's support for LangChain and Llamaindex, with new features still being actively added;
+1. there's support for LangChain and LlamaIndex, with new features still being actively added;
 2. some of the LangChain components are still in preview, which is why the setup instructs to install a forked version of the framework for the time being;
 3. CassIO can be used also directly in your application (for instance, for a non-language-based Vector Search need): this is also covered in the present documentation.
 

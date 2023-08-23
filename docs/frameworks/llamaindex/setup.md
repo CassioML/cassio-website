@@ -1,4 +1,4 @@
-# Llamaindex setup for running locally
+# LlamaIndex setup for running locally
 
 ## Setup
 
@@ -6,7 +6,7 @@
 
     You can skip this page if you are interested in Colab notebooks only.
 
-    These are the instructions for local setup of the Llamaindex-specific
+    These are the instructions for local setup of the LlamaIndex-specific
     Python environment. A prerequisite is the [general setup for running locally](/more_info/#run-with-local-jupyter).
 
 You should have a copy of this repository from the [general local-run setup](/more_info/#run-with-local-jupyter) already.

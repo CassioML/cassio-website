@@ -1,11 +1,11 @@
-# About Llamaindex
+# About LlamaIndex
 
-[Llamaindex](https://gpt-index.readthedocs.io/en/latest/index.html),
+[LlamaIndex](https://gpt-index.readthedocs.io/en/latest/index.html),
 formerly GPT Index, is a Python data framework designed to manage and structure
 LLM-based applications, with a particular emphasis on storage,
 indexing and retrieval of data.
 
-Llamaindex provides a complete set of tools to automate tasks such as
+LlamaIndex provides a complete set of tools to automate tasks such as
 data ingestion from heterogeneous sources (PDF files, Web pages, ...) and
 retrieval-augmented generation (RAG); it also features a rich ecosystem of
 plugins that make it possible to connect with third-party components,
@@ -17,11 +17,11 @@ from vector stores to data readers.
     provided you have checked the [pre-requisites](/start_here/#vector-database).
 
     If you prefer to run in local Jupyter, set up the
-    [Llamaindex Python environment](/frameworks/llamaindex/setup/) first.
+    [LlamaIndex Python environment](/frameworks/llamaindex/setup/) first.
 
 ## Available components
 
-CassIO powers integration with Llamaindex, making it possible to easily
+CassIO powers integration with LlamaIndex, making it possible to easily
 develop LLM applications within this framework while taking advantage
 of Astra DB / Cassandra as the storage system.
 
