@@ -1,5 +1,5 @@
 # for the time being:
-git+https://github.com/hemidactylus/langchain@cassio-full-preview#egg=langchain
+git+https://github.com/hemidactylus/langchain@updated-full-preview--lab#egg=langchain
 #
 cassio>=0.1.0
 google-cloud-aiplatform>=1.25.0
