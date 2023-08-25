@@ -38,10 +38,6 @@ codeLineReplacements = [
         "cqlMode = 'astra_db' # 'astra_db'/'local'",
         "cqlMode = 'astra_db'",
     ),
-    (
-        "loader = TextLoader('texts/amontillado.txt', encoding='utf8')",
-        "loader = TextLoader('amontillado.txt', encoding='utf8')",
-    ),
 ]
 
 # NOTE: currently you HAVE to mirror these changes
@@ -110,8 +106,17 @@ perNotebookColabCellSequences = {
         'seq_colab_dependency_setup',
         'seq_colab_setup_db',
         'seq_colab_setup_llm',
-        'seq_colab_setup_download_amontillado',
-        'seq_colab_setup_closing',
+        'seq_colab_setup_download_txt_stories',
+            'seq_colab_setup_closing',
+    ],
+    'docs/frameworks/langchain/qa-vector-metadata.ipynb': [
+        'seq_title',
+        'seq_colab_setup_preamble',
+        'seq_colab_dependency_setup',
+        'seq_colab_setup_db',
+        'seq_colab_setup_llm',
+        'seq_colab_setup_download_txt_stories',
+            'seq_colab_setup_closing',
     ],
     'docs/frameworks/langchain/memory-basic.ipynb': noLLM_cellSequences,
     'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
@@ -205,8 +210,8 @@ def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_closing.json')
 
 
-def colabSetupDownloadAmontillado(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripColabSnippetCells('colab_setup_download_amontillado.json')
+def colabSetupDownloadTxtStories(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_download_langchaintxtstories.json')
 
 
 def colabSetupDownloadLlamaPDFs(pathList, fileTitle, nbTree, **kwargs):
@@ -328,7 +333,7 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_db':                   colabSetupDBCells,
     'seq_colab_setup_llm':                  colabSetupLLMCells,
     'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
-    'seq_colab_setup_download_amontillado': colabSetupDownloadAmontillado,
+    'seq_colab_setup_download_txt_stories':     colabSetupDownloadTxtStories,
     'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,
     #

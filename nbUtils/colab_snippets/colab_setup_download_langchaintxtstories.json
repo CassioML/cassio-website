@@ -7,8 +7,11 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# retrieve the text of a short story that will be indexed in the vector store\n",
-    "! curl https://raw.githubusercontent.com/CassioML/cassio-website/main/docs/frameworks/langchain/texts/amontillado.txt --output amontillado.txt"
+    "# retrieve the text of a few short stories that will be indexed in the vector store\n",
+    "! mkdir texts\n",
+    "! curl https://raw.githubusercontent.com/CassioML/cassio-website/main/docs/frameworks/langchain/texts/amontillado.txt --output texts/amontillado.txt\n",
+    "! curl https://raw.githubusercontent.com/CassioML/cassio-website/main/docs/frameworks/langchain/texts/manuscript.txt --output texts/manuscript.txt\n",
+    "! curl https://raw.githubusercontent.com/CassioML/cassio-website/main/docs/frameworks/langchain/texts/mask.txt --output texts/mask.txt"
    ]
   }
  ],
