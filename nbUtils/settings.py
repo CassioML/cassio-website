@@ -118,6 +118,16 @@ perNotebookColabCellSequences = {
     #
     'docs/frameworks/direct_cassio/sound_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
     'docs/frameworks/direct_cassio/image_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
+    #
+    'docs/frameworks/llamaindex/vector-quickstart.ipynb': [
+        'seq_title',
+        'seq_colab_setup_preamble',
+        'seq_colab_dependency_setup',
+        'seq_colab_setup_db',
+        'seq_colab_setup_llm',
+        'seq_colab_setup_download_llama_pdfs',
+        'seq_colab_setup_closing',
+    ],
 }
 perNotebookColabCellClosingSequences = {}
 # Cell sequence generators, and their mapping, are defined here:
@@ -197,6 +207,10 @@ def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
 
 def colabSetupDownloadAmontillado(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_download_amontillado.json')
+
+
+def colabSetupDownloadLlamaPDFs(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_fetch_llama_pdfs.json')
 
 
 def colabClosingCTA(pathList, fileTitle, nbTree, **kwargs):
@@ -315,6 +329,7 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_llm':                  colabSetupLLMCells,
     'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
     'seq_colab_setup_download_amontillado': colabSetupDownloadAmontillado,
+    'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,
     #
     'seq_colab_closing_cta':                colabClosingCTA,

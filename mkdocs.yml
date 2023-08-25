@@ -30,6 +30,10 @@ nav:
         - VectorStore/QA, learn more: frameworks/langchain/qa-advanced.ipynb
         - VectorStore/QA, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
         - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
+  - LlamaIndex:
+    - About: frameworks/llamaindex/about.md
+    - Local setup: frameworks/llamaindex/setup.md
+    - Vector Store quickstart: frameworks/llamaindex/vector-quickstart.ipynb
   - Direct CassIO:
       - About: frameworks/direct_cassio/about.md
       - Local setup: frameworks/direct_cassio/setup.md

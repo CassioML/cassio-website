@@ -31,7 +31,7 @@
     "!./cqlsh-astra/bin/cqlsh \\\n",
     "    -b \"$ASTRA_DB_SECURE_BUNDLE_PATH\" \\\n",
     "    -u token \\\n",
-    "    -p \"$ASTRA_DB_TOKEN_BASED_PASSWORD\" \\\n",
+    "    -p \"$ASTRA_DB_APPLICATION_TOKEN\" \\\n",
     "    -k \"$ASTRA_DB_KEYSPACE\" \\\n",
     "    -f write_sample_data.cql"
    ]

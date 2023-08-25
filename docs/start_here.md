@@ -221,7 +221,6 @@ Look for the Colab
 symbol at the top of most code examples.
 
 As mentioned at the top of this page, CassIO is designed as a general-usage
-library: and, sure enough, we will offer integrations with other frameworks,
-such as Llamaindex or Microsoft Semantic Kernel.
+library: and, sure enough, the offering of integrations with LLM frameworks will keep growing, covering an expanding range of tools.
 
 Come back and check again in a few days for more!
