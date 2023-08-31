@@ -45,6 +45,16 @@ and install this dependency:
 pip install "feast[cassandra]>=0.26"
 ```
 
+!!! warning
+
+    The latest version of LangChain brings an apparent conflict
+    with Feast on package `SQLAlchemy`. Pending upgrades on the Feast side,
+    our experience is that you will be fine by running the following command
+    right after installing Feast: `pip install "sqlalchemy>=2"`.
+
+    Do not worry about a message similar to
+    _"feast 0.33.1 requires SQLAlchemy[mypy]<2,>1, but you have sqlalchemy 2.0.20 which is incompatible."_: the example notebook will run just fine.
+
 Keep file `../../../../.env` handy, as you will be shortly asked to provide
 the Secure Connect Bundle location and the keyspace name defined there.
 
