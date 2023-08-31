@@ -10,13 +10,10 @@ nav:
     - About: frameworks/langchain/about.md
     - Local setup: frameworks/langchain/setup.md
     - Prompt Templates:
-      - Intro: frameworks/langchain/prompt-templates-basic.ipynb
-      - Chat templates: frameworks/langchain/chat-prompt-templates.ipynb
-      - Partialing: frameworks/langchain/prompt-templates-partialing.ipynb
-    - Advanced Prompt Templates:
-        - Custom templates: frameworks/langchain/prompt-templates-engine.ipynb
-        - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
-        - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
+      - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
+      - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
+      - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
+      - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
     - Memory:
         - Base class: frameworks/langchain/memory-basic.ipynb
         - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb

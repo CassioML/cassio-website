@@ -164,6 +164,7 @@ INSERT INTO people (city, name, age) VALUES ('milan', 'odilia', 13);
 INSERT INTO people (city, name, age) VALUES ('milan', 'samanta', 14);
 INSERT INTO people (city, name, age) VALUES ('tampere', 'Mikko', 992);
 INSERT INTO people (city, name, age) VALUES ('tampere', 'Paivi', 991);
+INSERT INTO people (city, name, age) VALUES ('tokyo', 'hideo', 144);
 
 
 INSERT INTO nickname_by_city (city, nickname) VALUES ('liverpool', 'Livp');
@@ -174,3 +175,4 @@ INSERT INTO nickname_by_city (city, nickname) VALUES ('thebigcity', 'TheBiggestA
 INSERT INTO nickname_by_city (city, nickname) VALUES ('vladivostok', 'Vlady');
 INSERT INTO nickname_by_city (city, nickname) VALUES ('milan', 'Taaac');
 INSERT INTO nickname_by_city (city, nickname) VALUES ('tampere', 'Pere');
+INSERT INTO nickname_by_city (city, nickname) VALUES ('madrid', 'Dirdam!');
