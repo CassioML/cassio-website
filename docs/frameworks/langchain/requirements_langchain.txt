@@ -1,7 +1,7 @@
 # for the time being:
-git+https://github.com/hemidactylus/langchain@updated-full-preview--lab#egg=langchain
+git+https://github.com/hemidactylus/langchain@updated-full-preview--lab#egg=langchain&subdirectory=libs/langchain
 #
-cassio>=0.1.0
+cassio>=0.1.1
 google-cloud-aiplatform>=1.25.0
 jupyter>=1.0.0
 openai==0.27.7
