@@ -43,7 +43,7 @@ As a mediator between your application, a framework like LangChain or LlamaIndex
 CassIO is evolving rapidly. Note that at the time of writing
 
 1. there's support for LangChain and LlamaIndex, with new features still being actively added;
-2. some of the LangChain components are still in preview, which is why the setup instructs to install a forked version of the framework for the time being;
+2. some of the LangChain components are still in preview, which is why the setup instructs, for the time being, to install a forked version of the framework (namely, Prompt Templates and metadata support in vector stores are not yet into upstream);
 3. CassIO can be used also directly in your application (for instance, for a non-language-based Vector Search need): this is also covered in the present documentation.
 
 ## Trademark
