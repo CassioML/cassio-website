@@ -25,10 +25,9 @@ notebooks straight away (check out the
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 icon at the top of each page):
 
-- Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
-- ... the same, as part of a [longer LLM conversation](/frameworks/langchain/chat-prompt-templates/).
-- Support for ["partialing" of prompts](/frameworks/langchain/prompt-templates-partialing/) (i.e. leaving some input unspecified, to supply later).
-- Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt.
+- Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt in various LangChain pipelines;
+- Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt (check the [setup steps](/frameworks/langchain/prompt-templates-feast-setup/) first).
+- Generic, customizable ["convertor-based" prompt templates](/frameworks/langchain/prompt-templates-engine/) (not specific to Cassandra)
 - A [memory module](/frameworks/langchain/memory-basic/) for LLMs that uses Cassandra for storage;
 - ... that can be used to ["remember" the recent exchanges](/frameworks/langchain/memory-conversationbuffermemory/) in a chat interaction;
 - ... including [keeping a summary](/frameworks/langchain/memory-summarybuffermemory/) of the whole past conversation.
@@ -38,6 +37,7 @@ Additionally, the "Vector Search" capabilities that are being added to Cassandra
 
 - A [cache of LLM responses](/frameworks/langchain/semantic-caching-llm-responses/) that is oblivious to the exact form a test is phrased.
 - A ["semantic index"](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to buil the best answer to a given question ("QA use case");
+- ... with support for [metadata filtering](/frameworks/langchain/qa-vector-metadata/) to narrow down vector similarity queries;
 - ... whose usage can be [adapted](/frameworks/langchain/qa-advanced/) to suit many specific needs.
 - ... and that can be configured to retrieve pieces of information [as diverse as possible](/frameworks/langchain/qa-maximal-marginal-relevance/) to maximize the actual information flowing to the answer.
 - A ["semantic memory" element](/frameworks/langchain/memory-vectorstore/) for inclusion in LLM chat interactions, that can retrieve relevant past exchanges even if occurred in the far past.
