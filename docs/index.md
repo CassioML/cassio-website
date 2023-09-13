@@ -43,7 +43,7 @@ As a mediator between your application, a framework like LangChain or LlamaIndex
 CassIO is evolving rapidly. Note that at the time of writing
 
 1. there's support for LangChain and LlamaIndex, with new features still being actively added;
-2. some of the LangChain components are still in preview, which is why the setup instructs to install a forked version of the framework for the time being;
+2. The "Cassandra prompt template" component in LangChain is still in preview, which is why the setup instructs to install a forked version of the framework (but you're good to do with everything else by just doing a regular `pip install langchain`);
 3. CassIO can be used also directly in your application (for instance, for a non-language-based Vector Search need): this is also covered in the present documentation.
 
 ## Trademark
