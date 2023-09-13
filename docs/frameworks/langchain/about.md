@@ -5,7 +5,6 @@ framework to automate most of the management of, and interaction with, large lan
 models (LLMs): among its features are support for memory, vector-based similarity search,
 an advanced prompt templating abstraction and much more.
 
-
 LangChain comes with a Python and a Javascript implementation. This section
 targets the Python version.
 
@@ -17,6 +16,13 @@ targets the Python version.
     If you prefer to run in local Jupyter, set up the
     [LangChain Python environment](/frameworks/langchain/setup/) first.
 
+**Note** with the exception of the items marked as `[Preview]` below,
+all other components are in the latest LangChain release and can be used
+straight away after doing a `pip install langchain`. To help you experiment with
+the preview elements, the environment setup described in this section will install
+our preview fork of LangChain throughout. _You do not need to depart from_
+`pip install langchain` _if you're not interested in the preview components._
+
 ## Available components
 
 CassIO seamlessly integrates with LangChain, offering Cassandra-specific
@@ -25,9 +31,6 @@ notebooks straight away (check out the
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 icon at the top of each page):
 
-- Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt in various LangChain pipelines;
-- Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt (check the [setup steps](/frameworks/langchain/prompt-templates-feast-setup/) first).
-- Generic, customizable ["convertor-based" prompt templates](/frameworks/langchain/prompt-templates-engine/) (not specific to Cassandra)
 - A [memory module](/frameworks/langchain/memory-basic/) for LLMs that uses Cassandra for storage;
 - ... that can be used to ["remember" the recent exchanges](/frameworks/langchain/memory-conversationbuffermemory/) in a chat interaction;
 - ... including [keeping a summary](/frameworks/langchain/memory-summarybuffermemory/) of the whole past conversation.
@@ -41,6 +44,15 @@ Additionally, the "Vector Search" capabilities that are being added to Cassandra
 - ... whose usage can be [adapted](/frameworks/langchain/qa-advanced/) to suit many specific needs.
 - ... and that can be configured to retrieve pieces of information [as diverse as possible](/frameworks/langchain/qa-maximal-marginal-relevance/) to maximize the actual information flowing to the answer.
 - A ["semantic memory" element](/frameworks/langchain/memory-vectorstore/) for inclusion in LLM chat interactions, that can retrieve relevant past exchanges even if occurred in the far past.
+
+Last, there is a set of components around zero-boilerplate prompt templating
+using Cassandra as the source of data. Note: this is still in preview as of September 15th, 2023 and requires installation from the fork to be used.
+
+- `[Preview]` Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
+- `[Preview]` ... the same, as part of a [longer LLM conversation](/frameworks/langchain/chat-prompt-templates/).
+- `[Preview]` Support for ["partialing" of prompts](/frameworks/langchain/prompt-templates-partialing/) (i.e. leaving some input unspecified, to supply later).
+- `[Preview]` Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt.
+
 
 This list will grow over time as new needs are addressed
 and the current extensions are refined.
