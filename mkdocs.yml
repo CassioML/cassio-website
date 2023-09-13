@@ -9,17 +9,6 @@ nav:
   - LangChain:
     - About: frameworks/langchain/about.md
     - Local setup: frameworks/langchain/setup.md
-    - Prompt Templates:
-      - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
-      - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
-      - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
-      - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
-    - Memory:
-        - Base class: frameworks/langchain/memory-basic.ipynb
-        - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
-        - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
-    - Caching:
-        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
     - Vector Search:
         - About: frameworks/langchain/vector-similarity-search.md
         - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
@@ -28,6 +17,17 @@ nav:
         - VectorStore/QA, learn more: frameworks/langchain/qa-advanced.ipynb
         - VectorStore/QA, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
         - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
+    - Caching:
+        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
+    - Memory:
+        - Base class: frameworks/langchain/memory-basic.ipynb
+        - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
+        - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
+    - Prompt Templates:
+      - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
+      - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
+      - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
+      - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
   - LlamaIndex:
     - About: frameworks/llamaindex/about.md
     - Local setup: frameworks/llamaindex/setup.md
@@ -38,6 +38,8 @@ nav:
       - Vector Search use cases:
         - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
         - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
+  - Sample Apps:
+      - FLARE/LangChain: demo_apps/flare_langchain.md
   - Community:
       - Getting Help: community_help.md
       - Contributor Guide: community_contrib.md
