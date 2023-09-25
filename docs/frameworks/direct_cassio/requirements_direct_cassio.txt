@@ -1,10 +1,10 @@
-cassio>=0.1.0
+cassio>=0.1.1
 datasets==2.13.1
 gradio==3.36.1
 jupyter>=1.0.0
 numpy==1.24.4
 panns_inference==0.1.1
 python-dotenv==1.0.0
-scipy==1.11.1
+scipy>=1.10
 torch==2.0.1
 torchvision==0.15.2
