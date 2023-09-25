@@ -271,13 +271,21 @@ def prepareTitleCells(pathList, fileTitle, nbTree, **kwargs):
 
 
 dependencyInstallerLineClosing = ' \\\n'
+lastDependencyInstallerLineClosing = ' \n'
 postReqInstallCell = {
     "cell_type": "markdown",
     "id": "222f44ff",
     "metadata": {},
     "source": [
-        "You will likely be asked to \"Restart the Runtime\" at this time, as some dependencies\n",
-        "have been upgraded. **Please do restart the runtime now** for a smoother execution from this point onward."
+        (
+            "⚠️ **Do not mind a \"Your session crashed...\" "
+            "message you may see.**\n"
+        ),
+        "\n",
+        (
+            "It was us, making sure your kernel restarts with all the correct "
+            "dependency versions. _You can now proceed with the notebook._"
+        )
     ]
 }
 def colabSetupPrepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
@@ -310,10 +318,13 @@ def colabSetupPrepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
                     "outputs": [],
                     "source": [
                         "# install required dependencies\n",
-                        "! pip install \\\n",
+                        # "! pip install -q --progress-bar off --upgrade pip\n",
+                        "! pip install -q --progress-bar off \\\n",
                     ] + [
-                        f"    \"{depline}\"{'' if deplinei+1 == numDeps else dependencyInstallerLineClosing}"
+                        f"    \"{depline}\"{lastDependencyInstallerLineClosing if deplinei+1 == numDeps else dependencyInstallerLineClosing}"
                         for deplinei, depline in enumerate(dependencies)
+                    ] + [
+                        "exit()",
                     ]
                 },
                 postReqInstallCell
