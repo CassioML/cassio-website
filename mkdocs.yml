@@ -39,6 +39,7 @@ nav:
         - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
         - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
   - Sample Apps:
+      - Hotels/LangChain: demo_apps/hotels_langchain.md
       - FLARE/LangChain: demo_apps/flare_langchain.md
   - Community:
       - Getting Help: community_help.md
