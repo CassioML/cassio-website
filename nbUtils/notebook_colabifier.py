@@ -20,7 +20,7 @@ from nbmanipulate import (
 )
 
 from settings import (
-    codeLineReplacements,
+    codeLineReplacementsMap,
     suppressColabify,
     defaultColabCellSequences,
     defaultColabCellClosingSequences,
@@ -70,6 +70,18 @@ def colabifyNotebook(pathList, fileTitle):
     inNbTree = json.load(open(inputFile))
     nbHeadings = findNbHeadings(inNbTree)
     nbUrl = findNbUrl(pathList, fileTitle)
+    # prepare full list of replacements
+    codeLineReplacements = [
+        repRule
+        for pathSlice in (
+            (pathList + [fileTitle])[:i]
+            for i in range(len(pathList) + 2)
+        )
+        for repRule in codeLineReplacementsMap.get(
+            "/".join(pathSlice),
+            [],
+        )
+    ]
     # phase 2: clean specific lines in specific cells
     cleanedNbTree = replaceNbCodeLines(
         inNbTree,

@@ -17,11 +17,8 @@ from nbmanipulate import (
 
 # (old_part_of_line, full_new_line_or_None)
 # None means simply make the line disappear.
-codeLineReplacements = [
-    (
-        'from cqlsession import',
-        '# creation of the DB connection',
-    ),
+# Depending on the framework, different replacement rules apply
+codeLineReplacements0 = [
     (
         'import suggestLLMProvider',
         '# creation of the LLM resources'
@@ -34,11 +31,41 @@ codeLineReplacements = [
         'Alternatively set llmProvider',
         None,
     ),
+]
+codeLineReplacementsLegacyCQLSession = [
+    (
+        'from cqlsession import',
+        '# creation of the DB connection',
+    ),
     (
         "cqlMode = 'astra_db' # 'astra_db'/'local'",
         "cqlMode = 'astra_db'",
     ),
 ]
+codeLineReplacementsCassioInit = [
+    (
+        "# Ensure loading of Astra DB credentials into environment variables:",
+        "# Here the database connection parameters are put to use:",
+    ),
+    (
+        "from dotenv import load_dotenv",
+        None,
+    ),
+    (
+        "load_dotenv(\"../../../.env\")",
+        None,
+    ),
+]
+# this maps dot-joined pathLists to replacements with partial pathlist matching
+# i.e. keys = dot-joined pathlists, values = lists of 2-tuples for replacement.
+# (You can also have notebook-specific prescriptions)
+# NOTE: if you specify rules that walk on each other, your're on your own.
+codeLineReplacementsMap = {
+    "": codeLineReplacements0,
+    "docs/frameworks/langchain": codeLineReplacementsLegacyCQLSession,
+    "docs/frameworks/direct_cassio": codeLineReplacementsLegacyCQLSession,
+    "docs/frameworks/llamaindex": codeLineReplacementsCassioInit,
+}
 
 # NOTE: currently you HAVE to mirror these changes
 # to a list in overrides/main.html (*) to suppress
