@@ -63,7 +63,7 @@ codeLineReplacementsCassioInit = [
 codeLineReplacementsMap = {
     "": codeLineReplacements0,
     "docs/frameworks/langchain": codeLineReplacementsLegacyCQLSession,
-    "docs/frameworks/direct_cassio": codeLineReplacementsLegacyCQLSession,
+    "docs/frameworks/direct_cassio": codeLineReplacementsCassioInit,
     "docs/frameworks/llamaindex": codeLineReplacementsCassioInit,
 }
 
@@ -115,10 +115,10 @@ noLLM_cellSequences = [
 
 noLLM_GPU_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_no_llm',
+    'seq_colab_setup_preamble_no_llm_cassioinit',
     'seq_colab_setup_switch_to_gpu',
     'seq_colab_dependency_setup',
-    'seq_colab_setup_db',
+    'seq_colab_setup_db_cassioinit',
     'seq_colab_setup_closing',
 ]
 
@@ -186,6 +186,25 @@ def colabSetupSuggestGPUSwitchCells(pathList, fileTitle, nbTree, **kwargs):
 def colabSetupPreambleNoLLMCells(pathList, fileTitle, nbTree, **kwargs):
     nbUrl = kwargs['nbUrl']
     cells = loadAndStripColabSnippetCells('colab_setup_preamble_no_llm.json')
+    return [
+        {
+            k: (
+                v
+                if k != 'source'
+                else [
+                    lin.replace('__NOTEBOOK_URL__', nbUrl)
+                    for lin in v
+                ]
+            )
+            for k, v in c.items()
+        }
+        for c in cells
+    ]
+
+
+def colabSetupPreambleNoLLMCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
+    nbUrl = kwargs['nbUrl']
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble_no_llm_cassioinit.json')
     return [
         {
             k: (
@@ -387,6 +406,7 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,
     # new cassio-init stuff:
+    'seq_colab_setup_preamble_no_llm_cassioinit': colabSetupPreambleNoLLMCassioInitCells,
     'seq_colab_setup_preamble_cassioinit':  colabSetupPreambleCassioInitCells,
     'seq_colab_setup_db_cassioinit':        colabSetupDBCassioInitCells,
     #
