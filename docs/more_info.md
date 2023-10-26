@@ -39,7 +39,7 @@ parameters.
 You can copy the provided `.env.template` file and replace
 the environment variables you see there
 (essentially, the full path to the bundle file, the keyspace
-name and your database secret token string).
+name and your database secret token string and ID).
 
 ??? tip "Using the Astra CLI"
 
@@ -247,9 +247,11 @@ Python code similar to the following:
 from cassandra.cluster import Cluster
 
 cluster = Cluster()
-localSession = cluster.connect()
+session = cluster.connect()
 ```
 
-the `localSession` object will then be passed exactly in the same way
+the `session` object, along with the keyspace name (a string),
+can then be used e.g. in the `cassio.init(...)` invocations,
+or when instantiating individual objects, exactly in the same way
 as you would a connection to Astra DB
 (see [the drivers documentation](https://docs.datastax.com/en/developer/python-driver/latest/getting_started/#connecting-to-cassandra) for more options).
