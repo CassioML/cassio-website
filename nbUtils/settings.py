@@ -153,9 +153,9 @@ perNotebookColabCellSequences = {
     #
     'docs/frameworks/llamaindex/vector-quickstart.ipynb': [
         'seq_title',
-        'seq_colab_setup_preamble',
+        'seq_colab_setup_preamble_cassioinit',
         'seq_colab_dependency_setup',
-        'seq_colab_setup_db',
+        'seq_colab_setup_db_cassioinit',
         'seq_colab_setup_llm',
         'seq_colab_setup_download_llama_pdfs',
         'seq_colab_setup_closing',
@@ -243,6 +243,29 @@ def colabSetupDownloadTxtStories(pathList, fileTitle, nbTree, **kwargs):
 
 def colabSetupDownloadLlamaPDFs(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_fetch_llama_pdfs.json')
+
+
+def colabSetupPreambleCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
+    nbUrl = kwargs['nbUrl']
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble_cassioinit.json')
+    return [
+        {
+            k: (
+                v
+                if k != 'source'
+                else [
+                    lin.replace('__NOTEBOOK_URL__', nbUrl)
+                    for lin in v
+                ]
+            )
+            for k, v in c.items()
+        }
+        for c in cells
+    ]
+
+
+def colabSetupDBCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_db_cassioinit.json')
 
 
 def colabClosingCTA(pathList, fileTitle, nbTree, **kwargs):
@@ -363,6 +386,9 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_download_txt_stories':     colabSetupDownloadTxtStories,
     'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,
+    # new cassio-init stuff:
+    'seq_colab_setup_preamble_cassioinit':  colabSetupPreambleCassioInitCells,
+    'seq_colab_setup_db_cassioinit':        colabSetupDBCassioInitCells,
     #
     'seq_colab_closing_cta':                colabClosingCTA,
 }
