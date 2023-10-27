@@ -59,6 +59,16 @@ shown in the DB Quickstart page.
 Detailed explanations can be found
 [at this page](https://awesome-astra.github.io/docs/pages/astra/create-instance/).
 
+### Database ID
+
+This unique identifier for your database looks something like
+`01234567-89ab-cdef-0123-456789abcdef` and is found in your
+Astra DB dashboard, next to your newly-created database.
+
+Please check the
+[specific instructions](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier)
+for more information.
+
 ### Database Access Token
 
 Now you need credentials to connect securely to your database.
@@ -76,6 +86,15 @@ Detailed information on DB Tokens can be found
 Next, you need a "Secure Connect Bundle" zipfile, containing certificates
 and routing information for the drivers to properly establish a connection to
 your database.
+
+!!! info "You will soon not need this anymore"
+
+    DataStax Astra DB is transitioning away from having to manually manage
+    your database Secure Connect Bundle: the new connect experience
+    is based solely on secret strings.
+    
+    Please note that at the moment the new connection
+    mode is not supported for the LangChain framework yet.
 
 On the DB Connect panel, find the "Get Bundle" button and click on it.
 You don't need to unpack the zip file, just save it on you computer: you
