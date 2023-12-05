@@ -143,8 +143,8 @@ Starting with version 5.0, Apache Cassandra®
 with Vector capabilities.
 
 You can easily launch a locally-running (single-node) Cassandra cluster through
-Docker. First make sure you have Docker installed, then launch a command
-like the following:
+Docker. First make sure you have Docker [installed](https://www.docker.com/),
+then launch the following command:
 
 ```
 docker run --name my-cassandra -d cassandra:5.0-alpha2

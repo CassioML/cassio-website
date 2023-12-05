@@ -1,40 +1,37 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "id": "d26eb991",
+   "metadata": {},
+   "source": [
+    "### DB connection parameters",
+    "\n",
+    "Example values (found on your Astra dashboard):\n",
+    "- Database ID: `01234567-89ab-cdef-0123-456789abcdef`\n",
+    "- Token: `AstraCS:6gBhNmsk135....` (ensure it has a role of at least \"Database Administrator\")\n",
+    "- _Keyspace. Optional, if provided:_ `my_keyspace`"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "36fd7309",
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Input your Astra Database ID:\n",
     "import os\n",
-    "os.environ[\"ASTRA_DB_ID\"] = input(\"Your Astra Database ID (e.g. '0123abcd-...'):\")"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "6a585243",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Input your Astra DB token string, the one starting with \"AstraCS:...\"\n",
     "from getpass import getpass\n",
-    "os.environ[\"ASTRA_DB_APPLICATION_TOKEN\"] = getpass(\"Your Astra DB Token ('AstraCS:...'):\")"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "36ddf3d9",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# The keyspace is *optional*: each DB defines its 'default keyspace'.\n",
-    "astra_db_keyspace = input(\"(Optional) your Astra DB keyspace name (e.g. 'cassio_tutorials'):\").strip()\n",
-    "if astra_db_keyspace:\n",
-    "    os.environ[\"ASTRA_DB_KEYSPACE\"] = astra_db_keyspace\n"
+    "\n",
+    "# Input your Astra DB connection parameters and secrets:\n",
+    "\n",
+    "os.environ[\"ASTRA_DB_ID\"] = input(\"ASTRA_DB_ID = \")\n",
+    "\n",
+    "os.environ[\"ASTRA_DB_APPLICATION_TOKEN\"] = getpass(\"ASTRA_DB_APPLICATION_TOKEN = \")\n",
+    "\n",
+    "_keyspace = input(\"(Optional) ASTRA_DB_KEYSPACE = \")\n",
+    "if _keyspace:\n",
+    "    os.environ[\"ASTRA_DB_KEYSPACE\"] = _keyspace"
    ]
   }
  ],
