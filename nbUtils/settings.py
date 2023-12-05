@@ -52,8 +52,7 @@ codeLineReplacements0 = [
         "    # Cassandra not supported on Colab - please define your own getCassandraCQLSession/getCassandraCQLKeyspace",
     ),
 ]
-codeLineReplacementsLegacyCQLSession = []
-codeLineReplacementsCassioInit = []
+codeLineReplacementsLangChain = []
 
 # this maps dot-joined pathLists to replacements with partial pathlist matching
 # i.e. keys = dot-joined pathlists, values = lists of 2-tuples for replacement.
@@ -61,9 +60,7 @@ codeLineReplacementsCassioInit = []
 # NOTE: if you specify rules that walk on each other, your're on your own.
 codeLineReplacementsMap = {
     "": codeLineReplacements0,
-    # "docs/frameworks/langchain": codeLineReplacementsLegacyCQLSession,
-    # "docs/frameworks/direct_cassio": codeLineReplacementsCassioInit,
-    # "docs/frameworks/llamaindex": codeLineReplacementsCassioInit,
+    # "docs/frameworks/langchain": codeLineReplacementsLangChain,
 }
 
 # NOTE: currently you HAVE to mirror these changes
@@ -83,41 +80,41 @@ defaultColabCellClosingSequences = [
 # SEQUENCES OF COLAB-SPECIFIC CELLS (no writeDB, no amontillado)
 defaultColabCellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_cassioinit',
+    'seq_colab_setup_preamble',
     'seq_colab_dependency_setup',
-    'seq_colab_setup_db_cassioinit',
+    'seq_colab_setup_db',
     'seq_colab_setup_llm',
     'seq_colab_setup_closing',
 ]
 # variants
 writeDB_noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_no_llm_cassioinit',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
-    'seq_colab_setup_db_cassioinit',
+    'seq_colab_setup_db',
     'seq_colab_setup_provision_db',
     'seq_colab_setup_closing',
 ]
 noDB_noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_no_llm_cassioinit',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
     'seq_colab_setup_closing',
 ]
 noLLM_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_no_llm_cassioinit',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
-    'seq_colab_setup_db_cassioinit',
+    'seq_colab_setup_db',
     'seq_colab_setup_closing',
 ]
 
 noLLM_GPU_cellSequences = [
     'seq_title',
-    'seq_colab_setup_preamble_no_llm_cassioinit',
+    'seq_colab_setup_preamble_no_llm',
     'seq_colab_setup_switch_to_gpu',
     'seq_colab_dependency_setup',
-    'seq_colab_setup_db_cassioinit',
+    'seq_colab_setup_db',
     'seq_colab_setup_closing',
 ]
 
@@ -128,18 +125,18 @@ perNotebookColabCellSequences = {
     'docs/frameworks/langchain/prompt-templates-partialing.ipynb': writeDB_noLLM_cellSequences,
     'docs/frameworks/langchain/qa-basic.ipynb': [
         'seq_title',
-        'seq_colab_setup_preamble_cassioinit',
+        'seq_colab_setup_preamble',
         'seq_colab_dependency_setup',
-        'seq_colab_setup_db_cassioinit',
+        'seq_colab_setup_db',
         'seq_colab_setup_llm',
         'seq_colab_setup_download_txt_stories',
             'seq_colab_setup_closing',
     ],
     'docs/frameworks/langchain/qa-vector-metadata.ipynb': [
         'seq_title',
-        'seq_colab_setup_preamble_cassioinit',
+        'seq_colab_setup_preamble',
         'seq_colab_dependency_setup',
-        'seq_colab_setup_db_cassioinit',
+        'seq_colab_setup_db',
         'seq_colab_setup_llm',
         'seq_colab_setup_download_txt_stories',
             'seq_colab_setup_closing',
@@ -152,9 +149,9 @@ perNotebookColabCellSequences = {
     #
     'docs/frameworks/llamaindex/vector-quickstart.ipynb': [
         'seq_title',
-        'seq_colab_setup_preamble_cassioinit',
+        'seq_colab_setup_preamble',
         'seq_colab_dependency_setup',
-        'seq_colab_setup_db_cassioinit',
+        'seq_colab_setup_db',
         'seq_colab_setup_llm',
         'seq_colab_setup_download_llama_pdfs',
         'seq_colab_setup_closing',
@@ -181,9 +178,9 @@ def colabSetupSuggestGPUSwitchCells(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_suggest_gpu.json')
 
 
-def colabSetupPreambleNoLLMCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
+def colabSetupPreambleNoLLMCells(pathList, fileTitle, nbTree, **kwargs):
     nbUrl = kwargs['nbUrl']
-    cells = loadAndStripColabSnippetCells('colab_setup_preamble_no_llm_cassioinit.json')
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble_no_llm.json')
     return [
         {
             k: (
@@ -200,8 +197,8 @@ def colabSetupPreambleNoLLMCassioInitCells(pathList, fileTitle, nbTree, **kwargs
     ]
 
 
-def colabSetupDBCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripColabSnippetCells('colab_setup_db_cassioinit.json')
+def colabSetupDBCells(pathList, fileTitle, nbTree, **kwargs):
+    return loadAndStripColabSnippetCells('colab_setup_db.json')
 
 
 def colabSetupLLMCells(pathList, fileTitle, nbTree, **kwargs):
@@ -224,9 +221,9 @@ def colabSetupDownloadLlamaPDFs(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_fetch_llama_pdfs.json')
 
 
-def colabSetupPreambleCassioInitCells(pathList, fileTitle, nbTree, **kwargs):
+def colabSetupPreambleCells(pathList, fileTitle, nbTree, **kwargs):
     nbUrl = kwargs['nbUrl']
-    cells = loadAndStripColabSnippetCells('colab_setup_preamble_cassioinit.json')
+    cells = loadAndStripColabSnippetCells('colab_setup_preamble.json')
     return [
         {
             k: (
@@ -366,11 +363,11 @@ cellSequenceCreatorMap = {
     'seq_colab_dependency_setup':           colabSetupPrepareDependencyCells,
     'seq_colab_setup_llm':                  colabSetupLLMCells,
     'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
-    'seq_colab_setup_download_txt_stories':     colabSetupDownloadTxtStories,
+    'seq_colab_setup_download_txt_stories': colabSetupDownloadTxtStories,
     'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,
-    'seq_colab_setup_preamble_no_llm_cassioinit': colabSetupPreambleNoLLMCassioInitCells,
-    'seq_colab_setup_preamble_cassioinit':  colabSetupPreambleCassioInitCells,
-    'seq_colab_setup_db_cassioinit':        colabSetupDBCassioInitCells,
+    'seq_colab_setup_preamble_no_llm':      colabSetupPreambleNoLLMCells,
+    'seq_colab_setup_preamble':             colabSetupPreambleCells,
+    'seq_colab_setup_db':                   colabSetupDBCells,
     'seq_colab_closing_cta':                colabClosingCTA,
 }
