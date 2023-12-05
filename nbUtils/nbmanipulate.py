@@ -206,3 +206,61 @@ def replaceNbCodeLines(nbTree, replacements):
         )
         for k, v in nbTree.items()
     }
+
+
+def _renumberCell(cell, new_number):
+
+    def _renumber_kv(k, v, number):
+        if k == "execution_count":
+            return k, number
+        else:
+            return k, _renumber_node(v, number)
+
+    def _renumber_node(node, number):
+        if isinstance(node, str):
+            return node
+        elif isinstance(node, int):
+            return node
+        elif isinstance(node, dict):
+            return dict([
+                _renumber_kv(k, v, number)
+                for k, v in node.items()
+            ])
+        elif isinstance(node, list):
+            return [
+                _renumber_node(itm, number)
+                for itm in node
+            ]
+        else:
+            raise ValueError(str(node))
+
+    if new_number is not None:
+        return _renumber_node(cell, new_number)
+    else:
+        return cell
+
+
+def _renumberCells(cells, options={}):
+    numbereds = [
+        i
+        for i, cell in enumerate(cells)
+        if cell.get("execution_count") is not None
+    ]
+    new_number_map = {
+        old_i: new_i + 1
+        for new_i, old_i in enumerate(numbereds)
+    }
+    return [
+        _renumberCell(
+            cell,
+            new_number_map.get(cell_i),
+        )
+        for cell_i, cell in enumerate(cells)
+    ]
+
+
+def renumberNb(nbTree, options={}):
+    return {
+        k: v if k != "cells" else _renumberCells(v, options)
+        for k, v in nbTree.items()
+    }
