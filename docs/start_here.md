@@ -8,7 +8,8 @@ answer to the question.
 
 The quickstart is designed to run out-of-the-box as a notebook in
 Google Colaboratory ("Colab" for short)
-and to use Astra DB as the Vector Database.
+and to use Astra DB as the Vector Database -- this is a route with no installations
+required on your machine.
 
 ??? tip "Other ways to run the code"
 
@@ -21,13 +22,10 @@ and to use Astra DB as the Vector Database.
     machine instead of Colab: only the setup is a bit different. Check the
     ["Further Reading"](/more_info/) section for details.
 
-    We suggest to use a cloud database on DataStax Astra DB, which
-    currently offers Vector Search capabilities in Public Preview.
-    Should you prefer to run a local Cassandra cluster equipped with that feature,
-    you can definitely do that -- but bear in mind that Vector Search has not made
-    it to official Cassandra releases, hence you'll have to build a pre-release
-    from source code. We'll outline the process in the ["Further Reading"](/more_info/) section
-    for your convenience.
+    The "nothing to install" approach would be to use a cloud database
+    on DataStax Astra DB.
+    Should you prefer to run a local Cassandra cluster, consult the
+    ["Further Reading"](/more_info/) section for setup instructions.
 
 We'll come to the code in a moment;
 first, let's check the pre-requisites needed to run the examples.
@@ -46,10 +44,10 @@ Create your Vector Database with Astra DB: it's free, quick and easy.
 
 Go to [astra.datastax.com](https://astra.datastax.com) and sign up.
 
-Click "Create Database" and _make sure to select_ "Serverless with Vector Search".
+Click "Create Database" and make sure to select a "Vector" database.
 
 In the following we assume you called the database `cassio_db`.
-You will also be asked for a "Keyspace name" when creating the database:
+You may also be asked for a "Keyspace name" when creating the database:
 you can call it something like `cassio_tutorials` for example.
 (A keyspace is simply a way to keep related tables grouped together.)
 
