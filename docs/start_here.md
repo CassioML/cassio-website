@@ -1,4 +1,4 @@
-CassIO is designed to power several LLM frameworks. In the following,
+CassIO is designed to power several LLM frameworks. In the following quickstart,
 you will see it in action within one such framework,
 [LangChain](https://docs.langchain.com/docs/).
 You will run a short question-answering (QA) example, whereby an input corpus of text
@@ -11,12 +11,9 @@ Google Colaboratory ("Colab" for short)
 and to use Astra DB as the Vector Database -- this is a route with no installations
 required on your machine.
 
-??? tip "Other ways to run the code"
+??? tip "Other ways to run the examples"
 
-    The following will guide you through running your own QA pipeline in LangChain.
-
-    Feel free to look around for other examples and use cases: all you need is
-    a database and access to an LLM provider (as shown through the rest of this page).
+    This quickstart assumes you'll use an Astra DB cloud database from Google Colab.
 
     If you prefer, however, you can run the very same examples using Jupyter on your
     machine instead of Colab: only the setup is a bit different. Check the
@@ -30,76 +27,60 @@ required on your machine.
 We'll come to the code in a moment;
 first, let's check the pre-requisites needed to run the examples.
 
-## Vector Database
+## Database
 
-Create your Vector Database with Astra DB: it's free, quick and easy.
+### Cassandra
+
+Please follow the [specific instructions](/more_info/#use-a-local-vector-capable-cassandra)
+on how to get Cassandra 5 running if this is your preferred route.
+
+### Astra DB
+
+Alternatively, you can use an Astra DB cloud instance,
+ready in minutes without leaving the browser.
 
 ??? info "What is Astra DB?"
 
     Astra DB is a serverless DBaaS by DataStax, built on Apache Cassandra. It offers
     a free tier with generous traffic and storage limits. Using Astra DB frees you
-    from the hassle of running your own cluster while retaining all the advantages, such as the excellent data distribution and very high availability that make Cassandra a world-class NoSQL database.
+    from the hassle of running your own cluster while retaining all the advantages,
+    such as the excellent data distribution and very high availability that
+    make Cassandra a world-class NoSQL database.
 
-### Create the Database
+Go to [astra.datastax.com](https://astra.datastax.com) register,
+and look for "Create Database".
+Ensure you pick the "vector" option when creating the DB.
 
-Go to [astra.datastax.com](https://astra.datastax.com) and sign up.
-
-Click "Create Database" and make sure to select a "Vector" database.
-
-In the following we assume you called the database `cassio_db`.
-You may also be asked for a "Keyspace name" when creating the database:
-you can call it something like `cassio_tutorials` for example.
-(A keyspace is simply a way to keep related tables grouped together.)
+Depending on your Astra preferences, you _may_ be asked to provide a name
+for a "Keyspace" in the database (essentially a way to group tables).
+Correspondingly, here, when asked please provide the
+keyspace name (we'll assume you used `cassio_tutorials`), or leave it empty.
 
 In a couple of minutes your database will be in the "Active" state, as
-shown in the DB Quickstart page.
+shown in the DB Quickstart page ([more info](https://awesome-astra.github.io/docs/pages/astra/create-instance/)).
 
-Detailed explanations can be found
-[at this page](https://awesome-astra.github.io/docs/pages/astra/create-instance/).
+Now you need two connection parameters:
 
-### Database ID
+- the **Database ID**, such as `01234567-89ab-cdef-0123-456789abcdef`;
+- the (Database Administrator) **Token**, such as `AstraCS:aZ90...`.
 
-This unique identifier for your database looks something like
-`01234567-89ab-cdef-0123-456789abcdef` and is found in your
-Astra DB dashboard, next to your newly-created database.
+These can be located/generated on the Astra dashboard
+(more info
+[here](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier)
+and
+[here](https://awesome-astra.github.io/docs/pages/astra/create-token/)
+respectively).
 
-Please check the
-[specific instructions](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier)
-for more information.
+!!! warning "Locate the Database ID"
 
-### Database Access Token
+    Some choices of the appearance of the Astra dashboard expose the
+    "API Endpoint" connection parameter instead of the ID itself.
 
-Now you need credentials to connect securely to your database.
+    You can read the database ID from the endpoint by looking at the first
+    part of the domain name, the one before the region name: for instance if
+    your API endpoint is "https://01234567-89ab-cdef-0123-456789abcdef-us-east1.apps.astra.datastax.com",
+    the database ID to use here will be `01234567-89ab-cdef-0123-456789abcdef`.
 
-On the DB Connect panel, locate the "Create a custom token" link
-and generate a new token **with role "Database Administrator"**. _Make sure you
-safely store all parts of the Token: it will not be shown
-anymore for security reasons._
-
-Detailed information on DB Tokens can be found
-[here](https://awesome-astra.github.io/docs/pages/astra/create-token/).
-
-### Database Secure Connect Bundle
-
-Next, you need a "Secure Connect Bundle" zipfile, containing certificates
-and routing information for the drivers to properly establish a connection to
-your database.
-
-!!! info "You will soon not need this anymore"
-
-    DataStax Astra DB is transitioning away from having to manually manage
-    your database Secure Connect Bundle: the new connect experience
-    is based solely on secret strings.
-    
-    Please note that at the moment the new connection
-    mode is not supported for the LangChain framework yet.
-
-On the DB Connect panel, find the "Get Bundle" button and click on it.
-You don't need to unpack the zip file, just save it on you computer: you
-will need it momentarily.
-
-For more info on the Secure Connect Bundle
-see [this page](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure).
 
 ## LLM Access
 
@@ -214,7 +195,7 @@ See the inserts below for more information on each provider.
 
 ## Run the quickstart
 
-Once you have the Token and the Secure Connect Bundle,
+Once you have the Token and the Secure Connect Bundle as outlined above,
 and the secrets required to use an LLM, click on the Colab Notebook link below
 to start using your Vector Search Database in the LangChain QA example:
 
@@ -233,11 +214,9 @@ Check out other use cases which benefit from Vector Search, and other ways to
 enrich your application with LangChain and Cassandra, by browsing the
 [LangChain section](/frameworks/langchain/about/) of the site.
 
-Look for the Colab
+Or take a look at the various ways to use CassIO besides LangChain -- check
+out the other sections of the site.
+
+**Tip:** Look for the Colab
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 symbol at the top of most code examples.
-
-As mentioned at the top of this page, CassIO is designed as a general-usage
-library: and, sure enough, the offering of integrations with LLM frameworks will keep growing, covering an expanding range of tools.
-
-Come back and check again in a few days for more!

@@ -32,40 +32,15 @@ cd cassio-website
 
 Note that the following commands are to be run in the `cassio-website` directory.
 
-### DB
+### DB (Astra DB case)
 
 You need a `.env` file which defines the database credentials and connection
 parameters.
 
 You can copy the provided `.env.template` file and replace
-the environment variables you see there
-(essentially, the full path to the bundle file, the keyspace
-name and your database secret token string and ID).
-
-??? tip "Using the Astra CLI"
-
-    Alternatively, once you have the Database Administrator token,
-    you can use the Astra CLI to automate the rest (secure-connect bundle and `.env` file).
-
-    First [install Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/#1-installation).
-
-    Then configure it with:
-
-    ```
-    astra setup --token <TOKEN>
-    ```
-
-    replacing `<TOKEN>` with the Database Administrator token you created earlier
-    (the string starting with `AstraCS:...`).
-
-    Finally, in the root directory of this repo, adjusting names if needed, launch
-
-    ```
-    astra db create-dotenv cassio_db -k cassio_tutorials
-    ```
-
-    This will download the bundle zipfile and create a `.env` file
-    with all connection parameters you'll need later.
+the environment variables you see there.
+If using Astra DB, these amount to the database ID,
+the Token (with role "database administrator"), and optionally a keyspace name.
 
 If you plan on using a local Cassandra, the `.env` setup instructions are given
 [below](#use-the-local-cassandra-in-the-code).
