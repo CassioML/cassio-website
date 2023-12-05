@@ -8,8 +8,8 @@ answer to the question.
 
 The quickstart is designed to run out-of-the-box as a notebook in
 Google Colaboratory ("Colab" for short)
-and to use Astra DB as the Vector Database -- this is a route with no installations
-required on your machine.
+and to use Astra DB as the Vector Database -- this choice works fully in the cloud,
+with nothing to install on your machine.
 
 ??? tip "Other ways to run the examples"
 
@@ -195,8 +195,9 @@ See the inserts below for more information on each provider.
 
 ## Run the quickstart
 
-Once you have the Token and the Secure Connect Bundle as outlined above,
-and the secrets required to use an LLM, click on the Colab Notebook link below
+Once you have the DB ID and Token as outlined above,
+plus the LLM secret(s),
+click on the Colab Notebook link below
 to start using your Vector Search Database in the LangChain QA example:
 
 <p align="center">

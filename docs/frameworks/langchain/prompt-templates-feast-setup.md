@@ -71,6 +71,10 @@ Provide the required information, paying attention to the
 keyspace name (`cassio_tutorials` if you went with the defaults).
 For details, see
 [the Feast docs page](https://docs.feast.dev/reference/online-stores/cassandra#getting-started).
+Keep also in mind that, for Astra DB, you will be asked to provide
+the full path to the "Secure connect bundle" zipfile you can
+[download](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure)
+from the dashboard.
 
 !!! Note "Client ID and Client Secret for Astra DB"
 

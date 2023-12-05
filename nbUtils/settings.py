@@ -92,7 +92,6 @@ writeDB_noLLM_cellSequences = [
     'seq_colab_setup_preamble_no_llm',
     'seq_colab_dependency_setup',
     'seq_colab_setup_db',
-    'seq_colab_setup_provision_db',
     'seq_colab_setup_closing',
 ]
 noDB_noLLM_cellSequences = [
@@ -203,10 +202,6 @@ def colabSetupDBCells(pathList, fileTitle, nbTree, **kwargs):
 
 def colabSetupLLMCells(pathList, fileTitle, nbTree, **kwargs):
     return loadAndStripColabSnippetCells('colab_setup_llm.json')
-
-
-def colabSetupProvisionDBCells(pathList, fileTitle, nbTree, **kwargs):
-    return loadAndStripColabSnippetCells('colab_setup_provision_db.json')
 
 
 def colabSetupClosing(pathList, fileTitle, nbTree, **kwargs):
@@ -362,7 +357,6 @@ cellSequenceCreatorMap = {
     'seq_colab_setup_switch_to_gpu':        colabSetupSuggestGPUSwitchCells,
     'seq_colab_dependency_setup':           colabSetupPrepareDependencyCells,
     'seq_colab_setup_llm':                  colabSetupLLMCells,
-    'seq_colab_setup_provision_db':         colabSetupProvisionDBCells,
     'seq_colab_setup_download_txt_stories': colabSetupDownloadTxtStories,
     'seq_colab_setup_download_llama_pdfs':  colabSetupDownloadLlamaPDFs,
     'seq_colab_setup_closing':              colabSetupClosing,

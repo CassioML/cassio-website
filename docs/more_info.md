@@ -45,38 +45,6 @@ the Token (with role "database administrator"), and optionally a keyspace name.
 If you plan on using a local Cassandra, the `.env` setup instructions are given
 [below](#use-the-local-cassandra-in-the-code).
 
-#### Pre-populate the database
-
-Some of the provided code examples require pre-existing data on your
-database.
-
-To populate the newly-created keyspace with the required data:
-
-- download the newest (vector-search-compatible) `cqlsh` utility from [this link](https://downloads.datastax.com/enterprise/cqlsh-astra-20230526-vectortype-bin.tar.gz);
-- extract the `cqlsh` archive to a location of your liking, e.g. `/home/user/myCqlsh`;
-- ensure you are still in the repo's root directory;
-- source the environment file you prepared in the previous step with `. .env`;
-- launch the script that populates the database (adjust the path as needed):
-
-```
-/home/user/myCqlsh/cqlsh-astra/bin/cqlsh \
-    -b "$ASTRA_DB_SECURE_BUNDLE_PATH" \
-    -u token \
-    -p "$ASTRA_DB_APPLICATION_TOKEN" \
-    -k "$ASTRA_DB_KEYSPACE" \
-    -f setup/provision_db/write_sample_data.cql
-```
-
-!!! tip "Astra DB's in-browser console"
-
-    Alternatively, you can also populate the database
-    without a local `cqlsh` client, all from your browser.
-
-    Locate the [CQL Console](https://awesome-astra.github.io/docs/pages/astra/faq/#how-to-open-the-web-cql-console) in you Astra DB instance, then:
-
-    1. enter the command `USE cassio_tutorials;` and press Enter. Replace with your keyspace name if you called it differently.
-    2. Paste the contents of [this file](https://raw.githubusercontent.com/CassioML/cassio-website/main/setup/provision_db/write_sample_data.cql) in the Console and wait for it to complete.
-
 ### LLM Credentials
 
 In this repo's root directory again, create a `.api_keys` file where the secrets
