@@ -139,21 +139,7 @@ You can check that the keyspace exists with:
 DESC KEYSPACES;
 ```
 
-Exit the CQL console (`EXIT` + Enter) and ensure you are back to this repo's root dir
-(you should have cloned it earlier to `/some/directory/cassio-website/`).
-
-Now there's a small script to run, that populates the newly-created keyspace
-with sample tables occasionally used by some of the examples you'll encounter.
-
-To run the script, copy it to the Docker container and
-then ask `cqlsh` to run it there:
-
-```
-docker cp setup/provision_db/write_sample_data.cql my-cassandra:/
-docker exec -it my-cassandra cqlsh \
-    -k cassio_tutorials \
-    -f /write_sample_data.cql
-```
+You can now exit the CQL console (`EXIT` + Enter, or `Ctrl-D`).
 
 ### Use the local Cassandra in the code
 
@@ -164,8 +150,8 @@ You can copy from the provided `.env.template` example file if
 you haven't yet and, ignoring the `ASTRA_DB...` variables, make sure
 the `LOCAL_...` variables in the `.env` define:
 
-- the correct keyspace name used above;
-- and the IP address (or "contact point") for the Docker image.
+- and the IP address (or "contact point") for the Docker image;
+- the correct keyspace name used above.
 
 In particular, the IP address of the container is found within the very long
 output of `docker inspect my-cassandra`. The following command
@@ -179,7 +165,7 @@ docker inspect my-cassandra | \
 ```
 
 All notebooks offer the choice between using Cassandra and Astra DB: the former
-case relies on a `c1qlsession.py`, imported from the notebooks,
+case relies on a `cqlsession.py`, imported from the notebooks,
 which provides the simple logic to create the session and read the keyspace
 from the environment variables. If you need additional customization (such as
 setting up authentication, using a custom port for CQL, etc), this is the

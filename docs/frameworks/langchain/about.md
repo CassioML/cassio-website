@@ -49,9 +49,8 @@ Last, there is a set of components around zero-boilerplate prompt templating
 using Cassandra as the source of data. Note: this is still in preview as of September 15th, 2023 and requires installation from the fork to be used.
 
 - `[Preview]` Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
-- `[Preview]` ... the same, as part of a [longer LLM conversation](/frameworks/langchain/chat-prompt-templates/).
-- `[Preview]` Support for ["partialing" of prompts](/frameworks/langchain/prompt-templates-partialing/) (i.e. leaving some input unspecified, to supply later).
 - `[Preview]` Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt.
+- `[Preview]` A detour to look at the very [engine](/frameworks/langchain/prompt-templates-engine/) powering "database-bound prompt templates"... (useful to develop templates for automatic extraction of data from custom sources).
 
 
 This list will grow over time as new needs are addressed

@@ -29,7 +29,7 @@ first, let's check the pre-requisites needed to run the examples.
 
 ## Database
 
-### Cassandra
+### Apache Cassandra®
 
 Please follow the [specific instructions](/more_info/#use-a-local-vector-capable-cassandra)
 on how to get Cassandra 5 running if this is your preferred route.
@@ -73,11 +73,11 @@ respectively).
 
 !!! warning "Locate the Database ID"
 
-    Some choices of the appearance of the Astra dashboard expose the
-    "API Endpoint" connection parameter instead of the ID itself.
+    There is one choice of UI for the Astra dashboard that exposes the
+    "API Endpoint" connection parameter instead of the database ID itself.
 
-    You can read the database ID from the endpoint by looking at the first
-    part of the domain name, the one before the region name: for instance if
+    In that case, you can read the database ID from the endpoint by looking at the first
+    part of its domain name, the one before the region name: for instance if
     your API endpoint is "https://01234567-89ab-cdef-0123-456789abcdef-us-east1.apps.astra.datastax.com",
     the database ID to use here will be `01234567-89ab-cdef-0123-456789abcdef`.
 
@@ -216,7 +216,13 @@ enrich your application with LangChain and Cassandra, by browsing the
 [LangChain section](/frameworks/langchain/about/) of the site.
 
 Or take a look at the various ways to use CassIO besides LangChain -- check
-out the other sections of the site.
+out the other sections of the site, such as
+[LlamaIndex](/frameworks/llamaindex/about/)
+or the
+[direct Cassio](/frameworks/direct_cassio/about/) usage.
+
+Do you want to run the examples on your own machine? Check the support for
+[local Jupyter usage](/more_info/#run-with-local-jupyter).
 
 **Tip:** Look for the Colab
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
