@@ -10,12 +10,13 @@ Create a virtualenv e.g. `cassio-website-3.10`
 ## Run MkDocs 
 Serve with:
 
-```
+```bash
 mkdocs serve
 ```
 
 Build with
-```
+
+```bash
 mkdocs build
 ````
 
@@ -23,17 +24,19 @@ mkdocs build
 
 For cleanliness, please run this after closing the notebooks and before committing:
 
-```
+```bash
 find -name "*.ipynb" | grep -v ".ipynb_checkpoints" | grep -v ".colab" | xargs ./nbUtils/notebook_cleaner.py
 ```
 
-This simply strips `stderr` noise (and possibly other stuff that gets in the way) from notebooks.
+This simply strips `stderr` noise (and possibly other stuff that gets in the way)
+and cleans the cell numbering in the notebooks.
+
 
 ## Colab generation
 
 Run this after the above cleaning:
 
-```
+```bash
 ./nbUtils/notebook_colabifier.py
 ```
 

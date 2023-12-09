@@ -18,8 +18,14 @@ Click on the "**New Issue**" button: This will direct you to a page where you ca
 
 Remember to check first if your issue has already been reported by someone else to avoid duplicates. If you find a similar issue that's already been reported, you can contribute by commenting on the existing issue with any new information.
 
+<!--
 ## Discussions
 CassIO uses [GitHub discussions](https://github.com/orgs/CassioML/discussions). Please use this for general usage questions.
+-->
 
-## Apache Cassandra or DataStax Astra help
-The Planet Cassandra Discord server has people that can help. You can follow this invite to join: [https://discord.gg/JqKeEcZ3qE](https://discord.gg/JqKeEcZ3qE).
+## Need help with Cassandra?
+
+The Planet Cassandra Discord server has people that can help.
+You can follow this invite to join: [https://discord.gg/JqKeEcZ3qE](https://discord.gg/JqKeEcZ3qE).
+
+_Note: this is where you can get specific DataStax Astra help as well._

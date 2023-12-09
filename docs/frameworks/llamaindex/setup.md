@@ -16,7 +16,7 @@ Create a Python 3.8+
 [virtual environment](https://virtualenv.pypa.io/en/latest/user_guide.html),
 activate it and install the required dependencies with:
 
-```
+```bash
 pip install -r requirements_llamaindex.txt
 ```
 
@@ -26,13 +26,13 @@ Make sure you are in `docs/frameworks/llamaindex` and the virtual environment is
 
 Source the API Key configuration with
 
-```
+```bash
 . ../../../.api_keys
 ```
 
 Now fire up Jupyter with:
 
-```
+```bash
 jupyter notebook
 ```
 

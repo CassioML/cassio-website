@@ -40,7 +40,7 @@ repo (which you should have cloned in earlier setup steps),
 activate the virtual environment for the LangChain examples
 and install this dependency:
 
-```
+```bash
 pip install "feast[cassandra]>=0.26"
 ```
 
@@ -63,7 +63,7 @@ The following command starts an interactive creation
 of the feature store. Depending on whether you choose Cassandra or Astra DB,
 you will supply a different set of parameters:
 
-```
+```bash
 feast init -t cassandra user_features
 ```
 
@@ -94,13 +94,13 @@ _adapt the following commands accordingly.)_
 This command creates the data sources for ingestion by Feast
 in the form of two `*.parquet` files:
 
-```
+```bash
 python prepare_feast_data.py
 ```
 
 Place the sources within the store, ready to be found by Feast:
 
-```
+```bash
 mv *.parquet user_features/feature_repo/data/
 ```
 
@@ -109,7 +109,7 @@ mv *.parquet user_features/feature_repo/data/
 We have a ready-to-use feature definition file for this store.
 All you have to do is to copy it over the default one:
 
-```
+```bash
 cp user_data_feature_definitions.py user_features/feature_repo/example_repo.py
 ```
 
@@ -117,7 +117,7 @@ cp user_data_feature_definitions.py user_features/feature_repo/example_repo.py
 
 This step will trigger Feast to create the required table in your Astra DB:
 
-```
+```bash
 cd user_features/feature_repo/
 feast apply
 ```
@@ -127,7 +127,7 @@ feast apply
 Now you can have Feast transport the data into the (still empty) tables that
 constitute the online store:
 
-```
+```bash
 DATE0=$(date -d "`date` - 10 years" "+%Y-%m-%dT%H:%M:%S")
 DATE1=`date "+%Y-%m-%dT%H:%M:%S"`
 feast materialize $DATE0 $DATE1

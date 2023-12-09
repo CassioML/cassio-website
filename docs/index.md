@@ -1,3 +1,7 @@
+```bash
+pip install cassio
+```
+
 <img src="images/cassio_logo1_transparent.png#only-light" alt="CassIO logo" style="width: 30%;"/>
 <img src="images/cassio_logo1_transparent_darkmode.png#only-dark" alt="CassIO logo" style="width: 30%;"/>
 <!-- ![CassIO logo](images/cassio_logo1_transparent.png#only-light) -->
