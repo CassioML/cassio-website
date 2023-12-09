@@ -3,7 +3,7 @@
 import sys
 import json
 
-from nbmanipulate import cleanNb
+from nbmanipulate import cleanNb, renumberNb
 
 CREATE_COPY = False  # True
 
@@ -12,9 +12,10 @@ def cleanFile(fname):
     ofname = fname if not CREATE_COPY else f'{fname}.copy'
     nbdata = json.load(open(fname))
     cleaned = cleanNb(nbdata)
+    renumbered = renumberNb(cleaned)
     with open(ofname, 'w') as of:
         cleaned_json = json.dumps(
-            cleaned,
+            renumbered,
             indent=1,
             ensure_ascii=False,
             sort_keys=True,
@@ -23,7 +24,7 @@ def cleanFile(fname):
     return (json.dumps(
         nbdata, sort_keys=True,
     ) != json.dumps(
-        cleaned, sort_keys=True,
+        renumbered, sort_keys=True,
     ))
 
 

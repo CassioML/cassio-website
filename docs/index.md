@@ -5,7 +5,7 @@
 
 CassIO is the ultimate solution for seamlessly integrating [Apache Cassandra®](https://cassandra.apache.org) with generative artificial intelligence and other machine learning workloads. This powerful Python library simplifies the complicated process of accessing the advanced features of the Cassandra database, including vector search capabilities. With CassIO, developers can fully concentrate on designing and perfecting their AI systems without any concerns regarding the complexities of integration with Cassandra.
 
-Keep reading and explore the site for more info, or pick and run a [code example](/start_here/) straight away.
+Keep reading and explore the site for more info, or pick and run a [code example](/start_here/#run-the-quickstart) straight away.
 
 ## Features at a glance
 
@@ -25,8 +25,12 @@ management and -- crucially -- Vector Similarity Search.
         (e.g. for text data this means a semantic similarity, regardless of
         the exact words used in the texts you compare).
 
-        Vector Similarity Search can thus be at the heart of applications such as
+        Vector Similarity Search can thus be at the heart of many, diverse applications such as
         recommendation systems, content summarization, image retrieval and much more.
+        The most impactful usage is the family of techniques known as RAG (retrieval-augmented generation),
+        whereby the search is used to collect the best context then passed to LLMs
+        (large language models) for generating textual results.
+
         It provides a scalable and efficient way to search and retrieve relevant
         information even from very large datasets, and can be used across very different
         domains to solve a variety of use cases.

@@ -1,101 +1,37 @@
 {
  "cells": [
   {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "6a585243",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Input your database keyspace name:\n",
-    "ASTRA_DB_KEYSPACE = input('Your Astra DB Keyspace name (e.g. cassio_tutorials): ')"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "36ddf3d9",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Input your Astra DB token string, the one starting with \"AstraCS:...\"\n",
-    "from getpass import getpass\n",
-    "ASTRA_DB_APPLICATION_TOKEN = getpass('Your Astra DB Token (\"AstraCS:...\"): ')"
-   ]
-  },
-  {
    "cell_type": "markdown",
-   "metadata": {
-    "id": "QNQ6T_Gjk0Oz"
-   },
-   "source": [
-    "### Astra DB Secure Connect Bundle\n",
-    "\n",
-    "Please upload the Secure Connect Bundle zipfile to connect to your Astra DB instance.\n",
-    "\n",
-    "The Secure Connect Bundle is needed to establish a secure connection to the database.\n",
-    "Click [here](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure) for instructions on how to download it from Astra DB."
-   ],
-   "id": "QNQ6T_Gjk0Oz"
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "9b28f773",
+   "id": "d26eb991",
    "metadata": {},
-   "outputs": [],
    "source": [
-    "# Upload your Secure Connect Bundle zipfile:\n",
-    "import os\n",
-    "from google.colab import files\n",
+    "### DB connection parameters",
     "\n",
-    "\n",
-    "print('Please upload your Secure Connect Bundle')\n",
-    "uploaded = files.upload()\n",
-    "if uploaded:\n",
-    "    astraBundleFileTitle = list(uploaded.keys())[0]\n",
-    "    ASTRA_DB_SECURE_BUNDLE_PATH = os.path.join(os.getcwd(), astraBundleFileTitle)\n",
-    "else:\n",
-    "    raise ValueError(\n",
-    "        'Cannot proceed without Secure Connect Bundle. Please re-run the cell.'\n",
-    "    )"
+    "Example values (found on your Astra dashboard):\n",
+    "- Database ID: `01234567-89ab-cdef-0123-456789abcdef`\n",
+    "- Token: `AstraCS:6gBhNmsk135....` (ensure it has a role of at least \"Database Administrator\")\n",
+    "- _Keyspace. Optional, if provided:_ `cassio_tutorials`"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "0972f081",
+   "id": "36fd7309",
    "metadata": {},
    "outputs": [],
    "source": [
-    "# colab-specific override of helper functions\n",
-    "from cassandra.cluster import (\n",
-    "    Cluster,\n",
-    ")\n",
-    "from cassandra.auth import PlainTextAuthProvider\n",
+    "import os\n",
+    "from getpass import getpass\n",
     "\n",
+    "# Input your Astra DB connection parameters and secrets:\n",
     "\n",
-    "def getCQLSession(mode='astra_db'):\n",
-    "    if mode == 'astra_db':\n",
-    "        cluster = Cluster(\n",
-    "            cloud={\n",
-    "                \"secure_connect_bundle\": ASTRA_DB_SECURE_BUNDLE_PATH,\n",
-    "            },\n",
-    "            auth_provider=PlainTextAuthProvider(\n",
-    "                \"token\",\n",
-    "                ASTRA_DB_APPLICATION_TOKEN,\n",
-    "            ),\n",
-    "        )\n",
-    "        astraSession = cluster.connect()\n",
-    "        return astraSession\n",
-    "    else:\n",
-    "        raise ValueError('Unsupported CQL Session mode')\n",
+    "os.environ[\"ASTRA_DB_ID\"] = input(\"ASTRA_DB_ID = \")\n",
     "\n",
-    "def getCQLKeyspace(mode='astra_db'):\n",
-    "    if mode == 'astra_db':\n",
-    "        return ASTRA_DB_KEYSPACE\n",
-    "    else:\n",
-    "        raise ValueError('Unsupported CQL Session mode')"
+    "os.environ[\"ASTRA_DB_APPLICATION_TOKEN\"] = getpass(\"ASTRA_DB_APPLICATION_TOKEN = \")\n",
+    "\n",
+    "_keyspace = input(\"(Optional) ASTRA_DB_KEYSPACE = \")\n",
+    "if _keyspace:\n",
+    "    os.environ[\"ASTRA_DB_KEYSPACE\"] = _keyspace"
    ]
   }
  ],

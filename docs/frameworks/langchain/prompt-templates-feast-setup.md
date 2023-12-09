@@ -6,7 +6,7 @@ with the Feast feature store with minimal boilerplate.
 !!! info "Feast and Cassandra"
 
     Feast can admit several database technologies as its storage layer, one
-    of which being Cassandra.
+    of which being Cassandra (hence, Astra DB as a Cassandra-compatible backend).
 
     In this spirit, aiming at providing comprehensive information
     on how to integrate LangChain and Cassandra, we chose to cover this use case
@@ -29,10 +29,9 @@ in the next code example.
 ### Provision the Feature Store
 
 You will create a new Feature Store and configure it to use
-the Astra DB instance you should already have as its "online store".
+your database (either Cassandra or Astra DB) as its "online store".
 
-In practice, this amounts to Feast managing a couple of additional tables
-on your database.
+In practice, this amounts to Feast managing a couple of additional tables.
 
 ### Preliminaries
 
@@ -56,22 +55,28 @@ pip install "feast[cassandra]>=0.26"
     _"feast 0.33.1 requires SQLAlchemy[mypy]<2,>1, but you have sqlalchemy 2.0.20 which is incompatible."_: the example notebook will run just fine.
 
 Keep file `../../../../.env` handy, as you will be shortly asked to provide
-the Secure Connect Bundle location and the keyspace name defined there.
+database connection parameters and secrets for the Feast setup.
 
 ### Create the feature store
 
 The following command starts an interactive creation
-of the feature store. Choose Astra DB, unless you want to
-use your on-premise Cassandra cluster:
+of the feature store. Depending on whether you choose Cassandra or Astra DB,
+you will supply a different set of parameters:
 
 ```
 feast init -t cassandra user_features
 ```
 
-Provide the required information, paying attention to the keyspace name (`cassio_tutorials` if you went with the defaults).
-You can skip the optional parameters altogether.
+Provide the required information, paying attention to the
+keyspace name (`cassio_tutorials` if you went with the defaults).
+For details, see
+[the Feast docs page](https://docs.feast.dev/reference/online-stores/cassandra#getting-started).
+Keep also in mind that, for Astra DB, you will be asked to provide
+the full path to the "Secure connect bundle" zipfile you can
+[download](https://awesome-astra.github.io/docs/pages/astra/download-scb/#c-procedure)
+from the dashboard.
 
-!!! Note "Client ID and Client Secret"
+!!! Note "Client ID and Client Secret for Astra DB"
 
     Provide the string literal `token` as "Client ID" and the value of
     `ASTRA_DB_APPLICATION_TOKEN`, found in your `.env`, as "Client Secret".

@@ -49,14 +49,6 @@ ready to run.
 
 ## Database choice
 
-The code looks for an Astra DB instance by default (as defined in
-the `.env` file at the root of this repo).
-
-If you have a Cassandra cluster
-and want to use it instead, all you need is to find the notebook cell
-where the two calls `getCQLSession` and `getCQLKeyspace` take place:
-you can switch to a Cassandra cluster by changing the value
-of the variable `cqlMode` therein from `astra_db` to `local`.
-See the
-["Further reading"](/more_info/#use-the-local-cassandra-in-the-code)
-section for more on using a local Cassandra.
+The notebooks provide a choice between using Cassandra and Astra DB.
+Keep in mind that, if on a Colab, only Astra DB is supported out of the box.
+Check the ["Further reading"](/more_info/) section for more information.
