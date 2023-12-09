@@ -63,6 +63,40 @@ codeLineReplacementsMap = {
     # "docs/frameworks/langchain": codeLineReplacementsLangChain,
 }
 
+# path -> (filetitles, replacement_pairs) -> 
+dependencyReplacementsMap = {
+    "docs/frameworks/langchain": (
+        [
+            "caching-llm-responses.ipynb",
+            "memory-basic.ipynb",
+            "memory-conversationbuffermemory.ipynb",
+            "memory-summarybuffermemory.ipynb",
+            "memory-vectorstore.ipynb",
+            "qa-advanced.ipynb",
+            "qa-basic.ipynb",
+            "qa-maximal-marginal-relevance.ipynb",
+            "qa-vector-metadata.ipynb",
+            "semantic-caching-llm-responses.ipynb",
+        ],
+        {
+            (
+                "git+https://github.com/hemidactylus/langchain@SL-preview-for-cassio#egg=langchain-core&subdirectory=libs/core",
+                "langchain>=0.0.348",
+            ),
+            (
+                "git+https://github.com/hemidactylus/langchain@SL-preview-for-cassio#egg=langchain&subdirectory=libs/langchain",
+                None,
+            ),
+        },
+    )
+}
+
+_dependencyReplacementsUnfoldedMap = {
+    f"{path}/{ftitle}": dict(reppairs)
+    for path, (ftitles, reppairs) in dependencyReplacementsMap.items()
+    for ftitle in ftitles
+}
+
 # NOTE: currently you HAVE to mirror these changes
 # to a list in overrides/main.html (*) to suppress
 # the 'open in colab' button!
@@ -316,7 +350,7 @@ def colabSetupPrepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
     if reqFiles:
         reqFileTitle = reqFiles[0]
         reqFilePath = joinFilePath(pathList, reqFileTitle)
-        dependencies = [
+        dependencies0 = [
             line
             for line in (
                 _line.strip()
@@ -324,6 +358,17 @@ def colabSetupPrepareDependencyCells(pathList, fileTitle, nbTree, **kwargs):
             )
             if len(line) > 0 and line[0] != '#'
         ]
+        # apply dependency replacements
+        dep_replacements = _dependencyReplacementsUnfoldedMap.get("/".join(pathList + [fileTitle]), {})
+        dependencies = [
+            _d
+            for _d in [
+                dep_replacements.get(dep, dep)
+                for dep in dependencies0
+            ]
+            if _d is not None
+        ]
+        #
         if dependencies:
             numDeps = len(dependencies)
             return [

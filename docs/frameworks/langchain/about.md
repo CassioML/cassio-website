@@ -18,8 +18,8 @@ targets the Python version.
 
 **Note** with the exception of the items marked as `[Preview]` below,
 all other components are in the latest LangChain release and can be used
-straight away after doing a `pip install langchain`. To help you experiment with
-the preview elements, the environment setup described in this section will install
+straight away after doing a `pip install langchain`. To allow experimenting with
+the preview elements, however, the local environment setup will install
 our preview fork of LangChain throughout. _You do not need to depart from_
 `pip install langchain` _if you're not interested in the preview components._
 
@@ -46,7 +46,7 @@ Additionally, the "Vector Search" capabilities that are being added to Cassandra
 - A ["semantic memory" element](/frameworks/langchain/memory-vectorstore/) for inclusion in LLM chat interactions, that can retrieve relevant past exchanges even if occurred in the far past.
 
 Last, there is a set of components around zero-boilerplate prompt templating
-using Cassandra as the source of data. Note: this is still in preview as of September 15th, 2023 and requires installation from the fork to be used.
+using Cassandra as the source of data. Note: this is still in preview as of December 10th, 2023 and requires installation from the fork to be used.
 
 - `[Preview]` Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
 - `[Preview]` Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt.
