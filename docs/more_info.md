@@ -25,7 +25,7 @@ First, clone this repository on your machine
 (the repo spans both the website and the examples).
 In a directory of your choice, execute the following:
 
-```
+```bash
 git clone https://github.com/CassioML/cassio-website.git
 cd cassio-website
 ```
@@ -65,7 +65,7 @@ to be set here.
 
 Remember to "source" this file before launching notebooks or Python scripts:
 
-```
+```bash
 . .api_keys
 ```
 
@@ -89,7 +89,7 @@ You can easily launch a locally-running (single-node) Cassandra cluster through
 Docker. First make sure you have Docker [installed](https://www.docker.com/),
 then launch the following command:
 
-```
+```bash
 docker run --name my-cassandra -d cassandra:5.0-alpha2
 ```
 
@@ -120,7 +120,7 @@ looking for an output line starting with `UN ...`
 
 To launch a CQL Console on the Docker container, run the following:
 
-```
+```bash
 docker exec -it my-cassandra cqlsh
 ```
 
@@ -128,14 +128,14 @@ docker exec -it my-cassandra cqlsh
 
 Still in the CQL Console, create a keyspace for the examples by executing the following:
 
-```
+```sql
 CREATE KEYSPACE IF NOT EXISTS cassio_tutorials
     WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
 
 You can check that the keyspace exists with:
 
-```
+```sql
 DESC KEYSPACES;
 ```
 
@@ -157,7 +157,7 @@ In particular, the IP address of the container is found within the very long
 output of `docker inspect my-cassandra`. The following command
 should locate it for you:
 
-```
+```bash
 docker inspect my-cassandra | \
     jq -r '.[].NetworkSettings.Networks.bridge.IPAddress'
 

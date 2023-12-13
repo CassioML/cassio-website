@@ -1,4 +1,7 @@
-# "Direct CassIO" setup for running locally
+# Setup for running the "Usage" demos locally
+
+Follow these steps to get a local environment able to run the demos about
+using CassIO directly.
 
 ## Setup
 
@@ -7,7 +10,7 @@
     You can skip this page if you are interested in Colab notebooks only.
 
     These are the instructions for local setup of the
-    Python environment for the "direct CassIO" examples.
+    Python environment for the "Usage" examples.
     A prerequisite is the [general setup for running locally](/more_info/#run-with-local-jupyter).
 
     Note that not many demos here will require access to an LLM provider (so you may safely ignore the LLM requirement and still run most of the notebooks provided here).
@@ -19,7 +22,7 @@ Create a Python 3.8+
 [virtual environment](https://virtualenv.pypa.io/en/latest/user_guide.html),
 activate it and install the required dependencies with:
 
-```
+```bash
 pip install -r requirements_direct_cassio.txt
 ```
 
@@ -29,13 +32,13 @@ Make sure you are in `docs/frameworks/direct_cassio` and the virtual environment
 
 Source the API Key configuration with
 
-```
+```bash
 . ../../../.api_keys
 ```
 
 Now fire up Jupyter with:
 
-```
+```bash
 jupyter notebook
 ```
 

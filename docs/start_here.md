@@ -202,7 +202,7 @@ to start using your Vector Search Database in the LangChain QA example:
 
 <p align="center">
   <a href="http://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb" target="blank;">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" style="height: 2.0em; vertical-align: middle;"/>
+    <img src="/images/colab-badge.svg" style="height: 2.0em; vertical-align: middle;"/>
   </a>
 </p>
 
@@ -216,10 +216,12 @@ enrich your application with LangChain and Cassandra, by browsing the
 [LangChain section](/frameworks/langchain/about/) of the site.
 
 Or take a look at the various ways to use CassIO besides LangChain -- check
-out the other sections of the site, such as
+out the
 [LlamaIndex](/frameworks/llamaindex/about/)
-or the
-[direct Cassio](/frameworks/direct_cassio/about/) usage.
+section or the one about direct
+[Usage](/frameworks/direct_cassio/about/) of the library.
+
+If you are looking for something more specific, check out the [CassIO Reference](/reference/).
 
 Do you want to run the examples on your own machine? Check the support for
 [local Jupyter usage](/more_info/#run-with-local-jupyter).

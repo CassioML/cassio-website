@@ -32,12 +32,15 @@ nav:
     - About: frameworks/llamaindex/about.md
     - Local setup: frameworks/llamaindex/setup.md
     - Vector Store quickstart: frameworks/llamaindex/vector-quickstart.ipynb
-  - Direct CassIO:
+  - Usage:
       - About: frameworks/direct_cassio/about.md
       - Local setup: frameworks/direct_cassio/setup.md
       - Vector Search use cases:
         - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
         - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
+  - Reference:
+      - Home: reference/index.md
+      - Init: reference/init.md
   - Sample Apps:
       - Hotels/LangChain: demo_apps/hotels_langchain.md
       - FLARE/LangChain: demo_apps/flare_langchain.md
