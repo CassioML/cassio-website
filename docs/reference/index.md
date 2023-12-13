@@ -15,7 +15,7 @@ will default to this global setting.
 
 ### Data format
 
-Items ("rows" and similar) entering and exit the CassIO abstractions are
+"Rows" of data entering and exit the CassIO abstractions are
 in the form of regular Python dictionaries. In other words, you will not have to
 worry about the `Row` named-tuple data format that is customary at the Cassandra
 driver level.
