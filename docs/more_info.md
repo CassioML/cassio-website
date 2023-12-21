@@ -90,17 +90,17 @@ Docker. First make sure you have Docker [installed](https://www.docker.com/),
 then launch the following command:
 
 ```bash
-docker run --name my-cassandra -d cassandra:5.0-alpha2
+docker run --name my-cassandra -d cassandra:5
 ```
 
 In the command above, you can name the container any way you like:
 but keep in mind that the instructions on this page assume you
 used `my-cassandra`.
 
-The `5.0-alpha2`
+The `5`
 is an image tag: you may want to check Cassandra's
 [DockerHub page](https://hub.docker.com/_/cassandra#!)
-for the newest `5.*` tag to use.
+for the newest beyond `5.*` tag to use.
 
 In a few minutes, the container will be up and running, ready to be used. You
 can verify this by running `docker exec -it my-cassandra  nodetool status` and
