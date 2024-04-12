@@ -1,4 +1,4 @@
-If you want to see CassIO in action without runnig anything locally,
+If you want to see CassIO in action without running anything locally,
 as outlined in the ["Start Here"](/start_here/) page, just open a Colab example
 backed by an Astra DB cloud instance.
 
@@ -39,8 +39,7 @@ parameters.
 
 You can copy the provided `.env.template` file and replace
 the environment variables you see there.
-If using Astra DB, these amount to the database ID,
-the Token (with role "database administrator"), and optionally a keyspace name.
+If using Astra DB, these amount to the Database ID and Token.
 
 If you plan on using a local Cassandra, the `.env` setup instructions are given
 [below](#use-the-local-cassandra-in-the-code).
@@ -90,14 +89,14 @@ Docker. First make sure you have Docker [installed](https://www.docker.com/),
 then launch the following command:
 
 ```bash
-docker run --name my-cassandra -d cassandra:5.0-alpha2
+docker run --name my-cassandra -d cassandra:5.0-beta1
 ```
 
 In the command above, you can name the container any way you like:
 but keep in mind that the instructions on this page assume you
 used `my-cassandra`.
 
-The `5.0-alpha2`
+The `5.0-beta1`
 is an image tag: you may want to check Cassandra's
 [DockerHub page](https://hub.docker.com/_/cassandra#!)
 for the newest `5.*` tag to use.
@@ -150,8 +149,8 @@ You can copy from the provided `.env.template` example file if
 you haven't yet and, ignoring the `ASTRA_DB...` variables, make sure
 the `LOCAL_...` variables in the `.env` define:
 
-- and the IP address (or "contact point") for the Docker image;
-- the correct keyspace name used above.
+- the IP address (or "contact point") for the Docker image;
+- and the correct keyspace name as you just created it.
 
 In particular, the IP address of the container is found within the very long
 output of `docker inspect my-cassandra`. The following command
@@ -165,7 +164,7 @@ docker inspect my-cassandra | \
 ```
 
 All notebooks offer the choice between using Cassandra and Astra DB: the former
-case relies on a `cqlsession.py`, imported from the notebooks,
+case relies on a `cqlsession.py`, imported in the notebooks,
 which provides the simple logic to create the session and read the keyspace
 from the environment variables. If you need additional customization (such as
 setting up authentication, using a custom port for CQL, etc), this is the

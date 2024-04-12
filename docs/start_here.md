@@ -51,36 +51,12 @@ Go to [astra.datastax.com](https://astra.datastax.com) register,
 and look for "Create Database".
 Ensure you pick the "vector" option when creating the DB.
 
-Depending on your Astra preferences, you _may_ be asked to provide a name
-for a "Keyspace" in the database (essentially a way to group tables).
-Correspondingly, here, when asked please provide the
-keyspace name (we'll assume you used `cassio_tutorials`), or leave it empty.
+In a couple of minutes your database will be in the "Active" state.
 
-In a couple of minutes your database will be in the "Active" state, as
-shown in the DB Quickstart page ([more info](https://awesome-astra.github.io/docs/pages/astra/create-instance/)).
+Now you need two connection parameters from the Astra dashboard for your database:
 
-Now you need two connection parameters:
-
-- the **Database ID**, such as `01234567-89ab-cdef-0123-456789abcdef`;
-- the (Database Administrator) **Token**, such as `AstraCS:aZ90...`.
-
-These can be located/generated on the Astra dashboard
-(more info
-[here](https://awesome-astra.github.io/docs/pages/astra/faq/#where-should-i-find-a-database-identifier)
-and
-[here](https://awesome-astra.github.io/docs/pages/astra/create-token/)
-respectively).
-
-!!! warning "Locate the Database ID"
-
-    There is one choice of UI for the Astra dashboard that exposes the
-    "API Endpoint" connection parameter instead of the database ID itself.
-
-    In that case, you can read the database ID from the endpoint by looking at the first
-    part of its domain name, the one before the region name: for instance if
-    your API endpoint is "https://01234567-89ab-cdef-0123-456789abcdef-us-east1.apps.astra.datastax.com",
-    the database ID to use here will be `01234567-89ab-cdef-0123-456789abcdef`.
-
+- look for a "Generate token" button in the "Application Tokens" panel on the right: you will copy the **Database Token**, which looks like `AstraCS:aZ90...`;
+- locate the "API Endpoint" panel on the right and copy the endpoint string. The **Database ID** is the first part of the domain name, the one before the region: for instance if you have "https://01234567-89ab-cdef-0123-456789abcdef-us-east1.apps.astra.datastax.com" the ID will be `01234567-89ab-cdef-0123-456789abcdef`.
 
 ## LLM Access
 
@@ -215,7 +191,7 @@ Check out other use cases which benefit from Vector Search, and other ways to
 enrich your application with LangChain and Cassandra, by browsing the
 [LangChain section](/frameworks/langchain/about/) of the site.
 
-Or take a look at the various ways to use CassIO besides LangChain -- check
+Or take a look at the various ways to use CassIO besides LangChain — check
 out the
 [LlamaIndex](/frameworks/llamaindex/about/)
 section or the one about direct

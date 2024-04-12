@@ -4,8 +4,6 @@ pip install cassio
 
 <img src="images/cassio_logo1_transparent.png#only-light" alt="CassIO logo" style="width: 30%;"/>
 <img src="images/cassio_logo1_transparent_darkmode.png#only-dark" alt="CassIO logo" style="width: 30%;"/>
-<!-- ![CassIO logo](images/cassio_logo1_transparent.png#only-light) -->
-<!-- ![CassIO logo](images/cassio_logo1.png#only-dark) -->
 
 CassIO is the ultimate solution for seamlessly integrating [Apache Cassandra®](https://cassandra.apache.org) with generative artificial intelligence and other machine learning workloads. This powerful Python library simplifies the complicated process of accessing the advanced features of the Cassandra database, including vector search capabilities. With CassIO, developers can fully concentrate on designing and perfecting their AI systems without any concerns regarding the complexities of integration with Cassandra.
 
@@ -45,14 +43,6 @@ CassIO is the core logic powering various LLM frameworks, utilizing "thin adapte
 As a mediator between your application, a framework like LangChain or LlamaIndex, and the Cassandra database, CassIO is the optimal solution for efficient and effective data management.
 
 ![CassIO, sketch](images/cassio_sketch.png)
-
-## Latest status
-
-CassIO is evolving rapidly. Note that at the time of writing
-
-1. there's support for LangChain and LlamaIndex, with new features still being actively added;
-2. The "Cassandra prompt template" component in LangChain is still in preview, which is why the setup instructs to install a forked version of the framework (but you're good to do with everything else by just doing a regular `pip install langchain`);
-3. CassIO can be used also directly in your application (for instance, for a non-language-based Vector Search need): this is also covered in the present documentation.
 
 ## Trademark
 
