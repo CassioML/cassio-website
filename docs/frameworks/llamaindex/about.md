@@ -21,7 +21,7 @@ from vector stores to data readers.
 
 ## Available components
 
-CassIO powers integration with LlamaIndex, making it possible to easily
+CassIO powers integrations with LlamaIndex, making it possible to easily
 develop LLM applications within this framework while taking advantage
 of Astra DB / Cassandra as the storage system.
 
