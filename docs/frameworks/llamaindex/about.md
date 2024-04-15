@@ -28,11 +28,8 @@ of Astra DB / Cassandra as the storage system.
 The following examples can be run either locally as Jupyter notebooks
 (see the [local setup](/frameworks/llamaindex/setup/)
 section for instructions) or directly as Colab
-notebooks (check out the
+notebooks (look for the
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 icon at the top of each page).
 
 - Check out the [Vector Store Quickstart](/frameworks/llamaindex/vector-quickstart/) for a primer on creating and using a Vector Store on top of a Cassandra (vector-capable) database.
-
-This list will grow over time as new needs are addressed
-and the current extensions are refined.

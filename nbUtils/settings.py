@@ -177,8 +177,8 @@ perNotebookColabCellSequences = {
     'docs/frameworks/langchain/memory-basic.ipynb': noLLM_cellSequences,
     'docs/frameworks/langchain/prompt-templates-engine.ipynb': noDB_noLLM_cellSequences,
     #
-    'docs/frameworks/direct_cassio/sound_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
-    'docs/frameworks/direct_cassio/image_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
+    'docs/frameworks/standalone/sound_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
+    'docs/frameworks/standalone/image_similarity_vectors.ipynb': noLLM_GPU_cellSequences,
     #
     'docs/frameworks/llamaindex/vector-quickstart.ipynb': [
         'seq_title',

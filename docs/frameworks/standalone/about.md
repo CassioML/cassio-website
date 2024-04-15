@@ -1,4 +1,4 @@
-# Usage of CassIO
+# Stand-alone CassIO
 
 In most cases, CassIO is used within other frameworks, such as LangChain,
 as part of the stack to facilitate usage of Cassandra in ML/GenAI workloads.
@@ -9,12 +9,9 @@ However, sometimes one may prefer using CassIO directly in their application: fo
 
     Most of the examples in this section can run straight away as Colab notebooks,
     provided you have checked the [pre-requisites](/start_here/#vector-database).
-    (check out the
-    <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
-    icon at the top of each page)
 
     If you prefer to run in local Jupyter, set up the
-    ["Usage" environment](/frameworks/direct_cassio/setup/) first.
+    ["stand-alone" environment](/frameworks/standalone/setup/) first.
 
 <!-- documentation-oriented quickstarts, to come -->
 
@@ -23,7 +20,9 @@ However, sometimes one may prefer using CassIO directly in their application: fo
 Below is a collection of end-to-end use cases which make direct use of
 CassIO.
 All of the following examples can run as Colab
-notebooks straight away:
+notebooks straight away (look for the
+<img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
+icon at the top of each page):
 
-- [Image similarity detection](/frameworks/direct_cassio/image_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._
-- [Sound similarity detection](/frameworks/direct_cassio/sound_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._
+- [Image similarity detection](/frameworks/standalone/image_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._
+- [Sound similarity detection](/frameworks/standalone/sound_similarity_vectors/), through Vector Search. _Includes starting a Web front-end from within the notebook._

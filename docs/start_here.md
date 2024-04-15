@@ -194,8 +194,8 @@ enrich your application with LangChain and Cassandra, by browsing the
 Or take a look at the various ways to use CassIO besides LangChain — check
 out the
 [LlamaIndex](/frameworks/llamaindex/about/)
-section or the one about direct
-[Usage](/frameworks/direct_cassio/about/) of the library.
+section or the one about
+[stand-alone usage](/frameworks/standalone/about/) of the library.
 
 If you are looking for something more specific, check out the [CassIO Reference](/reference/).
 

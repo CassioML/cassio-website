@@ -27,7 +27,7 @@ our preview fork of LangChain throughout. _You do not need to depart from_
 
 CassIO seamlessly integrates with LangChain, offering Cassandra-specific
 tools for many tasks. Almost all of the following examples can run as Colab
-notebooks straight away (check out the
+notebooks straight away (look for the
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 icon at the top of each page):
 

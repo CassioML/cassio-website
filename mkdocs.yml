@@ -32,12 +32,12 @@ nav:
     - About: frameworks/llamaindex/about.md
     - Local setup: frameworks/llamaindex/setup.md
     - Vector Store quickstart: frameworks/llamaindex/vector-quickstart.ipynb
-  - Usage:
-      - About: frameworks/direct_cassio/about.md
-      - Local setup: frameworks/direct_cassio/setup.md
+  - Stand-alone:
+      - About: frameworks/standalone/about.md
+      - Local setup: frameworks/standalone/setup.md
       - Vector Search use cases:
-        - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
-        - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
+        - Image Similarity: frameworks/standalone/image_similarity_vectors.ipynb
+        - Sound Similarity: frameworks/standalone/sound_similarity_vectors.ipynb
   - Reference:
       - Home: reference/index.md
       - Init: reference/init.md
@@ -66,6 +66,12 @@ plugins:
       include_source: True
       include: ["*.ipynb"]
       ignore: ["**/.colab/*.ipynb", "**/.ipynb_checkpoints/*.ipynb"]
+  - redirects:
+      redirect_maps:
+        'frameworks/direct_cassio/about.md': 'frameworks/standalone/about.md'
+        'frameworks/direct_cassio/setup.md': 'frameworks/standalone/setup.md'
+        # there seems to be no way to have these nice redirect aware of the ipynb conversion
+        # so we'll drop redirects for notebook pages.
 
 # Theme
 theme:
