@@ -67,24 +67,16 @@ codeLineReplacementsMap = {
 dependencyReplacementsMap = {
     "docs/frameworks/langchain": (
         [
-            "caching-llm-responses.ipynb",
-            "memory-basic.ipynb",
-            "memory-conversationbuffermemory.ipynb",
-            "memory-summarybuffermemory.ipynb",
-            "memory-vectorstore.ipynb",
-            "qa-advanced.ipynb",
-            "qa-basic.ipynb",
-            "qa-maximal-marginal-relevance.ipynb",
-            "qa-vector-metadata.ipynb",
-            "semantic-caching-llm-responses.ipynb",
+            "some-notebook.ipynb",
+            "some-other-notebook.ipynb",
         ],
         {
             (
-                "git+https://github.com/hemidactylus/langchain@SL-preview-for-cassio#egg=langchain-core&subdirectory=libs/core",
-                "langchain>=0.0.348",
+                "special-dependency==1.2.3",
+                "replacement-dependency==9.8.7",
             ),
             (
-                "git+https://github.com/hemidactylus/langchain@SL-preview-for-cassio#egg=langchain&subdirectory=libs/langchain",
+                "no-colab-dependency==x.y.z",
                 None,
             ),
         },
@@ -103,7 +95,7 @@ _dependencyReplacementsUnfoldedMap = {
 #       (*) note: slightly different way to express the path, check it there.
 suppressColabify = [
     'docs/frameworks/langchain/prompt-templates-feast.ipynb',
-    'docs/frameworks/dir1/dir2/another-notebook-not-colabified.ipynb', 
+    'docs/frameworks/dir1/dir2/a-notebook-not-colabified.ipynb', 
 ]
 
 # SEQUENCES OF COLAB-SPECIFIC CLOSING CELLS (just a cta)
