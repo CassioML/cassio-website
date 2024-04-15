@@ -54,7 +54,7 @@
     "    apiSecret = input(f'Your API Key for LLM provider \"{llmProvider}\": ')\n",
     "    os.environ['AZURE_OPENAI_API_KEY'] = apiSecret\n",
     "    apiBase = input('The \"Base URL\" for your models (e.g. \"https://YOUR-RESOURCE-NAME.openai.azure.com\"): ')\n",
-    "    os.environ['AZURE_OPENAI_API_BASE'] = apiBase\n",
+    "    os.environ['AZURE_OPENAI_ENDPOINT'] = apiBase\n",
     "    apiLLMDepl = input('The name of your LLM Deployment: ')\n",
     "    os.environ['AZURE_OPENAI_LLM_DEPLOYMENT'] = apiLLMDepl\n",
     "    apiLLMModel = input('The name of your LLM Model (e.g. \"gpt-4\"): ')\n",

@@ -9,25 +9,24 @@ nav:
   - LangChain:
     - About: frameworks/langchain/about.md
     - Local setup: frameworks/langchain/setup.md
-    - Vector Search:
-        - About: frameworks/langchain/vector-similarity-search.md
-        - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
-        - Vector Similarity Search QA Quickstart: frameworks/langchain/qa-basic.ipynb
-        - VectorStore/QA, metadata filtering: frameworks/langchain/qa-vector-metadata.ipynb
-        - VectorStore/QA, learn more: frameworks/langchain/qa-advanced.ipynb
-        - VectorStore/QA, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
-        - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
-    - Caching:
-        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
+    - RAG / Vector Search:
+        - RAG Quickstart: frameworks/langchain/qa-basic.ipynb
+        - VectorStore, metadata filtering: frameworks/langchain/qa-vector-metadata.ipynb
+        - VectorStore, advanced: frameworks/langchain/qa-advanced.ipynb
+        - VectorStore, MMR reranking: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
     - Memory:
-        - Base class: frameworks/langchain/memory-basic.ipynb
+        - Memory, base class: frameworks/langchain/memory-basic.ipynb
         - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
         - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
-    - Prompt Templates:
-      - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
-      - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
-      - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
-      - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
+        - Semantic Memory: frameworks/langchain/memory-vectorstore.ipynb
+    - LLM Caching:
+        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
+        - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
+    # - Prompt Templates:
+    #   - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
+    #   - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
+    #   - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
+    #   - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
   - LlamaIndex:
     - About: frameworks/llamaindex/about.md
     - Local setup: frameworks/llamaindex/setup.md

@@ -24,7 +24,7 @@ notebooks straight away (look for the
 <img src="/images/colab.png" style="height: 1.4em; vertical-align: middle;"/>
 icon at the top of each page):
 
-- A [Vector Store](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to build the best answer to a given question ("QA use case");
+- A [Vector Store](/frameworks/langchain/qa-basic/) that can store a knowledge base and retrieve its relevant parts to build the best answer to a given question (the so-called RAG, or retrieval-augmented-generation, technique);
 - ... with support for [metadata filtering](/frameworks/langchain/qa-vector-metadata/) to narrow down vector similarity queries;
 - ... whose usage can be [adapted](/frameworks/langchain/qa-advanced/) to suit many specific needs.
 - ... and that can be configured to retrieve pieces of information [as diverse as possible](/frameworks/langchain/qa-maximal-marginal-relevance/) to maximize the actual information flowing to the answer.
@@ -35,6 +35,7 @@ icon at the top of each page):
 - A facility for [caching LLM responses](/frameworks/langchain/caching-llm-responses/) on Cassandra, thereby saving on latency and tokens where possible.
 - ... and a semantic [version of the LLM cache](/frameworks/langchain/semantic-caching-llm-responses/), oblivious to the exact form a text is phrased.
 
-- `[Preview]` Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
+<!-- - `[Preview]` Automatic [injection](/frameworks/langchain/prompt-templates-basic/) of data from Cassandra into a prompt;
 - `[Preview]` Automatic injection of data [from a Feast feature store](/frameworks/langchain/prompt-templates-feast/) (e.g. backed by Cassandra) into a prompt.
 - `[Preview]` A detour to look at the very [engine](/frameworks/langchain/prompt-templates-engine/) powering "database-bound prompt templates"... (useful to develop templates for automatic extraction of data from custom sources).
+ -->

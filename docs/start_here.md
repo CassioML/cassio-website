@@ -160,7 +160,7 @@ See the inserts below for more information on each provider.
 
     A dialog will be shown (make sure that Python code is
     the selected option), where you will find the remaining
-    connection parameters: the API Version, the "API Base"
+    connection parameters: the API Version, the "Azure Endpoint"
     (an URL to your resource), and the API Key (shown as masked copyable text box).
 
     ![Azure OpenAI, View-Code Dialog](images/services/azure-openai-api-key-7.png)

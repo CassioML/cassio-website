@@ -5,13 +5,14 @@ export OPENAI_API_KEY="..."
 # export GOOGLE_APPLICATION_CREDENTIALS="/path/to/service-account-key.json"
 
 ## Azure_OpenAI
-# export AZURE_OPENAI_API_VERSION="2023-03-15-preview"
-# export AZURE_OPENAI_API_BASE="https://YOUR-RESOURCE-NAME.openai.azure.com"
+# export AZURE_OPENAI_API_VERSION="2024-02-15-preview"
+# export AZURE_OPENAI_ENDPOINT="https://YOUR-RESOURCE-NAME.openai.azure.com"
 # export AZURE_OPENAI_API_KEY="..."
 # export AZURE_OPENAI_LLM_DEPLOYMENT="Your_LLM_Deployment_Name"
-# export AZURE_OPENAI_LLM_MODEL="gpt-4"
 # export AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT="Your_Embeddings_Deployment_Name"
-# export AZURE_OPENAI_EMBEDDINGS_MODEL="text-embedding-ada-002"
+#
+# Optional (default is for 'text-embedding-ada-002' embedding model:
+# export AZURE_OPENAI_EMBEDDINGS_DIMENSION="1536" # check your embedding model!
 
 ## see e.g. 'docs/frameworks/langchain/llm_choice.py' for valid options here
 export PREFERRED_LLM_PROVIDER="OpenAI"
