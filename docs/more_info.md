@@ -104,7 +104,7 @@ for the newest `5.*` tag to use.
 In a few minutes, the container will be up and running, ready to be used. You
 can verify this by running `docker exec -it my-cassandra  nodetool status` and
 looking for an output line starting with `UN ...`
-(which stands the "Up" and "Normal" state of the node).
+(which stands for the "Up" and "Normal" state of the node).
 
 !!! note "Other ways to run Cassandra"
 
@@ -113,7 +113,8 @@ looking for an output line starting with `UN ...`
     and the keyspace name in the `.env` file as outlined below.
 
     For more advanced setup involving e.g. authentication, you might have to
-    modify the Python code that creates the `Session` to fit your needs.
+    modify the Python code that creates the `Session`
+    (e.g. the appropriate `cqlsession.py`) to fit your needs.
 
 ### CQL Console
 
@@ -128,7 +129,7 @@ docker exec -it my-cassandra cqlsh
 Still in the CQL Console, create a keyspace for the examples by executing the following:
 
 ```sql
-CREATE KEYSPACE IF NOT EXISTS cassio_tutorials
+CREATE KEYSPACE IF NOT EXISTS default_keyspace
     WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
 

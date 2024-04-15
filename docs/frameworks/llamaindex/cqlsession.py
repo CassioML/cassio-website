@@ -8,7 +8,7 @@ from cassandra.cluster import (
 )
 from cassandra.auth import PlainTextAuthProvider
 
-LOCAL_KEYSPACE = os.environ.get('LOCAL_KEYSPACE', 'cassio_tutorials')
+LOCAL_KEYSPACE = os.environ.get('LOCAL_KEYSPACE', 'default_keyspace')
 LOCAL_CONTACT_POINT_STRING = os.environ.get('LOCAL_CONTACT_POINTS', '')
 
 def getCassandraCQLSession():

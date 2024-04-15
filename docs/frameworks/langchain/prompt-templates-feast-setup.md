@@ -68,7 +68,7 @@ feast init -t cassandra user_features
 ```
 
 Provide the required information, paying attention to the
-keyspace name (`cassio_tutorials` if you went with the defaults).
+keyspace name (`default_keyspace` if you went with the defaults).
 For details, see
 [the Feast docs page](https://docs.feast.dev/reference/online-stores/cassandra#getting-started).
 Keep also in mind that, for Astra DB, you will be asked to provide
