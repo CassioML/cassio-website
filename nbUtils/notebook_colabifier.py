@@ -20,13 +20,11 @@ from nbmanipulate import (
 )
 
 from settings import (
+    cellSequenceCreatorMap,
     codeLineReplacementsMap,
-    suppressColabify,
-    defaultColabCellSequences,
     defaultColabCellClosingSequences,
     perNotebookColabCellSequences,
     perNotebookColabCellClosingSequences,
-    cellSequenceCreatorMap,
 )
 
 # enrichment-specific tools
@@ -35,7 +33,7 @@ def enrichNbTree(pathList, fileTitle, nbTree, **kwargs):
     inputFile = joinFilePath(pathList, fileTitle)
     cellSequenceIDs = perNotebookColabCellSequences.get(
         inputFile,
-        defaultColabCellSequences,
+        [],
     )
     cellClosingSequenceIDs = perNotebookColabCellClosingSequences.get(
         inputFile,
@@ -140,8 +138,7 @@ def locateNotebooks(home='.', excludeDirs={'.ipynb_checkpoints', '.colab'}):
 if __name__ == '__main__':
     for pathList, fileTitle in locateNotebooks():
         pathString = joinFilePath(pathList, fileTitle)
-        if pathString not in suppressColabify:
-            print(f'* Doing "{pathString}" ... ', end='')
-            colabifyNotebook(pathList, fileTitle)
-            print('done.')
+        print(f'* Doing "{pathString}" ... ', end='')
+        colabifyNotebook(pathList, fileTitle)
+        print('done.')
 
