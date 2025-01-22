@@ -1,5 +1,10 @@
 # CassIO, website
 
+> [!WARNING]
+> **Discontinued as a public library**
+> Starting March 2024, efforts to improve CassIO are put on hold. The library, while still used as is within other projects and receiving occasional updates, is now essentially **discontinued** for use by the general public.
+
+
 ## Local run (with auto-reload)
 
 Create a virtualenv e.g. `cassio-website-3.10`
