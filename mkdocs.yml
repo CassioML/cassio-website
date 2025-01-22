@@ -2,51 +2,13 @@ site_name: CassIO
 repo_url: https://github.com/CassioML/cassio
 
 nav:
-  - Home:
-      - Overview: index.md
-      - Start Here: start_here.md
-      - Further reading: more_info.md
-  - LangChain:
-    - About: frameworks/langchain/about.md
-    - Local setup: frameworks/langchain/setup.md
-    - Vector Search:
-        - About: frameworks/langchain/vector-similarity-search.md
-        - Semantic LLM response caching: frameworks/langchain/semantic-caching-llm-responses.ipynb
-        - Vector Similarity Search QA Quickstart: frameworks/langchain/qa-basic.ipynb
-        - VectorStore/QA, metadata filtering: frameworks/langchain/qa-vector-metadata.ipynb
-        - VectorStore/QA, learn more: frameworks/langchain/qa-advanced.ipynb
-        - VectorStore/QA, MMR support: frameworks/langchain/qa-maximal-marginal-relevance.ipynb
-        - VectorStore-backed memory: frameworks/langchain/memory-vectorstore.ipynb
-    - Caching:
-        - Caching LLM responses: frameworks/langchain/caching-llm-responses.ipynb
-    - Memory:
-        - Base class: frameworks/langchain/memory-basic.ipynb
-        - Conversation Buffer Memory: frameworks/langchain/memory-conversationbuffermemory.ipynb
-        - Summary Buffer Memory: frameworks/langchain/memory-summarybuffermemory.ipynb
-    - Prompt Templates:
-      - Cassandra Prompt Templates: frameworks/langchain/prompt-templates-basic.ipynb
-      - Feast/Cassandra, setup: frameworks/langchain/prompt-templates-feast-setup.md
-      - Feast Prompt Templates: frameworks/langchain/prompt-templates-feast.ipynb
-      - Convertor-based templates: frameworks/langchain/prompt-templates-engine.ipynb
-  - LlamaIndex:
-    - About: frameworks/llamaindex/about.md
-    - Local setup: frameworks/llamaindex/setup.md
-    - Vector Store quickstart: frameworks/llamaindex/vector-quickstart.ipynb
-  - Usage:
-      - About: frameworks/direct_cassio/about.md
-      - Local setup: frameworks/direct_cassio/setup.md
-      - Vector Search use cases:
-        - Image Similarity: frameworks/direct_cassio/image_similarity_vectors.ipynb
-        - Sound Similarity: frameworks/direct_cassio/sound_similarity_vectors.ipynb
+  - Home: index.md
+  - Examples:
+    - Overview: frameworks/examples/index.md
+    - Quickstart: frameworks/examples/quickstart.ipynb
   - Reference:
       - Home: reference/index.md
       - Init: reference/init.md
-  - Sample Apps:
-      - Hotels/LangChain: demo_apps/hotels_langchain.md
-      - FLARE/LangChain: demo_apps/flare_langchain.md
-  - Community:
-      - Getting Help: community_help.md
-      - Contributor Guide: community_contrib.md
 
 markdown_extensions:
   - admonition
